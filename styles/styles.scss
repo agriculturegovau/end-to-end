@@ -1,0 +1,318 @@
+/* TODO: Figure out how to code split the component styles, while still having access to the AuDS SASS variables and functions */
+
+$AU-color-foreground-text: #313131; // Default theme colour used for body text and headings.
+$AU-color-foreground-action: #00558b; // Default theme colour for buttons and interactive elements.
+$AU-color-foreground-focus: #9163de; // Default theme colour that outlines an element when it receives focus.
+$AU-color-background: #ffffff; // Default theme background colour.
+$AU-colordark-foreground-text: #ffffff; // Dark theme colour used for body text and headings.
+$AU-colordark-foreground-action: #61daff; // Dark theme colour for buttons and interactive elements.
+$AU-colordark-foreground-focus: #c390f9; // Dark theme colour that outlines an element when it receives focus.
+$AU-colordark-background: #162845; // Dark theme background colour.
+
+$custom-colordark-background-alt: #0a1931;
+$custom-color-foreground-hint: #6f777b;
+$custom-color-background-alt: #e6f6f6;
+$custom-color-tabs-border: #f4f3f4;
+
+@import './@gov.au/core/_module.scss';
+@import './@gov.au/grid-12/_module.scss';
+@import './@gov.au/body/_module.scss';
+@import './@gov.au/breadcrumbs/_module.scss';
+@import './@gov.au/buttons/_module.scss';
+@import './@gov.au/callout/_module.scss';
+@import './@gov.au/card/_module.scss';
+@import './@gov.au/control-input/_module.scss';
+@import './@gov.au/footer/_module.scss';
+@import './@gov.au/form/_module.scss';
+@import './@gov.au/header/_module.scss';
+@import './@gov.au/headings/_module.scss';
+@import './@gov.au/link-list/_module.scss';
+@import './@gov.au/main-nav/_module.scss';
+@import './@gov.au/page-alerts/_module.scss';
+@import './@gov.au/skip-link/_module.scss';
+@import './@gov.au/table/_module.scss';
+@import './@gov.au/select/_module.scss';
+/* //@import './@gov.au/tags/_module.scss'; */
+@import './@gov.au/text-inputs/_module.scss';
+
+html {
+  background-color: $AU-colordark-background;
+}
+
+body {
+  margin: 0;
+  background-color: $AU-color-background;
+}
+
+section {
+  @include AU-space(padding, 4unit 0);
+}
+
+section > * + * {
+  @include AU-space(margin-top, 2unit);
+}
+
+.pre-wrap {
+  white-space: pre-wrap;
+}
+
+.questions-nav {
+  @include AU-space(padding-top, 2unit);
+}
+
+.bg-light {
+  background: $AU-color-background;
+}
+
+.font-lg {
+  @include AU-fontgrid(lg, default);
+}
+
+$spacing: (
+  '0': 0unit,
+  '1\\/4': 0.25unit,
+  '1\\/2': 0.5unit,
+  '3\\/4': 0.75unit,
+  '1': 1unit,
+  '1_5': 1.5unit,
+  '2': 2unit,
+  '5': 5unit,
+);
+$widths: (
+  'half': 50%,
+  '30': 30rem,
+  '44': 44rem,
+  '50': 50rem,
+);
+
+@each $name, $value in $spacing {
+  .m-#{$name} {
+    @include AU-space(margin, $value);
+  }
+  .-mt-#{$name} {
+    @include AU-space(margin-top, -$value);
+  }
+  .mt-#{$name} {
+    @include AU-space(margin-top, $value);
+  }
+  .mr-#{$name} {
+    @include AU-space(margin-right, $value);
+  }
+  .mb-#{$name} {
+    @include AU-space(margin-bottom, $value);
+  }
+  .ml-#{$name} {
+    @include AU-space(margin-left, $value);
+  }
+  .p-#{$name} {
+    @include AU-space(padding, $value);
+  }
+  .pt-#{$name} {
+    @include AU-space(padding-top, $value);
+  }
+  .pr-#{$name} {
+    @include AU-space(padding-right, $value);
+  }
+  .pb-#{$name} {
+    @include AU-space(padding-bottom, $value);
+  }
+  .pl-#{$name} {
+    @include AU-space(padding-left, $value);
+  }
+}
+
+@each $name, $value in $widths {
+  .minw-#{$name} {
+    min-width: $value;
+  }
+  .maxw-#{$name} {
+    max-width: $value;
+  }
+}
+
+.badge {
+  color: $AU-color-foreground-text;
+  @include AU-space(padding, 0.125unit 0.5unit);
+  @include AU-space(margin-left, 0.5unit);
+  border: solid 2px $AU-color-foreground-text;
+  @include AU-space(border-radius, 2unit);
+  @include AU-space(font-size, 0.75unit);
+  font-weight: normal;
+}
+
+.badge__error {
+  color: $AU-color-error;
+  border-color: $AU-color-error;
+}
+
+.badge__success {
+  color: $AU-color-success;
+  border-color: $AU-color-success;
+}
+
+.badge__warning {
+  color: $AU-color-warning;
+  border-color: $AU-color-warning;
+}
+
+.badge__info {
+  color: $AU-color-info;
+  border-color: $AU-color-info;
+}
+
+.badge__super {
+  vertical-align: super;
+}
+
+/* This is in the styles for https://designsystem.gov.au/ but doesn't appear in the npm package */
+.header__badge {
+  padding: 2px 8px;
+  padding: 2px 0.5rem;
+  margin-left: 8px;
+  margin-left: 0.5rem;
+  border: solid 2px #fff;
+  border-radius: 2em;
+  font-size: 12px;
+  font-size: 0.75rem;
+  font-weight: normal;
+  vertical-align: super;
+}
+
+.establishment-header {
+  @include AU-space(padding, 4unit 0);
+  background: $custom-colordark-background-alt;
+  color: $AU-colordark-foreground-text;
+
+  .au-breadcrumbs {
+    color: $AU-colordark-foreground-text;
+  }
+
+  a,
+  a:visited {
+    color: $AU-colordark-foreground-action;
+  }
+
+  .au-tag {
+    font-size: 1.25rem;
+    @include AU-space(margin-right, 1unit);
+    position: relative;
+    top: -0.5rem;
+  }
+}
+
+.actions {
+  @include AU-media(md) {
+    display: flex;
+    flex-direction: row;
+    @include AU-space(padding-bottom, 2unit);
+  }
+
+  & > * {
+    @include AU-space(margin-bottom, 1unit);
+
+    @include AU-media(md) {
+      flex: 1;
+      @include AU-space(margin-left, 1unit);
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+.action-card:not([href='#']) {
+  color: $AU-color-foreground-action;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+.action-card__icon {
+  text-align: center;
+  @include AU-space(padding-bottom, 1unit);
+}
+
+.au-card.au-card--coming-soon {
+  color: $custom-color-foreground-hint;
+}
+
+.au-btn.au-btn--tertiary.btn-remove {
+  color: $AU-color-error;
+}
+
+.success-pane {
+  background: $custom-color-background-alt;
+  @include AU-space(padding, 2unit);
+  @include AU-space(margin-top, 1unit);
+  text-align: center;
+
+  strong {
+    font-size: 2.5rem;
+    line-height: 1.125;
+  }
+}
+
+.react-micro-modal--portal {
+  div[role='dialog'][style] {
+    max-width: 750px !important;
+  }
+}
+
+.tabs-header {
+  border-bottom-color: $custom-color-tabs-border;
+
+  .active a,
+  .active a:hover {
+    border-bottom-color: $AU-color-foreground-action;
+  }
+}
+
+.react-micro-modal--portal div[role='dialog'][style].modal-dialog {
+  width: 95vw !important;
+  max-width: 36rem !important;
+  max-height: 95vh !important;
+}
+
+a.back-btn {
+  padding-left: 0 !important;
+}
+
+.au-control-input__input ~ .yes-no-toggle {
+  display: none;
+}
+
+.au-control-input__input:checked ~ .yes-no-toggle {
+  display: block;
+}
+
+/* TODO: this was hacked in */
+.au-inpage-nav-links {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding-left: 24px;
+  padding-left: 1.5rem;
+  margin-bottom: 48px;
+  margin-bottom: 3rem;
+  border-left: 4px solid #00698f;
+}
+
+.product-category-columns {
+  @include AU-media(md) {
+    columns: 2;
+
+    .au-control-input {
+      break-inside: avoid-column;
+      page-break-inside: avoid;
+    }
+  }
+}
+
+.progress-navigator {
+  @include AU-media(md) {
+    margin-left: 2em;
+  }
+}

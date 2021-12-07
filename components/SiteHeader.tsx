@@ -25,9 +25,11 @@ const SiteHeader = () => (
                 <div className="au-header__text">
                   <h1 className="au-header__heading">
                     Export service
-                    {/*<span className="header__badge">beta</span> */}
+                    <span className="header__badge">beta</span>
                   </h1>
+                  {/*
                   <div className="au-header__subline">Supporting Australian agricultural exports</div>
+                  */}
                 </div>
               </a>
             </Link>

@@ -1,19 +1,10 @@
 import '../styles/styles.scss';
-import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import DefaultLayout from 'components/layouts/DefaultLayout';
-import React, { ReactElement, ReactNode } from 'react';
-import type { NextPage } from 'next';
+import React from 'react';
+import { LayoutPageProps } from 'components/LayoutPage';
 
-type PageLayout = NextPage & {
-  getLayout?: React.FC;
-};
-
-type AppLayoutProps = AppProps & {
-  Component: PageLayout;
-};
-
-const App = ({ Component, pageProps }: AppLayoutProps) => {
+const App = ({ Component, pageProps }: LayoutPageProps) => {
   const Layout = Component.getLayout ?? DefaultLayout;
 
   const title = 'Department of Agriculture, Water and the Environment | Register non-prescribed goods';

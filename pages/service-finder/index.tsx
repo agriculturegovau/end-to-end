@@ -7,8 +7,9 @@ import AUcheckbox from 'components/@gov.au/AUcheckbox';
 import { ButtonGroup } from 'components/button-group';
 import { IntroLayout } from 'components/layouts/IntroLayout';
 import React from 'react';
+import { LayoutPage } from 'components/LayoutPage';
 
-const Page = () => (
+const Page: LayoutPage = () => (
   <IntroLayout
     heading="Scenario 1"
     superheading="End to end service prototype"

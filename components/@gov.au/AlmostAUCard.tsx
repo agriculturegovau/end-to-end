@@ -7,7 +7,7 @@ interface CardListProps {
 }
 
 interface CardProps {
-  title: React.ReactNode;
+  heading: React.ReactNode;
   footer?: React.ReactNode;
   //shadow?: boolean;
   //centred?: boolean;
@@ -38,7 +38,7 @@ export const AlmostAUCardList: React.FC<CardListProps & React.ComponentProps<'ul
   </ul>
 );
 
-const AlmostAUCard: React.FC<CardProps & React.ComponentProps<'div'>> = ({ title, footer, style, children }) => (
+const AlmostAUCard: React.FC<CardProps & React.ComponentProps<'div'>> = ({ heading, footer, style, children }) => (
   <div
     className="au-card au-body"
     style={{
@@ -55,7 +55,7 @@ const AlmostAUCard: React.FC<CardProps & React.ComponentProps<'div'>> = ({ title
   >
     <div className="au-card__inner">
       <AUHeading level={3} size="lg" style={{ margin: '0 0 1rem 0' }}>
-        {title}
+        {heading}
       </AUHeading>
       {children}
     </div>

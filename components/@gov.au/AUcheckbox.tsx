@@ -1,20 +1,19 @@
-import React, { forwardRef } from 'react'
-import clsx from 'clsx'
-import AUerrorText from './AUerrorText'
-import { FieldError } from 'react-hook-form'
+import React, { forwardRef } from 'react';
+import clsx from 'clsx';
+import AUerrorText from './AUerrorText';
 
 interface IAUcheckbox {
-  dark?: boolean
-  alternate?: boolean
-  small?: boolean
-  block?: boolean
-  label?: string | React.ReactNode
-  status?: 'valid' | 'invalid'
-  id: string
-  error?: Error | FieldError
+  dark?: boolean;
+  alternate?: boolean;
+  small?: boolean;
+  block?: boolean;
+  label?: string | React.ReactNode;
+  status?: 'valid' | 'invalid';
+  id: string;
+  error?: Error;
 }
 
-type AUcheckboxFC = React.ComponentProps<'input'> & IAUcheckbox
+type AUcheckboxFC = React.ComponentProps<'input'> & IAUcheckbox;
 
 const AUcheckbox = forwardRef<HTMLInputElement, AUcheckboxFC>(
   (
@@ -43,28 +42,20 @@ const AUcheckbox = forwardRef<HTMLInputElement, AUcheckboxFC>(
       block && 'au-control-input--block',
       status === 'valid' && 'au-control-input--valid',
       status === 'invalid' && 'au-control-input--invalid',
-    ])
+    ]);
 
     return (
       <div className={classNames}>
-        <input
-          ref={ref}
-          className="au-control-input__input"
-          id={id}
-          type={type}
-          {...otherProps}
-        />
+        <input ref={ref} className="au-control-input__input" id={id} type={type} {...otherProps} />
         <label className="au-control-input__text" htmlFor={id}>
           {label}
         </label>
-        {error?.message ? (
-          <AUerrorText text={error?.message} dark={!!dark} role="alert" />
-        ) : null}
+        {error?.message ? <AUerrorText text={error?.message} dark={!!dark} role="alert" /> : null}
       </div>
-    )
+    );
   }
-)
+);
 
-AUcheckbox.displayName = 'AUcheckbox'
+AUcheckbox.displayName = 'AUcheckbox';
 
-export default AUcheckbox
+export default AUcheckbox;

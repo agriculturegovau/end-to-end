@@ -58,7 +58,7 @@ const Home: LayoutPage = () => (
       <div className="row" style={{ marginTop: 0 }}>
         <AlmostAUCardList>
           <AlmostAUCard
-            title={
+            heading={
               <>
                 <Image src="/portrait-icon.png" width={60} height={60} alt="portrait icon" />
                 <br />
@@ -71,7 +71,7 @@ const Home: LayoutPage = () => (
             listed in management and control.
           </AlmostAUCard>
           <AlmostAUCard
-            title={
+            heading={
               <>
                 <Image src="/portrait-icon.png" width={60} height={60} alt="portrait icon" />
                 <br />
@@ -84,7 +84,7 @@ const Home: LayoutPage = () => (
             arrangement or operations.
           </AlmostAUCard>
           <AlmostAUCard
-            title={
+            heading={
               <>
                 <Image src="/portrait-icon.png" width={60} height={60} alt="portrait icon" />
                 <br />
@@ -97,7 +97,7 @@ const Home: LayoutPage = () => (
             account for convenience and access.
           </AlmostAUCard>
           <AlmostAUCard
-            title={
+            heading={
               <>
                 <Image src="/portrait-icon.png" width={60} height={60} alt="portrait icon" />
                 <br />
@@ -116,15 +116,15 @@ const Home: LayoutPage = () => (
 
       <div className="row">
         <AlmostAUCardList>
-          <AlmostAUCard title={<Link href="javascript:;">About the Export Service</Link>}>
+          <AlmostAUCard heading={<Link href="javascript:;">About the Export Service</Link>}>
             Deserunt anim non sunt irure do ex nulla sunt. Id exercitation dolore culpa.
           </AlmostAUCard>
 
-          <AlmostAUCard title={<Link href="javascript:;">How to get started</Link>}>
+          <AlmostAUCard heading={<Link href="javascript:;">How to get started</Link>}>
             Deserunt anim non sunt irure do ex nulla sunt. Id exercitation dolore culpa.
           </AlmostAUCard>
 
-          <AlmostAUCard title={<Link href="javascript:;">Contact us</Link>}>
+          <AlmostAUCard heading={<Link href="javascript:;">Contact us</Link>}>
             Deserunt anim non sunt irure do ex nulla sunt. Id exercitation dolore culpa.
           </AlmostAUCard>
         </AlmostAUCardList>

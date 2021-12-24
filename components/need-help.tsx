@@ -1,7 +1,8 @@
-import React from 'react'
-import AUcallout from './@gov.au/AUcallout'
-import AUheading from './@gov.au/AUheading'
-import { CONTACT_EMAIL } from '../store/constants'
+import React from 'react';
+import AUcallout from './@gov.au/AUcallout';
+import AUheading from './@gov.au/AUheading';
+
+const CONTACT_EMAIL = 'todo';
 
 export const NeedHelp: React.FC = () => (
   <AUcallout>
@@ -12,4 +13,4 @@ export const NeedHelp: React.FC = () => (
       Contact <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
     </p>
   </AUcallout>
-)
+);

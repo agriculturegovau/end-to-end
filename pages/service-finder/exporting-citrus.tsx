@@ -1,14 +1,7 @@
 import AUbutton from 'components/@gov.au/AUbutton';
 import { WizardLayout } from 'components/layouts/WizardLayout';
-import Link from 'next/link';
 import type { NextPage } from 'next';
-import AUformGroup from 'components/@gov.au/AUformGroup';
-import AUcheckbox from 'components/@gov.au/AUcheckbox';
-import { ButtonGroup } from 'components/button-group';
-import { ExitButton } from 'components/exit-button';
-import TextInput from 'components/TextInput';
 import AUheading from 'components/@gov.au/AUheading';
-import MyGovID from 'components/myGovID';
 
 const Page: NextPage = () => (
   <WizardLayout title="Exporting citrus to Zuy" navigator={false}>

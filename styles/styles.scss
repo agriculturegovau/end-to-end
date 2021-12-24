@@ -14,6 +14,22 @@ $custom-color-foreground-hint: #6f777b;
 $custom-color-background-alt: #e6f6f6;
 $custom-color-tabs-border: #f4f3f4;
 
+:root {
+  --AU-color-foreground-text: #{$AU-color-foreground-text};
+  --AU-color-foreground-action: #{$AU-color-foreground-action};
+  --AU-color-foreground-focus: #{$AU-color-foreground-focus};
+  --AU-color-background: #{$AU-color-background};
+  --AU-colordark-foreground-text: #{$AU-colordark-foreground-text};
+  --AU-colordark-foreground-action: #{$AU-colordark-foreground-action};
+  --AU-colordark-foreground-focus: #{$AU-colordark-foreground-focus};
+  --AU-colordark-background: #{$AU-colordark-background};
+
+  --custom-colordark-background-alt: #{$custom-colordark-background-alt};
+  --custom-color-foreground-hint: #{$custom-color-foreground-hint};
+  --custom-color-background-alt: #{$custom-color-background-alt};
+  --custom-color-tabs-border: #{$custom-color-tabs-border};
+}
+
 @import './@gov.au/core/_module.scss';
 @import './@gov.au/grid-12/_module.scss';
 @import './@gov.au/body/_module.scss';

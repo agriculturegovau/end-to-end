@@ -5,17 +5,28 @@ import { Navigator, ProgressPages } from '../wizard/navigator';
 import LogoDAWE from 'components/LogoDAWE';
 import AUbutton from 'components/@gov.au/AUbutton';
 import Link from 'next/link';
+import styled from '@emotion/styled';
 
 type IntroLayoutProps = {
   superheading?: string;
   heading: string;
-  cta?: { label: string; href: string };
+  cta?: { label?: string; href: string };
 };
+
+const App = styled.div``;
+
+const Main = styled.main`
+  color: var(--AU-color-background);
+  background-color: var(--AU-colordark-background);
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+`;
 
 export const IntroLayout: React.FC<IntroLayoutProps> = ({ superheading, heading, cta, children }) => {
   return (
-    <div className="App">
-      <main id="content">
+    <App className="App">
+      <Main id="content">
         <section className="container" style={{ fontSize: '1.2em' }}>
           <LogoDAWE />
           {superheading ? (
@@ -28,9 +39,9 @@ export const IntroLayout: React.FC<IntroLayoutProps> = ({ superheading, heading,
           </AUheading>
           <div style={{ fontSize: '1.2em' }}>{children}</div>
 
-          {cta ? <Link href={cta.href}>{cta.label}</Link> : null}
+          {cta ? <Link href={cta.href}>{cta.label || 'Get started'}</Link> : null}
         </section>
-      </main>
-    </div>
+      </Main>
+    </App>
   );
 };

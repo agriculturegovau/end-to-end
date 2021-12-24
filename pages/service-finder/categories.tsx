@@ -26,7 +26,7 @@ const Page: NextPage = () => (
 
     <AUformGroup style={{ marginTop: '2em' }}>
       {labels.map((label, n) => (
-        <AUcheckbox id={`export_option_${n}`} label={label} block />
+        <AUcheckbox key={`option-${n}`} id={`export_option_${n}`} label={label} block />
       ))}
     </AUformGroup>
 

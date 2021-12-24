@@ -43,7 +43,6 @@ const Home: NextPage = () => (
       <p>
         <Link href="/todo">Getting ready for an inspection</Link>
       </p>
-      up
     </AUcallout>
   </WizardLayout>
 );

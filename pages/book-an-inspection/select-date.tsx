@@ -31,16 +31,16 @@ const Home: NextPage = () => (
     <p>These are the available times on the selected date.</p>
 
     <AUformGroup style={{ marginTop: '1em' }}>
-      <AUcheckbox type="radio" id="a" label="9.00am - 11.00am" block />
-      <AUcheckbox type="radio" id="b" label="10.00am - 12.00pm" block />
-      <AUcheckbox type="radio" id="c" label="1.30pm - 3.30 pm" block />
-      <AUcheckbox type="radio" id="c" label="2.30pm - 4.30 pm" block />
+      <AUcheckbox type="radio" name="inspection-date" id="a" label="9.00am - 11.00am" block />
+      <AUcheckbox type="radio" name="inspection-date" id="b" label="10.00am - 12.00pm" block />
+      <AUcheckbox type="radio" name="inspection-date" id="c" label="1.30pm - 3.30 pm" block />
+      <AUcheckbox type="radio" name="inspection-date" id="d" label="2.30pm - 4.30 pm" block />
     </AUformGroup>
 
     <div style={{ marginTop: '3em' }}>
       <ButtonGroup>
-        <Link href="/book-an-inspection/booked">
-          <AUbutton>Book inspection</AUbutton>
+        <Link passHref href="/book-an-inspection/booked">
+          <AUbutton link>Book inspection</AUbutton>
         </Link>
         <AUbutton as="secondary">Cancel</AUbutton>
       </ButtonGroup>

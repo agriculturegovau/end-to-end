@@ -202,10 +202,12 @@ const CalendarB: React.FC<React.ComponentProps<'div'>> = ({ children, ...props }
 const Calendar: React.FC<React.ComponentProps<'div'>> = ({ children, ...props }) => (
   <>
     <CalendarA {...props} />
+    {/*
     <CalendarB {...props} />
     <br />
     {children}
     <input type="date" id="calendar"></input>;
+    */}
   </>
 );
 

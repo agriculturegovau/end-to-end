@@ -126,11 +126,11 @@ const App = ({ Component, pageProps }: LayoutPageProps) => {
         <meta property="og:url" content={url} />
         <meta property="og:image" content="/og-image.png" />
       </Head>
-      <Layout>
-        <OverlayCapture>
+      <OverlayCapture>
+        <Layout>
           <Component {...pageProps} />
-        </OverlayCapture>
-      </Layout>
+        </Layout>
+      </OverlayCapture>
     </>
   );
 };

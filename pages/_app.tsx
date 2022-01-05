@@ -1,8 +1,115 @@
 import '../styles/styles.scss';
 import Head from 'next/head';
+import Link from 'next/link';
 import DefaultLayout from 'components/layouts/DefaultLayout';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { LayoutPageProps } from 'components/LayoutPage';
+import styled from '@emotion/styled';
+
+const references = {
+  ['service-finder']: ['categories', 'where', 'suggested'],
+  ['book-an-inspection']: ['sign-in', 'select-date', 'booked'],
+  ['make-payment']: ['push-notification', 'email-inbox', 'sign-in', 'payment-summary', 'paypal', 'paypal-pay', 'paid'],
+};
+
+const Details = styled.details`
+  & + & {
+    margin-top: 2em;
+  }
+
+  & summary {
+    cursor: pointer;
+  }
+`;
+
+const References: React.FC<{ title: string; root: string; pages: string[] }> = ({ title, root, pages }) => (
+  <Details open>
+    <summary>{title}</summary>
+    <ul>
+      <li>
+        <Link href={`/${root}`}>index</Link>
+      </li>
+      {pages.map((page) => (
+        <li key={page}>
+          <Link href={`/${root}/${page}`}>{page}</Link>
+        </li>
+      ))}
+    </ul>
+  </Details>
+);
+
+const Overlay = styled.div`
+  background-color: var(--AU-color-background);
+  background-color: #e8eaec;
+  padding: 2em;
+  position: fixed;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 20em;
+  box-shadow: -4px 3px 10px #00000038;
+  z-index: 3;
+  border: 2px dashed #f31dc5;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  //text-align: right;
+  //border: 4px dashed #e46fca;
+`;
+
+const OverlayCapture: React.FC = ({ children }) => {
+  const [overlay, setOverlay] = useState(false);
+
+  useEffect(() => {
+    const el = window;
+
+    const overlayListener = (e: KeyboardEvent) => {
+      if (e.code !== 'Period') {
+        return;
+      }
+
+      setOverlay(!overlay);
+    };
+
+    el.addEventListener('keydown', overlayListener);
+    return () => {
+      el.removeEventListener('keydown', overlayListener);
+    };
+  });
+
+  return (
+    <>
+      {overlay ? (
+        <Overlay>
+          <code style={{ display: 'block' }}>
+            e2e tools
+            <hr />
+            <References title="Service finder" root="service-finder" pages={references['service-finder']} />
+            <References title="Book an inspection" root="book-an-inspection" pages={references['book-an-inspection']} />
+            <References title="Make payment" root="make-payment" pages={references['make-payment']} />
+          </code>
+          <span
+            style={{
+              cursor: 'pointer',
+              fontSize: '4em',
+              marginTop: 'auto',
+              paddingTop: '1rem',
+              alignSelf: 'flex-end',
+            }}
+            onClick={(e) => {
+              setOverlay(false);
+            }}
+          >
+            👋
+          </span>
+        </Overlay>
+      ) : null}
+      {children}
+    </>
+  );
+};
 
 const App = ({ Component, pageProps }: LayoutPageProps) => {
   const Layout = Component.getLayout ?? DefaultLayout;
@@ -20,7 +127,9 @@ const App = ({ Component, pageProps }: LayoutPageProps) => {
         <meta property="og:image" content="/og-image.png" />
       </Head>
       <Layout>
-        <Component {...pageProps} />
+        <OverlayCapture>
+          <Component {...pageProps} />
+        </OverlayCapture>
       </Layout>
     </>
   );

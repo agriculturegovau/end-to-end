@@ -30,16 +30,22 @@ export const IntroLayout: React.FC<IntroLayoutProps> = ({ superheading, heading,
         <section className="container" style={{ fontSize: '1.2em' }}>
           <LogoDAWE />
           {superheading ? (
-            <AUheading size="xl" level={1}>
+            <AUheading size="lg" level={1}>
               {superheading}
             </AUheading>
           ) : null}
           <AUheading size="xxxl" level={2}>
             {heading}
           </AUheading>
-          <div style={{ fontSize: '1.2em' }}>{children}</div>
+          <div style={{ fontSize: '1.2em', maxWidth: '36em' }}>{children}</div>
 
-          {cta ? <Link href={cta.href}>{cta.label || 'Get started'}</Link> : null}
+          {cta ? (
+            <Link passHref href={cta.href}>
+              <AUbutton dark link>
+                {cta.label || 'Get started'}
+              </AUbutton>
+            </Link>
+          ) : null}
         </section>
       </Main>
     </App>

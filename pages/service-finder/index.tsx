@@ -21,8 +21,8 @@ const Page: LayoutPage = () => (
   </IntroLayout>
 );
 
-const Wut: React.FC = ({ children }) => <>{children}</>;
+const Layout: React.FC = ({ children }) => <>{children}</>;
 
-Page.getLayout = Wut;
+Page.getLayout = Layout;
 
 export default Page;

@@ -2,7 +2,6 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    loader: 'imgix',
-    path: 'wut',
+    loader: 'custom',
   },
 };

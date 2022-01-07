@@ -8,6 +8,7 @@ import { ButtonGroup } from 'components/button-group';
 import WrapperLayout from 'components/layouts/WrapperLayout';
 import { LayoutPage } from 'components/LayoutPage';
 import { Main } from 'components/layouts/DefaultLayout';
+import Image from 'next/image';
 
 const Home: LayoutPage = () => (
   <main id="content" className="au-body">
@@ -55,6 +56,13 @@ const Home: LayoutPage = () => (
           <AlmostAUCard
             heading={
               <>
+                <Image
+                  src="/portrait-icon.png"
+                  width={60}
+                  height={60}
+                  alt="portrait icon"
+                  loader={(loaderProps) => loaderProps.src}
+                />
                 <br />
                 Establishment details
               </>
@@ -67,6 +75,13 @@ const Home: LayoutPage = () => (
           <AlmostAUCard
             heading={
               <>
+                <Image
+                  src="/portrait-icon.png"
+                  width={60}
+                  height={60}
+                  alt="portrait icon"
+                  loader={(loaderProps) => loaderProps.src}
+                />
                 <br />
                 Variation requests
               </>
@@ -79,6 +94,13 @@ const Home: LayoutPage = () => (
           <AlmostAUCard
             heading={
               <>
+                <Image
+                  src="/portrait-icon.png"
+                  width={60}
+                  height={60}
+                  alt="portrait icon"
+                  loader={(loaderProps) => loaderProps.src}
+                />
                 <br />
                 Data dashboard
               </>
@@ -91,6 +113,13 @@ const Home: LayoutPage = () => (
           <AlmostAUCard
             heading={
               <>
+                <Image
+                  src="/portrait-icon.png"
+                  width={60}
+                  height={60}
+                  alt="portrait icon"
+                  loader={(loaderProps) => loaderProps.src}
+                />
                 <br />
                 Corrective actions
               </>

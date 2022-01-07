@@ -7,7 +7,7 @@ import { LayoutPageProps } from 'components/LayoutPage';
 import styled from '@emotion/styled';
 
 const references = {
-  ['service-finder']: ['categories', 'where', 'suggested'],
+  ['service-finder']: ['categories', 'sign-in', 'where', 'suggested'],
   ['book-an-inspection']: ['sign-in', 'select-date', 'booked'],
   ['make-payment']: ['push-notification', 'email-inbox', 'sign-in', 'payment-summary', 'paypal', 'paypal-pay', 'paid'],
 };

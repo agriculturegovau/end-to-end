@@ -16,6 +16,7 @@ const MyGovID: React.FC<IMyGovID> = ({ callbackURL = '/' }) => (
     }}
   >
     <div style={{ margin: '0 14px' }}>Sign in with</div>
+    <Image src="/fingerprint.png" alt="myGovID" width={114} height={58} loader={(loaderProps) => loaderProps.src} />
   </div>
 );
 

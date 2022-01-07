@@ -1,10 +1,11 @@
 import AUbutton from 'components/@gov.au/AUbutton';
 import { WizardLayout } from 'components/layouts/WizardLayout';
 import type { NextPage } from 'next';
+import Link from 'next/link';
 import AUheading from 'components/@gov.au/AUheading';
 import MyGovID from 'components/MyGovID';
 
-const A: React.FC<{}> = ({ children }) => <a href="javascript:;">{children}</a>;
+const A: React.FC<{}> = ({ children }) => <Link href="/todo">{children}</Link>;
 
 const Page: NextPage = () => (
   <WizardLayout title="Sign in to your Export Service account" navigator={false}>

@@ -12,7 +12,7 @@ const Page: NextPage = () => (
     breadcrumbs={[
       {
         text: 'Home',
-        link: 'javascript:;',
+        link: '/todo',
       },
       { text: 'Sign in' },
     ]}

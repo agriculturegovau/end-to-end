@@ -8,7 +8,6 @@ import { ButtonGroup } from 'components/button-group';
 import WrapperLayout from 'components/layouts/WrapperLayout';
 import { LayoutPage } from 'components/LayoutPage';
 import { Main } from 'components/layouts/DefaultLayout';
-import Image from 'next/image';
 
 const Home: LayoutPage = () => (
   <main id="content" className="au-body">
@@ -30,10 +29,6 @@ const Home: LayoutPage = () => (
             <AUheading size="xxl" level="1" style={{ marginTop: '1rem' }}>
               A simpler way to manage export transactions
             </AUheading>
-
-            {/*
-            <Image src="/farm-landscape-large.jpg" width={1000} height={800} alt="what" />
-*/}
 
             <p>Access and manage your agricultural export requirements in one place.</p>
 
@@ -60,7 +55,6 @@ const Home: LayoutPage = () => (
           <AlmostAUCard
             heading={
               <>
-                <Image src="/portrait-icon.png" width={60} height={60} alt="portrait icon" />
                 <br />
                 Establishment details
               </>
@@ -73,7 +67,6 @@ const Home: LayoutPage = () => (
           <AlmostAUCard
             heading={
               <>
-                <Image src="/portrait-icon.png" width={60} height={60} alt="portrait icon" />
                 <br />
                 Variation requests
               </>
@@ -86,7 +79,6 @@ const Home: LayoutPage = () => (
           <AlmostAUCard
             heading={
               <>
-                <Image src="/portrait-icon.png" width={60} height={60} alt="portrait icon" />
                 <br />
                 Data dashboard
               </>
@@ -99,7 +91,6 @@ const Home: LayoutPage = () => (
           <AlmostAUCard
             heading={
               <>
-                <Image src="/portrait-icon.png" width={60} height={60} alt="portrait icon" />
                 <br />
                 Corrective actions
               </>
@@ -116,15 +107,15 @@ const Home: LayoutPage = () => (
 
       <div className="row">
         <AlmostAUCardList>
-          <AlmostAUCard heading={<Link href="javascript:;">About the Export Service</Link>}>
+          <AlmostAUCard heading={<Link href="/todo">About the Export Service</Link>}>
             Deserunt anim non sunt irure do ex nulla sunt. Id exercitation dolore culpa.
           </AlmostAUCard>
 
-          <AlmostAUCard heading={<Link href="javascript:;">How to get started</Link>}>
+          <AlmostAUCard heading={<Link href="/todo">How to get started</Link>}>
             Deserunt anim non sunt irure do ex nulla sunt. Id exercitation dolore culpa.
           </AlmostAUCard>
 
-          <AlmostAUCard heading={<Link href="javascript:;">Contact us</Link>}>
+          <AlmostAUCard heading={<Link href="/todo">Contact us</Link>}>
             Deserunt anim non sunt irure do ex nulla sunt. Id exercitation dolore culpa.
           </AlmostAUCard>
         </AlmostAUCardList>

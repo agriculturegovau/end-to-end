@@ -4,7 +4,7 @@ import { LayoutPage } from 'components/LayoutPage';
 
 const Page: LayoutPage = () => (
   <IntroLayout heading="Oops! 🛠" cta={{ href: '/', label: 'Start over again' }}>
-    <p>We're still working on that</p>
+    <p>We&apos;re still working on that</p>
   </IntroLayout>
 );
 

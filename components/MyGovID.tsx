@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from 'next/image';
+import StaticImage from './StaticImage';
 
 interface IMyGovID {
   callbackURL?: string;
@@ -16,7 +16,7 @@ const MyGovID: React.FC<IMyGovID> = ({ callbackURL = '/' }) => (
     }}
   >
     <div style={{ margin: '0 14px' }}>Sign in with</div>
-    <Image src="/fingerprint.png" alt="myGovID" width={114} height={58} loader={(loaderProps) => loaderProps.src} />
+    <StaticImage src="/fingerprint.png" alt="myGovID" width={114} height={58} />
   </div>
 );
 

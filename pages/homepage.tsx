@@ -3,12 +3,10 @@ import { WizardLayout } from 'components/layouts/WizardLayout';
 import Link from 'next/link';
 import AUheading from 'components/@gov.au/AUheading';
 import AlmostAUCard, { AlmostAUCardList } from 'components/@gov.au/AlmostAUCard';
-import type { NextPage } from 'next';
 import { ButtonGroup } from 'components/button-group';
 import WrapperLayout from 'components/layouts/WrapperLayout';
 import { LayoutPage } from 'components/LayoutPage';
-import { Main } from 'components/layouts/DefaultLayout';
-import Image from 'next/image';
+import StaticImage from 'components/StaticImage';
 
 const Home: LayoutPage = () => (
   <main id="content" className="au-body">
@@ -56,13 +54,7 @@ const Home: LayoutPage = () => (
           <AlmostAUCard
             heading={
               <>
-                <Image
-                  src="/portrait-icon.png"
-                  width={60}
-                  height={60}
-                  alt="portrait icon"
-                  loader={(loaderProps) => loaderProps.src}
-                />
+                <StaticImage src="/portrait-icon.png" width={60} height={60} alt="portrait icon" />
                 <br />
                 Establishment details
               </>
@@ -75,13 +67,7 @@ const Home: LayoutPage = () => (
           <AlmostAUCard
             heading={
               <>
-                <Image
-                  src="/portrait-icon.png"
-                  width={60}
-                  height={60}
-                  alt="portrait icon"
-                  loader={(loaderProps) => loaderProps.src}
-                />
+                <StaticImage src="/portrait-icon.png" width={60} height={60} alt="portrait icon" />
                 <br />
                 Variation requests
               </>
@@ -94,13 +80,7 @@ const Home: LayoutPage = () => (
           <AlmostAUCard
             heading={
               <>
-                <Image
-                  src="/portrait-icon.png"
-                  width={60}
-                  height={60}
-                  alt="portrait icon"
-                  loader={(loaderProps) => loaderProps.src}
-                />
+                <StaticImage src="/portrait-icon.png" width={60} height={60} alt="portrait icon" />
                 <br />
                 Data dashboard
               </>
@@ -113,13 +93,7 @@ const Home: LayoutPage = () => (
           <AlmostAUCard
             heading={
               <>
-                <Image
-                  src="/portrait-icon.png"
-                  width={60}
-                  height={60}
-                  alt="portrait icon"
-                  loader={(loaderProps) => loaderProps.src}
-                />
+                <StaticImage src="/portrait-icon.png" width={60} height={60} alt="portrait icon" />
                 <br />
                 Corrective actions
               </>

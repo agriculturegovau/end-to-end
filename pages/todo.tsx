@@ -3,8 +3,8 @@ import React from 'react';
 import { LayoutPage } from 'components/LayoutPage';
 
 const Page: LayoutPage = () => (
-  <IntroLayout heading="Oops! Sorry about that 👻" cta={{ href: '/', label: 'Start over again' }}>
-    <p>Seems we&apos;ve gotten our wires crossed, why not️</p>
+  <IntroLayout heading="Oops! 🛠" cta={{ href: '/', label: 'Start over again' }}>
+    <p>We're still working on that</p>
   </IntroLayout>
 );
 

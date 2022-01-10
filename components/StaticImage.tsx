@@ -1,15 +1,14 @@
 import React from 'react';
 import Image, { ImageLoaderProps, ImageProps } from 'next/image';
 
-const staticLoader = (props: ImageLoaderProps) => {
-  console.log('loader props', { props });
-  return props.src;
-};
+const isProd = process.env.NODE_ENV === 'production';
 
-const StaticImage: typeof Image = ({ loader = staticLoader, ...props }: ImageProps) => {
-  console.log('image props', { props });
+const StaticLoader = (props: ImageLoaderProps) => props.src;
 
-  <Image unoptimized loader={loader} {...props} />;
+const StaticImage: typeof Image = ({ loader = StaticLoader, ...props }: ImageProps) => {
+  const src = isProd ? `/end-to-end${props.src}` : props.src;
+
+  return <Image unoptimized {...props} loader={loader} src={src} />;
 };
 
 export default StaticImage;

@@ -7,6 +7,17 @@ import { LayoutPageProps } from 'components/LayoutPage';
 import styled from '@emotion/styled';
 
 const references = {
+  ['eligible-new-market']: [
+    'push-notification',
+    'email-inbox',
+    'sign-in',
+    'introduction',
+    'apply',
+    'servicensw-login',
+    'servicensw-agree',
+    'confirm',
+    'success',
+  ],
   ['service-finder']: ['categories', 'sign-in', 'where', 'suggested'],
   ['book-an-inspection']: ['sign-in', 'select-date', 'booked'],
   ['make-payment']: ['push-notification', 'email-inbox', 'sign-in', 'payment-summary', 'paypal', 'paypal-pay', 'paid'],
@@ -87,6 +98,11 @@ const OverlayCapture: React.FC = ({ children }) => {
             e2e tools
             <hr />
             <References title="Service finder" root="service-finder" pages={references['service-finder']} />
+            <References
+              title="Eligible for new market"
+              root="eligible-new-market"
+              pages={references['eligible-new-market']}
+            />
             <References title="Book an inspection" root="book-an-inspection" pages={references['book-an-inspection']} />
             <References title="Make payment" root="make-payment" pages={references['make-payment']} />
           </code>

@@ -11,6 +11,7 @@ type IntroLayoutProps = {
   superheading?: string;
   heading: string;
   cta?: { label?: string; href: string };
+  logo?: React.ReactNode;
 };
 
 const App = styled.div``;
@@ -23,12 +24,12 @@ const Main = styled.main`
   min-height: 100vh;
 `;
 
-export const IntroLayout: React.FC<IntroLayoutProps> = ({ superheading, heading, cta, children }) => {
+export const IntroLayout: React.FC<IntroLayoutProps> = ({ superheading, heading, cta, children, logo }) => {
   return (
     <App className="App">
       <Main id="content">
         <section className="container" style={{ fontSize: '1.2em' }}>
-          <LogoDAWE />
+          {logo === undefined ? <LogoDAWE /> : logo}
           {superheading ? (
             <AUheading size="lg" level={1}>
               {superheading}

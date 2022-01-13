@@ -6,7 +6,7 @@ const Page: LayoutPage = () => (
   <IntroLayout
     heading="Eligibile for new market"
     superheading="End to end service prototype"
-    cta={{ href: '/book-an-inspection/sign-in', label: 'Get started' }}
+    cta={{ href: '/eligible-new-market/push-notification', label: 'Get started' }}
   >
     You’ve been successfully exporting your products to the fake country of Zuy for a while, when you receive the
     following message...

@@ -20,6 +20,7 @@ const references = {
   ],
   ['service-finder']: ['categories', 'sign-in', 'where', 'suggested'],
   ['book-an-inspection']: ['sign-in', 'select-date', 'booked'],
+  ['changed-market-requirements']: ['push-notification', 'email-inbox', 'sign-in', 'upload-document', 'submitted'],
   ['make-payment']: ['push-notification', 'email-inbox', 'sign-in', 'payment-summary', 'paypal', 'paypal-pay', 'paid'],
 };
 
@@ -104,6 +105,11 @@ const OverlayCapture: React.FC = ({ children }) => {
               pages={references['eligible-new-market']}
             />
             <References title="Book an inspection" root="book-an-inspection" pages={references['book-an-inspection']} />
+            <References
+              title="Changed market requirements"
+              root="changed-market-requirements"
+              pages={references['changed-market-requirements']}
+            />
             <References title="Make payment" root="make-payment" pages={references['make-payment']} />
           </code>
           <span

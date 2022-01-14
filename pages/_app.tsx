@@ -5,6 +5,7 @@ import DefaultLayout from 'components/layouts/DefaultLayout';
 import React, { useEffect, useState } from 'react';
 import { LayoutPageProps } from 'components/LayoutPage';
 import styled from '@emotion/styled';
+import { useRouter } from 'next/router';
 
 const references = {
   ['account-preferences']: [
@@ -43,21 +44,35 @@ const Details = styled.details`
   }
 `;
 
-const References: React.FC<{ title: string; root: string; pages: string[] }> = ({ title, root, pages }) => (
-  <Details open>
-    <summary>{title}</summary>
-    <ul>
-      <li>
-        <Link href={`/${root}`}>index</Link>
-      </li>
-      {pages.map((page) => (
-        <li key={page}>
-          <Link href={`/${root}/${page}`}>{page}</Link>
-        </li>
-      ))}
-    </ul>
-  </Details>
-);
+const Li = styled.li<{ active?: boolean }>`
+  list-style: none;
+  &::before {
+    content: '${(props) => (props.active ? '👉' : '•')}';
+    display: inline-block;
+    width: 1.5em;
+    margin-left: -1.5em;
+  }
+`;
+
+const References: React.FC<{ title: string; root: string; pages: string[] }> = ({ title, root, pages }) => {
+  const router = useRouter();
+  const paths = [['index', `/${root}`], ...pages.map((page) => [page, `/${root}/${page}`])];
+
+  return (
+    <Details open>
+      <summary>{title}</summary>
+      <ul>
+        {paths.map(([page, path]) => {
+          return (
+            <Li active={path === router.pathname} key={path}>
+              <Link href={path}>{page}</Link>
+            </Li>
+          );
+        })}
+      </ul>
+    </Details>
+  );
+};
 
 const Overlay = styled.div`
   background-color: var(--AU-color-background);

@@ -2,7 +2,6 @@ import AUbutton from 'components/@gov.au/AUbutton';
 import { WizardLayout } from 'components/layouts/WizardLayout';
 import Link from 'next/link';
 import type { NextPage } from 'next';
-import AUheading from 'components/@gov.au/AUheading';
 import Hr from 'components/Hr';
 import { ButtonGroup } from 'components/button-group';
 

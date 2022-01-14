@@ -7,8 +7,17 @@ import { LayoutPageProps } from 'components/LayoutPage';
 import styled from '@emotion/styled';
 
 const references = {
+  ['account-preferences']: [
+    'sign-in',
+    'welcome',
+    'personalisation',
+    'notification-preferences',
+    'sharing-preferences',
+    'success',
+  ],
   ['eligible-new-market']: [
     'push-notification',
+
     'email-inbox',
     'sign-in',
     'introduction',
@@ -99,6 +108,11 @@ const OverlayCapture: React.FC = ({ children }) => {
             e2e tools
             <hr />
             <References title="Service finder" root="service-finder" pages={references['service-finder']} />
+            <References
+              title="Account preferences"
+              root="account-preferences"
+              pages={references['account-preferences']}
+            />
             <References
               title="Eligible for new market"
               root="eligible-new-market"

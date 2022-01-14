@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 const Page: LayoutPage = () => (
   <IntroLayout heading="Changed market requirements" logo={null}>
-    <Link href="/eligible-new-market/sign-in">
+    <Link href="/changed-market-requirements/sign-in">
       <a>
         <StaticImage src="/changed-market-requirements_email-inbox.png" width="1440" height="900" />
       </a>

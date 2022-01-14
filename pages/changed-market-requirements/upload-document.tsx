@@ -6,6 +6,8 @@ import AUheading from 'components/@gov.au/AUheading';
 import { ButtonGroup } from 'components/button-group';
 import styled from '@emotion/styled';
 import { useState } from 'react';
+import StaticImage from 'components/StaticImage';
+import Hr from 'components/Hr';
 
 const Upload = styled.section`
   background: #f5f5f5;
@@ -17,7 +19,9 @@ const Upload = styled.section`
   align-items: center;
 `;
 
-const Documents = styled.section``;
+const Documents = styled.section`
+  padding: 2rem 0;
+`;
 const Document = styled.div`
   margin-top: 1em;
   border-radius: 8px;
@@ -52,13 +56,17 @@ const Home: NextPage = () => {
         <Link href="/todo">Zuy import legislation for Australian exporters.</Link>
       </p>
 
-      <AUheading size="md" level={3}>
+      <AUheading size="md" level={3} style={{ marginTop: '2em' }}>
         Upload files (required)
       </AUheading>
-      <p>Formats accepted: .png, .jpg, .pdf, .docx, .xls. Total file size must not exceed 100 MB.</p>
+      <p style={{ marginTop: '.5rem', marginBottom: '.5rem' }}>
+        Formats accepted: .png, .jpg, .pdf, .docx, .xls. Total file size must not exceed 100 MB.
+      </p>
 
       <Upload>
-        <div>📂</div>
+        <div>
+          <StaticImage src="/upload-icon.png" height={48} width={48} />
+        </div>
         <div>Drag and drop files here or select files from your device.</div>
         <AUbutton
           as="secondary"
@@ -87,6 +95,8 @@ const Home: NextPage = () => {
           ))}
         </Documents>
       ) : null}
+
+      <Hr />
 
       <div style={{ marginTop: '3em' }}>
         <ButtonGroup>

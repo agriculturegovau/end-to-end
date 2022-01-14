@@ -4,6 +4,7 @@ import type { NextPage } from 'next';
 import Link from 'next/link';
 import AUheading from 'components/@gov.au/AUheading';
 import MyGovID from 'components/MyGovID';
+import Hr from 'components/Hr';
 
 const A: React.FC<{}> = ({ children }) => <Link href="/todo">{children}</Link>;
 
@@ -20,7 +21,7 @@ const Page: NextPage = () => (
       <MyGovID />
     </div>
 
-    <hr style={{ borderTop: '1px solid #E0E0E0' }} />
+    <Hr />
 
     <AUheading level={2} size="lg">
       Don’t have myGovID and RAM set up?

@@ -3,6 +3,7 @@ import { WizardLayout } from 'components/layouts/WizardLayout';
 import Link from 'next/link';
 import type { NextPage } from 'next';
 import AUheading from 'components/@gov.au/AUheading';
+import Hr from 'components/Hr';
 
 const Page: NextPage = () => (
   <WizardLayout
@@ -25,7 +26,7 @@ const Page: NextPage = () => (
       </Link>
     </div>
 
-    <hr style={{ borderTop: '1px solid #E0E0E0' }} />
+    <Hr />
 
     <AUheading level={2} size="lg">
       Don’t have an account yet?

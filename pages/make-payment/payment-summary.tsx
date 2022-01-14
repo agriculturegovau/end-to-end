@@ -9,6 +9,7 @@ import AUformGroup from 'components/@gov.au/AUformGroup';
 import AUcheckbox from 'components/@gov.au/AUcheckbox';
 import AUfieldset from 'components/@gov.au/AUfieldset';
 import AUlegend from 'components/@gov.au/AUlegend';
+import Hr from 'components/Hr';
 
 const Page: NextPage = () => (
   <WizardLayout title="Payment details" navigator={false} backbreadcrumb={false}>
@@ -46,7 +47,7 @@ const Page: NextPage = () => (
       <AUcheckbox type="radio" name="payment-method" id="b" label="Pay by direct deposit" block />
     </AUformGroup>
 
-    <hr style={{ borderTop: '1px solid #E0E0E0' }} />
+    <Hr />
 
     <ButtonGroup style={{ marginTop: '1em' }}>
       <Link passHref href="/make-payment/paypal">

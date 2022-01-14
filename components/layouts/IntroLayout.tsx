@@ -1,7 +1,5 @@
 import React from 'react';
-import BackBreadcrumb from '../BackBreadcrumb';
 import AUheading from '../@gov.au/AUheading';
-import { Navigator, ProgressPages } from '../wizard/navigator';
 import LogoDAWE from 'components/LogoDAWE';
 import AUbutton from 'components/@gov.au/AUbutton';
 import Link from 'next/link';

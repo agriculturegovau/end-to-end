@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { ExecFileOptionsWithStringEncoding } from 'child_process';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
@@ -12,9 +13,9 @@ export const flows = {
     'sharing-preferences',
     'success',
   ],
+  ['book-a-call']: ['push-notification', 'email-inbox', 'sign-in', 'payment-summary', 'book-a-call', 'booked'],
   ['eligible-new-market']: [
     'push-notification',
-
     'email-inbox',
     'sign-in',
     'introduction',
@@ -30,9 +31,10 @@ export const flows = {
   ['make-payment']: ['push-notification', 'email-inbox', 'sign-in', 'payment-summary', 'paypal', 'paypal-pay', 'paid'],
 };
 
-export const indexContents = new Map([
+export const indexContents = new Map<keyof typeof flows, string>([
   ['service-finder', 'Service finder'],
   ['account-preferences', 'Account preferences'],
+  ['book-a-call', 'Book a call with finance'],
   ['eligible-new-market', 'Eligible for new market'],
   ['book-an-inspection', 'Book an inspection'],
   ['changed-market-requirements', 'Changed market requirements'],
@@ -60,7 +62,14 @@ const Li = styled.li<{ active?: boolean }>`
 `;
 
 // TODO : rename this
-const References: React.FC<{ title: string; root: string; pages: string[] }> = ({ title, root, pages }) => {
+const References: React.FC<{
+  root: keyof typeof flows;
+  title?: string;
+  pages?: string[];
+}> = (props) => {
+  const { root } = props;
+  const { title = indexContents.get(root), pages = flows[root] } = props;
+
   const router = useRouter();
   const paths = [['index', `/${root}`], ...pages.map((page) => [page, `/${root}/${page}`])];
 
@@ -126,20 +135,13 @@ export const OverlayCapture: React.FC = ({ children }) => {
           <code style={{ display: 'block' }}>
             e2e tools
             <hr />
-            <References title="Service finder" root="service-finder" pages={flows['service-finder']} />
-            <References title="Account preferences" root="account-preferences" pages={flows['account-preferences']} />
-            <References
-              title="Eligible for new market"
-              root="eligible-new-market"
-              pages={flows['eligible-new-market']}
-            />
-            <References title="Book an inspection" root="book-an-inspection" pages={flows['book-an-inspection']} />
-            <References
-              title="Changed market requirements"
-              root="changed-market-requirements"
-              pages={flows['changed-market-requirements']}
-            />
-            <References title="Make payment" root="make-payment" pages={flows['make-payment']} />
+            <References root="service-finder" />
+            <References root="account-preferences" />
+            <References root="book-a-call" />
+            <References root="eligible-new-market" />
+            <References root="book-an-inspection" />
+            <References root="changed-market-requirements" />
+            <References root="make-payment" />
           </code>
           <span
             style={{

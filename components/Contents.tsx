@@ -5,6 +5,16 @@ import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 
 export const flows = {
+  ['register-establishment']: [
+    'dashboard',
+    'register-establishment',
+    'establishment-details',
+    'commodities',
+    'add-persons',
+    'compliance',
+    'confirm',
+    'establishment-added',
+  ],
   ['account-preferences']: [
     'sign-in',
     'welcome',
@@ -32,6 +42,7 @@ export const flows = {
 };
 
 export const indexContents = new Map<keyof typeof flows, string>([
+  ['register-establishment', 'Register establishment'],
   ['service-finder', 'Service finder'],
   ['account-preferences', 'Account preferences'],
   ['book-a-call', 'Book a call with finance'],
@@ -135,6 +146,7 @@ export const OverlayCapture: React.FC = ({ children }) => {
           <code style={{ display: 'block' }}>
             e2e tools
             <hr />
+            <References root="register-establishment" />
             <References root="service-finder" />
             <References root="account-preferences" />
             <References root="book-a-call" />

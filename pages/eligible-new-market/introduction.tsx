@@ -3,7 +3,7 @@ import { WizardLayout } from 'components/layouts/WizardLayout';
 import Link from 'next/link';
 import type { NextPage } from 'next';
 import AUheading from 'components/@gov.au/AUheading';
-import Todo from 'components/Todo';
+import DescripionList from 'components/DescriptionList';
 
 const Home: NextPage = () => (
   <WizardLayout
@@ -25,18 +25,16 @@ const Home: NextPage = () => (
       Importing country requirements
     </AUheading>
 
-    <Todo>
-      <dl>
-        <dt>Preconditions for market access</dt>
-        <dd>Australian-grown boonberries, pressure-treated and certified by Australian government.</dd>
+    <DescripionList fixedTermWidth>
+      <dt>Preconditions for market access</dt>
+      <dd>Australian-grown boonberries, pressure-treated and certified by Australian government.</dd>
 
-        <dt>Documentation requirements</dt>
-        <dd>Boonberry pressure standard certificate</dd>
+      <dt>Documentation requirements</dt>
+      <dd>Boonberry pressure standard certificate</dd>
 
-        <dt>Other requirements</dt>
-        <dd>None</dd>
-      </dl>
-    </Todo>
+      <dt>Other requirements</dt>
+      <dd>None</dd>
+    </DescripionList>
 
     <div style={{ marginTop: '3em' }}>
       <Link passHref href="/eligible-new-market/apply">

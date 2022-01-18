@@ -6,7 +6,7 @@ import { ButtonGroup } from 'components/button-group';
 import AUheading from 'components/@gov.au/AUheading';
 import AUcheckbox from 'components/@gov.au/AUcheckbox';
 import AUformGroup from 'components/@gov.au/AUformGroup';
-import Todo from 'components/Todo';
+import DescripionList from 'components/DescriptionList';
 
 const Home: NextPage = () => (
   <WizardLayout
@@ -25,18 +25,16 @@ const Home: NextPage = () => (
     <AUheading size="lg" level={2}>
       Details
     </AUheading>
-    <Todo>
-      <dl>
-        <dt>Business details</dt>
-        <dd>ProduceCo</dd>
+    <DescripionList>
+      <dt>Business details</dt>
+      <dd>ProduceCo</dd>
 
-        <dt>Prefill information</dt>
-        <dd>Pressure standard certificate - boonberries</dd>
+      <dt>Prefill information</dt>
+      <dd>Pressure standard certificate - boonberries</dd>
 
-        <dt>Importing country</dt>
-        <dd>Fantasia</dd>
-      </dl>
-    </Todo>
+      <dt>Importing country</dt>
+      <dd>Fantasia</dd>
+    </DescripionList>
 
     <AUheading size="lg" level={2}>
       Declaration

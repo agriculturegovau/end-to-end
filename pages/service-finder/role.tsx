@@ -8,20 +8,15 @@ import { ButtonGroup } from 'components/button-group';
 import Hr from 'components/Hr';
 
 const labels = [
-  'Animal by-products (such as wool, feathers or bones)',
-  'Fodder, straw, timber products and/or nursery stock',
-  'Fresh fruit and/or vegetables ',
-  'Grains, nuts and/or seeds',
-  'Honey and/or apiary products',
-  'Organic produce',
-  'Processed foods',
-  'Other - not listed above',
-  'I’m not sure',
+  'I produce an agricultural product I want to export',
+  'I want to process agricultural products for export',
+  'I want to treat, store or handle agricultural products for export',
+  'I want to inspect agricultural products for export',
 ];
 
 const Page: NextPage = () => (
   <WizardLayout
-    title="What do you want to export?"
+    title="What is your role in the supply chain?"
     navigator={false}
     frontmatter={
       <div style={{ marginTop: '2em' }}>
@@ -29,9 +24,7 @@ const Page: NextPage = () => (
       </div>
     }
   >
-    <p style={{ fontSize: '1.2em' }}>
-      Export requirements differ, depending on the type of product you want to export from Australia.
-    </p>
+    <p style={{ fontSize: '1.2em' }}>Tell us which aspects of export you’re interested in.</p>
     <p>Select all that apply</p>
 
     <AUformGroup style={{ marginTop: '2em' }}>
@@ -44,7 +37,7 @@ const Page: NextPage = () => (
 
     <div style={{ marginTop: '3em' }}>
       <ButtonGroup>
-        <Link passHref href="/service-finder/role">
+        <Link passHref href="/service-finder/where">
           <AUbutton link>Continue</AUbutton>
         </Link>
         <AUbutton as="secondary">Cancel</AUbutton>

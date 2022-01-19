@@ -35,7 +35,7 @@ export const flows = {
     'confirm',
     'success',
   ],
-  ['service-finder']: ['categories', 'sign-in', 'where', 'suggested'],
+  ['service-finder']: ['previous-exports', 'categories', 'role', 'where', 'results', 'create-account'],
   ['book-an-inspection']: ['sign-in', 'select-date', 'booked'],
   ['changed-market-requirements']: ['push-notification', 'email-inbox', 'sign-in', 'upload-document', 'submitted'],
   ['make-payment']: ['push-notification', 'email-inbox', 'sign-in', 'payment-summary', 'paypal', 'paypal-pay', 'paid'],

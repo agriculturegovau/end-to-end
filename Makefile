@@ -1,10 +1,12 @@
 SHELL    := bash -ex
 YARN     := yarn
+DIRS     := pages public styles components
+FILES    := $(shell find $(DIRS) -type f)
 DOTNEXT   = .next
 BUILD_ID := $(DOTNEXT)/BUILD_ID
 OUT      := out
 
-$(BUILD_ID):
+$(BUILD_ID): $(FILES)
 	$(YARN) build
 
 build: $(BUILD_ID)
@@ -23,5 +25,3 @@ publish: $(OUT)
 	cd $(OUT) && git remote add github git@github.com:steelthreads/end-to-end
 	cd $(OUT) && git push github :gh-pages
 	cd $(OUT) && git push github gh-pages:gh-pages -f
-
-.PHONY: $(BUILD_ID)

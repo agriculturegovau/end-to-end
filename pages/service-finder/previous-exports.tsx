@@ -7,21 +7,9 @@ import AUcheckbox from 'components/@gov.au/AUcheckbox';
 import { ButtonGroup } from 'components/button-group';
 import Hr from 'components/Hr';
 
-const labels = [
-  'Animal by-products (such as wool, feathers or bones)',
-  'Fodder, straw, timber products and/or nursery stock',
-  'Fresh fruit and/or vegetables ',
-  'Grains, nuts and/or seeds',
-  'Honey and/or apiary products',
-  'Organic produce',
-  'Processed foods',
-  'Other - not listed above',
-  'I’m not sure',
-];
-
 const Page: NextPage = () => (
   <WizardLayout
-    title="What do you want to export?"
+    title="Have you previously exported goods from Australia?"
     navigator={false}
     frontmatter={
       <div style={{ marginTop: '2em' }}>
@@ -29,22 +17,18 @@ const Page: NextPage = () => (
       </div>
     }
   >
-    <p style={{ fontSize: '1.2em' }}>
-      Export requirements differ, depending on the type of product you want to export from Australia.
-    </p>
-    <p>Select all that apply</p>
+    <p style={{ fontSize: '1.2em' }}>This includes if someone else exports on your behalf.</p>
 
     <AUformGroup style={{ marginTop: '2em' }}>
-      {labels.map((label, n) => (
-        <AUcheckbox key={`option-${n}`} id={`export_option_${n}`} label={label} block />
-      ))}
+      <AUcheckbox type="radio" name="previous_exporter" id="previous_no" label="No - I’m new to exporting" block />
+      <AUcheckbox type="radio" name="previous_exporter" id="previous_yes" label="Yes - I’ve exported before" block />
     </AUformGroup>
 
     <Hr />
 
     <div style={{ marginTop: '3em' }}>
       <ButtonGroup>
-        <Link passHref href="/service-finder/role">
+        <Link passHref href="/service-finder/categories">
           <AUbutton link>Continue</AUbutton>
         </Link>
         <AUbutton as="secondary">Cancel</AUbutton>

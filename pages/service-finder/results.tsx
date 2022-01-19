@@ -8,8 +8,7 @@ import DescripionList from 'components/DescriptionList';
 import styled from '@emotion/styled';
 import Todo from 'components/Todo';
 import AUcallout from 'components/@gov.au/AUcallout';
-
-const Step = styled.div``;
+import Sequence from 'components/Sequence';
 
 const Card = styled.div`
   margin-top: 1em;
@@ -71,8 +70,8 @@ const Page: NextPage = () => (
       Guide to exporting oranges to Zuy
     </AUheading>
 
-    <Todo>
-      <Step>
+    <Sequence style={{ marginTop: '2em' }}>
+      <li>
         <AUheading level={2} size="lg">
           Export rules for oranges
         </AUheading>
@@ -80,16 +79,16 @@ const Page: NextPage = () => (
           All oranges exported from Australia must meet export control rules. We can help you understand and meet the
           requirements.
         </p>
-      </Step>
+      </li>
 
-      <Step>
+      <li>
         <AUheading level={2} size="lg">
           Zuy’s rules for Australian oranges
         </AUheading>
         <p>These are the rules Australian produce needs to meet to be imported into Zuy.</p>
-      </Step>
+      </li>
 
-      <Step>
+      <li>
         <AUheading level={2} size="lg">
           Have your property accredited
         </AUheading>
@@ -98,9 +97,9 @@ const Page: NextPage = () => (
           and the country you plan to export to.
         </p>
         <p style={{ fontSize: '0.9em' }}>3 months</p>
-      </Step>
+      </li>
 
-      <Step>
+      <li>
         <AUheading level={2} size="lg">
           Export your product
         </AUheading>
@@ -109,8 +108,9 @@ const Page: NextPage = () => (
           organise transport and get the permits, certificates and labels you need.
         </p>
         <p style={{ fontSize: '0.9em' }}>5 - 10 days</p>
-      </Step>
-    </Todo>
+      </li>
+    </Sequence>
+
     <div style={{ marginTop: '1em' }}>
       <Link href="/todo">Read the full guide →</Link>
     </div>

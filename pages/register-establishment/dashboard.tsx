@@ -10,7 +10,7 @@ import DescripionList from 'components/DescriptionList';
 import Todo from 'components/Todo';
 
 const Home: NextPage = () => (
-  <WizardLayout title="Welcome to the Export Service" navigator={false} backbreadcrumb={false}>
+  <WizardLayout title="Welcome to the Export Service" backbreadcrumb={false}>
     <Todo>
       <Link href="/register-establishment/register-establishment">Register establishment</Link>
     </Todo>

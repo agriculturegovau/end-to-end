@@ -5,8 +5,8 @@ import type { NextPage } from 'next';
 import Hr from 'components/Hr';
 import { ButtonGroup } from 'components/button-group';
 import AUheading from 'components/@gov.au/AUheading';
-import Todo from 'components/Todo';
 import styled from '@emotion/styled';
+import { Navigator, preferencesPages } from 'components/wizard/navigator';
 
 const Split = styled.div`
   display: flex;
@@ -17,7 +17,7 @@ const Split = styled.div`
 const Page: NextPage = () => (
   <WizardLayout
     title="Information sharing preferences"
-    navigator={false}
+    navigator={<Navigator pages={preferencesPages} progress={2} />}
     backbreadcrumb={false}
     frontmatter={<strong>Set up account preferences</strong>}
   >
@@ -96,10 +96,6 @@ const Page: NextPage = () => (
       <AUbutton as="secondary">Skip</AUbutton>
       <AUbutton as="tertiary">Cancel</AUbutton>
     </ButtonGroup>
-
-    <Todo style={{ marginTop: '2em' }}>
-      <h1>👈 needs progress panel</h1>
-    </Todo>
   </WizardLayout>
 );
 

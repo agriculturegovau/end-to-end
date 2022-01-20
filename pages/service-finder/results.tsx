@@ -2,13 +2,12 @@ import AUbutton from 'components/@gov.au/AUbutton';
 import { WizardLayout } from 'components/layouts/WizardLayout';
 import Link from 'next/link';
 import type { NextPage } from 'next';
-import { ButtonGroup } from 'components/button-group';
 import AUheading from 'components/@gov.au/AUheading';
 import DescripionList from 'components/DescriptionList';
 import styled from '@emotion/styled';
-import Todo from 'components/Todo';
 import AUcallout from 'components/@gov.au/AUcallout';
 import Sequence from 'components/Sequence';
+import { Navigator, serviceFinderPages } from 'components/wizard/navigator';
 
 const Card = styled.div`
   margin-top: 1em;
@@ -28,7 +27,7 @@ const SplitDD = styled.dd`
 const Page: NextPage = () => (
   <WizardLayout
     title="Exporting oranges to Zuy"
-    navigator={false}
+    navigator={<Navigator pages={serviceFinderPages} progress={4} />}
     frontmatter={
       <div style={{ marginTop: '2em' }}>
         <strong>Service finder</strong>

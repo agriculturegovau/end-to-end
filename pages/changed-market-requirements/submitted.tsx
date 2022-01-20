@@ -8,7 +8,6 @@ import Link from 'next/link';
 const Home: NextPage = () => (
   <WizardLayout
     title="What happens next?"
-    navigator={false}
     backbreadcrumb={false}
     frontmatter={
       <AUAlert title="Your document was submitted" type="success">

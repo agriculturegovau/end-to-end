@@ -39,7 +39,7 @@ const Home: NextPage = () => {
   const documents = [...Array(documentsAdded)].map((_, n) => `Document ${n}.docx`);
 
   return (
-    <WizardLayout title="Upload citrus sweetness certificate" navigator={false} backbreadcrumb={false}>
+    <WizardLayout title="Upload citrus sweetness certificate" backbreadcrumb={false}>
       <p style={{ fontSize: '1.2em' }}>
         Submit your third party certificate to continue exporting to Zuy by 7 January 2022 to maintain market access.
       </p>

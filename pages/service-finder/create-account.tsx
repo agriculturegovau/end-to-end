@@ -9,7 +9,6 @@ import AUformGroup from 'components/@gov.au/AUformGroup';
 const Page: NextPage = () => (
   <WizardLayout
     title="Create an Export Service account"
-    navigator={false}
     backbreadcrumb={false}
     breadcrumbs={[
       {

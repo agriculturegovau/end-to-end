@@ -5,7 +5,7 @@ import type { NextPage } from 'next';
 import Todo from 'components/Todo';
 
 const Page: NextPage = () => (
-  <WizardLayout title="Paypal" navigator={false} backbreadcrumb={false}>
+  <WizardLayout title="Paypal" backbreadcrumb={false}>
     <Todo>
       <div>
         <Link passHref href="/make-payment/paid">

@@ -11,7 +11,7 @@ import Hr from 'components/Hr';
 import Todo from 'components/Todo';
 
 const Home: NextPage = () => (
-  <WizardLayout title="Book a call to talk to finance support" navigator={false} backbreadcrumb={false}>
+  <WizardLayout title="Book a call to talk to finance support" backbreadcrumb={false}>
     <p style={{ fontSize: '1.2em' }}>We can call you on XXXX XXX 123 at a time that suits you.</p>
     <p>
       <Link href="/todo">Change phone number</Link>

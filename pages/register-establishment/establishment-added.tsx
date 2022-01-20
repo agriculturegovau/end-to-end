@@ -8,7 +8,6 @@ import Link from 'next/link';
 const Home: NextPage = () => (
   <WizardLayout
     title="What will happen next?"
-    navigator={false}
     backbreadcrumb={false}
     breadcrumbs={[
       {

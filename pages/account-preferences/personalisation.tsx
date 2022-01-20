@@ -7,7 +7,7 @@ import { ButtonGroup } from 'components/button-group';
 import AUheading from 'components/@gov.au/AUheading';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
-import Todo from 'components/Todo';
+import { Navigator, preferencesPages } from 'components/wizard/navigator';
 
 const Tag = styled.span<{ secondary?: boolean }>`
   border: 1px solid var(--AU-color-foreground-action);
@@ -42,7 +42,7 @@ const Section = styled.section`
 const Page: NextPage = () => (
   <WizardLayout
     title="Personalisation preferences"
-    navigator={false}
+    navigator={<Navigator pages={preferencesPages} progress={0} />}
     backbreadcrumb={false}
     frontmatter={<strong>Set up account preferences</strong>}
   >
@@ -103,10 +103,6 @@ const Page: NextPage = () => (
       <AUbutton as="secondary">Skip</AUbutton>
       <AUbutton as="tertiary">Cancel</AUbutton>
     </ButtonGroup>
-
-    <Todo style={{ marginTop: '2em' }}>
-      <h1>👈 needs progress panel</h1>
-    </Todo>
   </WizardLayout>
 );
 

@@ -8,7 +8,6 @@ import Sequence from 'components/Sequence';
 const Home: NextPage = () => (
   <WizardLayout
     title="Register an establishment"
-    navigator={false}
     backbreadcrumb={false}
     breadcrumbs={[
       {

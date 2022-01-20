@@ -12,6 +12,7 @@ import styled from '@emotion/styled';
 import Hr from 'components/Hr';
 import { useRef, useState } from 'react';
 import { css } from '@emotion/react';
+import { Navigator, serviceFinderPages } from 'components/wizard/navigator';
 
 const Split = styled.div`
   display: flex;
@@ -53,7 +54,7 @@ const Home: NextPage = () => {
   return (
     <WizardLayout
       title="Where do you want to export it?"
-      navigator={false}
+      navigator={<Navigator pages={serviceFinderPages} progress={3} />}
       frontmatter={
         <div style={{ marginTop: '2em' }}>
           <strong>Service finder</strong>

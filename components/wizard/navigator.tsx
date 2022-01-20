@@ -1,43 +1,22 @@
-import React from 'react'
-import { ProgressIndicatorIcon } from './progress-indicator'
-import clsx from 'clsx'
-import { NextRouter, useRouter } from 'next/router'
+import React from 'react';
+import { ProgressIndicatorIcon } from './progress-indicator';
+import clsx from 'clsx';
+import AUheading from 'components/@gov.au/AUheading';
 
-export type StatusType = 'todo' | 'doing' | 'done'
-
-export type ProgressPages =
-  | '/step/eligibility'
-  | '/step/applicant-details'
-  | '/step/company-details'
-  | '/step/facility-details'
-  | '/step/existing-registrations'
-  | '/step/last-consignment'
-  | '/step/product-listing'
-  | '/step/consent'
-
-export type WizardStep =
-  | ProgressPages
-  | '/step/eligibility-step-1'
-  | '/step/eligibility-step-2'
-  | '/step/eligibility-step-3'
-  | '/step/eligibility-step-4'
-  | '/step/product-listing/add'
-  | '/step/product-listing/[product_index]'
+export type StatusType = 'todo' | 'doing' | 'done';
 
 const mapStatusToTitle = {
   todo: 'To do',
   doing: 'Doing',
   done: 'Done',
-}
+};
 
 type ItemProps = {
-  title: string
-  status: StatusType
-  href: WizardStep
-  router: NextRouter
-}
+  title: string;
+  status: StatusType;
+};
 
-const Item = ({ title, status, href, router }: ItemProps) => {
+const Item = ({ title, status }: ItemProps) => {
   return (
     <>
       <style
@@ -75,12 +54,7 @@ const Item = ({ title, status, href, router }: ItemProps) => {
           `,
         }}
       />
-      <div
-        className={clsx(
-          'wizard-navigator__item',
-          status === 'doing' && 'active'
-        )}
-      >
+      <div className={clsx('wizard-navigator__item', status === 'doing' && 'active')}>
         <div className={'wizard-navigator__item__status'}>
           <ProgressIndicatorIcon status={status} />
         </div>
@@ -92,80 +66,52 @@ const Item = ({ title, status, href, router }: ItemProps) => {
               fontWeight: status === 'doing' ? 'bold' : 'inherit',
               cursor: 'pointer',
             }}
-            onClick={() => router.push(href)}
           >
             {title}
           </span>
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export interface Props<F> {
-  formData: F
-  stepCompleted(_page: ProgressPages, _form: F): boolean
-}
+export const serviceFinderPages = [
+  'Have you previously exported goods from Australia?',
+  'What do you want to export?',
+  'What is your role in the supply chain?',
+  'Where do you want to export it?',
+  'Suggested for you',
+];
 
-interface NavStep {
-  title: string
-  root: ProgressPages
-  extraPages: Set<string>
-}
+export const preferencesPages = [
+  'Personalisation preferences',
+  'Notification preferences',
+  'Information sharing preferences',
+];
 
-const ns = (
-  title: string,
-  root: ProgressPages,
-  ...extras: WizardStep[]
-): NavStep => ({
-  title,
-  root,
-  extraPages: new Set(extras),
-})
+export const registerEstablishmentPages = [
+  'Establishment details',
+  'Commodities',
+  'Add persons',
+  'Compliance',
+  'Confirm',
+];
 
-const pages: NavStep[] = [
-  ns(
-    'Requirements checker',
-    '/step/eligibility',
-    '/step/eligibility-step-1',
-    '/step/eligibility-step-2',
-    '/step/eligibility-step-3',
-    '/step/eligibility-step-4'
-  ),
-  ns('Applicant details', '/step/applicant-details'),
-  ns('Business details', '/step/company-details'),
-  ns('Facility details', '/step/facility-details'),
-  ns('Existing registration', '/step/existing-registrations'),
-  ns('Last consignment to China', '/step/last-consignment'),
-  ns(
-    'Product listing',
-    '/step/product-listing',
-    '/step/product-listing/add',
-    '/step/product-listing/[product_index]'
-  ),
-  ns('Check and submit', '/step/consent'),
-]
-
-export const Navigator = <F,>({ formData, stepCompleted }: Props<F>) => {
-  const router = useRouter()
-
+export const Navigator: React.FC<React.ComponentProps<'div'> & { pages: string[]; progress: number }> = ({
+  pages,
+  progress,
+  ...props
+}) => {
   return (
-    <div className="progress-navigator">
-      {pages.map(({ title, root, extraPages }) => (
-        <Item
-          router={router}
-          key={root}
-          title={title}
-          href={root}
-          status={
-            extraPages.add(root).has(router.pathname)
-              ? 'doing'
-              : stepCompleted(root, formData)
-              ? 'done'
-              : 'todo'
-          }
-        />
-      ))}
-    </div>
-  )
-}
+    <>
+      <AUheading level={3} size="md" style={{ marginBottom: '1em' }}>
+        Your progress
+      </AUheading>
+      <div {...props} className="progress-navigator">
+        {pages.map((page, n) => (
+          <Item key={`page-${n}`} title={page} status={progress < n ? 'todo' : progress > n ? 'done' : 'doing'} />
+        ))}
+      </div>
+    </>
+  );
+};

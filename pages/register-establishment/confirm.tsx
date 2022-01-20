@@ -8,6 +8,7 @@ import Hr from 'components/Hr';
 import DescripionList from 'components/DescriptionList';
 import styled from '@emotion/styled';
 import AUcheckbox from 'components/@gov.au/AUcheckbox';
+import { Navigator, registerEstablishmentPages } from 'components/wizard/navigator';
 
 const Split = styled.div`
   display: flex;
@@ -18,7 +19,7 @@ const Split = styled.div`
 const Home: NextPage = () => (
   <WizardLayout
     title="Confirm"
-    navigator={false}
+    navigator={<Navigator pages={registerEstablishmentPages} progress={4} />}
     frontmatter={
       <div style={{ marginTop: '2em' }}>
         <strong>Register an establishment</strong>

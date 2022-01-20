@@ -1,9 +1,9 @@
 import React from 'react';
 import BackBreadcrumb from '../BackBreadcrumb';
 import AUheading from '../@gov.au/AUheading';
-import { Navigator, ProgressPages } from '../wizard/navigator';
 import { IAUlinkListItem } from 'components/@gov.au/AUlinkList';
 import AUbreadcrumbs from 'components/@gov.au/AUbreadcrumbs';
+import clsx from 'clsx';
 
 type WizardLayoutProps = {
   title: string;
@@ -13,7 +13,7 @@ type WizardLayoutProps = {
 
   breadcrumbs?: IAUlinkListItem[];
   backbreadcrumb?: boolean;
-  navigator?: boolean;
+  navigator?: React.ReactNode;
 };
 
 export const WizardLayout = ({
@@ -23,11 +23,16 @@ export const WizardLayout = ({
   breadcrumbs,
   frontmatter,
   backbreadcrumb = true,
-  navigator = true,
+  navigator,
 }: WizardLayoutProps) => {
   return (
     <div className="row">
-      <div className="col-md-8 col-xs-12" style={{ marginBottom: '3em' }}>
+      {navigator ? <div className="col-md-3 col-xs-12">{navigator}</div> : null}
+
+      <div
+        className={clsx('col-md-8', 'col-xs-12', { ['col-xs-offset-1']: !!navigator })}
+        style={{ marginBottom: '3em' }}
+      >
         {breadcrumbs ? <AUbreadcrumbs label="bc" items={breadcrumbs} /> : null}
         {backbreadcrumb ? <BackBreadcrumb backHref={backHref} /> : null}
         {frontmatter === undefined ? null : frontmatter}
@@ -37,10 +42,6 @@ export const WizardLayout = ({
         </AUheading>
 
         {children}
-      </div>
-
-      <div className="col-md-4 col-xs-12">
-        {navigator ? <Navigator formData={{}} stepCompleted={() => false} /> : null}
       </div>
     </div>
   );

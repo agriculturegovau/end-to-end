@@ -18,7 +18,6 @@ const Calendar = styled.div`
 const Home: NextPage = () => (
   <WizardLayout
     title="What happens next"
-    navigator={false}
     backbreadcrumb={false}
     frontmatter={
       <AUAlert title="Your inspection is booked" type="success">

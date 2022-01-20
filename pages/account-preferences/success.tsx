@@ -16,7 +16,6 @@ const Split = styled.div`
 const Home: NextPage = () => (
   <WizardLayout
     title="What happens next?"
-    navigator={false}
     backbreadcrumb={false}
     frontmatter={
       <AUAlert title="Your preferences were set successfully" type="success">

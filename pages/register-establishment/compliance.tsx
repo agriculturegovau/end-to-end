@@ -6,21 +6,14 @@ import { ButtonGroup } from 'components/button-group';
 import AUheading from 'components/@gov.au/AUheading';
 import AUcheckbox from 'components/@gov.au/AUcheckbox';
 import AUformGroup from 'components/@gov.au/AUformGroup';
-import DescripionList from 'components/DescriptionList';
-import Todo from 'components/Todo';
-import styled from '@emotion/styled';
 import Hr from 'components/Hr';
-import TextInput from 'components/TextInput';
 import AUfieldset from 'components/@gov.au/AUfieldset';
-
-const Step = styled.div`
-  border: 1px solid black;
-`;
+import { Navigator, registerEstablishmentPages } from 'components/wizard/navigator';
 
 const Home: NextPage = () => (
   <WizardLayout
     title="Compliance"
-    navigator={false}
+    navigator={<Navigator pages={registerEstablishmentPages} progress={3} />}
     frontmatter={
       <div style={{ marginTop: '2em' }}>
         <strong>Register an establishment</strong>

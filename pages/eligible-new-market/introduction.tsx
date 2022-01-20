@@ -8,7 +8,6 @@ import DescripionList from 'components/DescriptionList';
 const Home: NextPage = () => (
   <WizardLayout
     title="Market eligibility: pressure-treated boonberries - Fantasia"
-    navigator={false}
     backbreadcrumb={false}
     breadcrumbs={[
       {

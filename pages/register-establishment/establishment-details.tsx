@@ -4,13 +4,10 @@ import Link from 'next/link';
 import type { NextPage } from 'next';
 import { ButtonGroup } from 'components/button-group';
 import AUheading from 'components/@gov.au/AUheading';
-import AUcheckbox from 'components/@gov.au/AUcheckbox';
-import AUformGroup from 'components/@gov.au/AUformGroup';
-import DescripionList from 'components/DescriptionList';
-import Todo from 'components/Todo';
 import styled from '@emotion/styled';
 import Hr from 'components/Hr';
 import TextInput from 'components/TextInput';
+import { Navigator, registerEstablishmentPages } from 'components/wizard/navigator';
 
 const Step = styled.div`
   border: 1px solid black;
@@ -19,7 +16,7 @@ const Step = styled.div`
 const Home: NextPage = () => (
   <WizardLayout
     title="Establishment details"
-    navigator={false}
+    navigator={<Navigator pages={registerEstablishmentPages} progress={0} />}
     frontmatter={
       <div style={{ marginTop: '2em' }}>
         <strong>Register an establishment</strong>

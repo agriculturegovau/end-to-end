@@ -8,7 +8,6 @@ import Hr from 'components/Hr';
 const Page: NextPage = () => (
   <WizardLayout
     title="Sign in to your Export Service account"
-    navigator={false}
     backbreadcrumb={false}
     breadcrumbs={[
       {

@@ -6,7 +6,7 @@ import Hr from 'components/Hr';
 import { ButtonGroup } from 'components/button-group';
 
 const Page: NextPage = () => (
-  <WizardLayout title="Welcome to the Export Service" navigator={false} backbreadcrumb={false}>
+  <WizardLayout title="Welcome to the Export Service" backbreadcrumb={false}>
     <p style={{ fontSize: '1.2em' }}>Set up your account preferences to personalise your experience.</p>
     <p>Choose the way you receive updates and help us tailor services to suit your needs.</p>
     <p>

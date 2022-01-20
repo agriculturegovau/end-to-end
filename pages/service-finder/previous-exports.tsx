@@ -6,11 +6,12 @@ import AUformGroup from 'components/@gov.au/AUformGroup';
 import AUcheckbox from 'components/@gov.au/AUcheckbox';
 import { ButtonGroup } from 'components/button-group';
 import Hr from 'components/Hr';
+import { Navigator, serviceFinderPages } from 'components/wizard/navigator';
 
 const Page: NextPage = () => (
   <WizardLayout
     title="Have you previously exported goods from Australia?"
-    navigator={false}
+    navigator={<Navigator pages={serviceFinderPages} progress={0} />}
     frontmatter={
       <div style={{ marginTop: '2em' }}>
         <strong>Service finder</strong>

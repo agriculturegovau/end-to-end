@@ -5,7 +5,6 @@ import AUAlert from 'components/@gov.au/AUAlert';
 const Home: NextPage = () => (
   <WizardLayout
     title="What happens next?"
-    navigator={false}
     backbreadcrumb={false}
     breadcrumbs={[
       {

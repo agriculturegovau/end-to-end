@@ -7,12 +7,10 @@ import AUcallout from 'components/@gov.au/AUcallout';
 import { ButtonGroup } from 'components/button-group';
 import AUformGroup from 'components/@gov.au/AUformGroup';
 import AUcheckbox from 'components/@gov.au/AUcheckbox';
-import AUfieldset from 'components/@gov.au/AUfieldset';
-import AUlegend from 'components/@gov.au/AUlegend';
 import Hr from 'components/Hr';
 
 const Page: NextPage = () => (
-  <WizardLayout title="Payment details" navigator={false} backbreadcrumb={false}>
+  <WizardLayout title="Payment details" backbreadcrumb={false}>
     <p style={{ fontSize: '1.2em' }}>You need to make a payment towards the inspection of your goods.</p>
 
     <AUcallout>

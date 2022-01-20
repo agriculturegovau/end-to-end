@@ -10,7 +10,7 @@ import AUformGroup from 'components/@gov.au/AUformGroup';
 import AUcheckbox from 'components/@gov.au/AUcheckbox';
 
 const Page: NextPage = () => (
-  <WizardLayout title="Pay your document processing" navigator={false} backbreadcrumb={false}>
+  <WizardLayout title="Pay your document processing" backbreadcrumb={false}>
     <p style={{ fontSize: '1.2em' }}>You need to pay for the processing of your documents, before you can export.</p>
 
     <Todo>

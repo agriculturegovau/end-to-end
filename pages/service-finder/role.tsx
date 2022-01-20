@@ -6,6 +6,7 @@ import AUformGroup from 'components/@gov.au/AUformGroup';
 import AUcheckbox from 'components/@gov.au/AUcheckbox';
 import { ButtonGroup } from 'components/button-group';
 import Hr from 'components/Hr';
+import { Navigator, serviceFinderPages } from 'components/wizard/navigator';
 
 const labels = [
   'I produce an agricultural product I want to export',
@@ -17,7 +18,7 @@ const labels = [
 const Page: NextPage = () => (
   <WizardLayout
     title="What is your role in the supply chain?"
-    navigator={false}
+    navigator={<Navigator pages={serviceFinderPages} progress={2} />}
     frontmatter={
       <div style={{ marginTop: '2em' }}>
         <strong>Service finder</strong>

@@ -11,7 +11,7 @@ import AUcheckbox from 'components/@gov.au/AUcheckbox';
 import AUformGroup from 'components/@gov.au/AUformGroup';
 
 const Home: NextPage = () => (
-  <WizardLayout title="Book an inspection" navigator={false} backbreadcrumb={false}>
+  <WizardLayout title="Book an inspection" backbreadcrumb={false}>
     <p style={{ fontSize: '1.2em' }}>Choose a date and time that’s convenient for you. </p>
     <p>
       Inspections take around 2 hours and cost $3,700.00. After the inspection, you’ll recieve a report via email along

@@ -329,6 +329,6 @@ a.back-btn {
 
 .progress-navigator {
   @include AU-media(md) {
-    margin-left: 2em;
+    // margin-left: 2em; -- reversed now. on the left, not right
   }
 }

@@ -11,7 +11,6 @@ import DescripionList from 'components/DescriptionList';
 const Home: NextPage = () => (
   <WizardLayout
     title="Confirm"
-    navigator={false}
     backbreadcrumb={false}
     breadcrumbs={[
       {

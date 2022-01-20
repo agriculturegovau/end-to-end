@@ -5,16 +5,16 @@ import type { NextPage } from 'next';
 import Hr from 'components/Hr';
 import { ButtonGroup } from 'components/button-group';
 import AUheading from 'components/@gov.au/AUheading';
-import Todo from 'components/Todo';
 import AUcallout from 'components/@gov.au/AUcallout';
 import AUformGroup from 'components/@gov.au/AUformGroup';
 import AUcheckbox from 'components/@gov.au/AUcheckbox';
+import { Navigator, preferencesPages } from 'components/wizard/navigator';
 
 const Page: NextPage = () => (
   <WizardLayout
     title="Notification preferences"
-    navigator={false}
     backbreadcrumb={false}
+    navigator={<Navigator pages={preferencesPages} progress={1} />}
     frontmatter={<strong>Set up account preferences</strong>}
   >
     <p style={{ fontSize: '1.2em' }}>Choose how you get notified about your export account activity.</p>
@@ -58,10 +58,6 @@ const Page: NextPage = () => (
       <AUbutton as="secondary">Skip</AUbutton>
       <AUbutton as="tertiary">Cancel</AUbutton>
     </ButtonGroup>
-
-    <Todo style={{ marginTop: '2em' }}>
-      <h1>👈 needs progress panel</h1>
-    </Todo>
   </WizardLayout>
 );
 

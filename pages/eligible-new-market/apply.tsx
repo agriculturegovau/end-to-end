@@ -11,7 +11,6 @@ import Todo from 'components/Todo';
 const Home: NextPage = () => (
   <WizardLayout
     title="Apply to export to Fantasia"
-    navigator={false}
     backbreadcrumb={false}
     breadcrumbs={[
       {

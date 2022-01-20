@@ -1,5 +1,4 @@
-import React, { forwardRef, useState } from 'react';
-import clsx from 'clsx';
+import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 
@@ -74,7 +73,7 @@ const CalendarA: React.FC<React.ComponentProps<'div'>> = ({ children, ...props }
   <CalendarComponent2 {...props}>
     <CalendarComponent2Header>
       <strong>December</strong>
-      <Cell>👇</Cell>
+      <Cell>⭣</Cell>
       <div>
         <Cell style={{ display: 'inline-block' }}>←</Cell>
         <Cell style={{ display: 'inline-block' }}>→</Cell>

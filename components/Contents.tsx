@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import { ExecFileOptionsWithStringEncoding } from 'child_process';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
@@ -39,6 +38,15 @@ export const flows = {
   ['book-an-inspection']: ['sign-in', 'select-date', 'booked'],
   ['changed-market-requirements']: ['push-notification', 'email-inbox', 'sign-in', 'upload-document', 'submitted'],
   ['make-payment']: ['push-notification', 'email-inbox', 'sign-in', 'payment-summary', 'paypal', 'paypal-pay', 'paid'],
+  ['new-market-opportunity']: [
+    'push-notification',
+    'email-inbox',
+    'sign-in',
+    'introduction',
+    'apply',
+    'confirm',
+    'success',
+  ],
 };
 
 export const indexContents = new Map<keyof typeof flows, string>([
@@ -50,6 +58,7 @@ export const indexContents = new Map<keyof typeof flows, string>([
   ['book-an-inspection', 'Book an inspection'],
   ['changed-market-requirements', 'Changed market requirements'],
   ['make-payment', 'Make payment'],
+  ['new-market-opportunity', 'New market opportunity'],
 ]);
 
 const Details = styled.details`
@@ -154,6 +163,7 @@ export const OverlayCapture: React.FC = ({ children }) => {
             <References root="book-an-inspection" />
             <References root="changed-market-requirements" />
             <References root="make-payment" />
+            <References root="new-market-opportunity" />
           </code>
           <span
             style={{

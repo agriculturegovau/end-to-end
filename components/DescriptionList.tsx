@@ -28,11 +28,20 @@ subsequent dd or dt terms (or nested divs) is unsupported as of now.
 
 Use a plain prop to turn off stripes and borders
 */
-const DescripionList = styled(DescripionListLayout)<{ fixedTermWidth?: boolean; plain?: boolean }>`
+const DescripionList = styled(DescripionListLayout)<{ fixedTermWidth?: boolean; plain?: boolean; split?: boolean }>`
   ${(props) =>
     props.fixedTermWidth
       ? css`
           grid-template-columns: 15em 1fr;
+        `
+      : css``}
+
+  ${(props) =>
+    props.split
+      ? css`
+          dd {
+            text-align: right;
+          }
         `
       : css``}
 

@@ -7,14 +7,7 @@ import { ButtonGroup } from 'components/button-group';
 import AUcheckbox from 'components/@gov.au/AUcheckbox';
 import DescripionList from 'components/DescriptionList';
 import Todo from 'components/Todo';
-import Indicator, {
-  ErrorSVG,
-  IndicatorC,
-  IndicatorComponent,
-  InfoSVG,
-  SuccessSVG,
-  WarningSVG,
-} from 'components/Indicator';
+import Indicator from 'components/Indicator';
 
 const Page: NextPage = () => (
   <WizardLayout
@@ -31,60 +24,36 @@ const Page: NextPage = () => (
     <p style={{ fontSize: '1.2em' }}>Confirm the details below and supply any missing documentation before applying.</p>
 
     <AUheading level={2} size="lg">
-      Requirements not met to export to Canada
+      <Indicator type="error">Requirements not met to export to Canada</Indicator>
     </AUheading>
     <p>Upload the missing document to apply for this market opportunity.</p>
-    <Todo>
-      <div> styling needs work 👇 </div>
-      <DescripionList>
-        <dt>Cold treatment certificate</dt>
-        <dd>
-          <Indicator type="error">
-            <strong>Supplied</strong> (prefilled)
-          </Indicator>
-
-          <IndicatorC>supplied</IndicatorC>
-          <IndicatorC type="success">supplied</IndicatorC>
-          <IndicatorC type="warning">supplied</IndicatorC>
-          <IndicatorC type="error">supplied</IndicatorC>
-          <IndicatorC type="info">supplied</IndicatorC>
-          <IndicatorComponent>
-            <SuccessSVG />
-            &nbsp;Supplied (prefilled)
-          </IndicatorComponent>
-          <IndicatorComponent>
-            <ErrorSVG />
-            &nbsp;Supplied (prefilled)
-          </IndicatorComponent>
-          <IndicatorComponent>
-            <InfoSVG />
-            &nbsp;Supplied (prefilled)
-          </IndicatorComponent>
-          <IndicatorComponent>
-            <WarningSVG />
-            &nbsp;Supplied (prefilled)
-          </IndicatorComponent>
-        </dd>
-        <dt>Endorsement 3358</dt>
-        <dd>
+    <DescripionList split>
+      <dt>Cold treatment certificate</dt>
+      <dd>
+        <Indicator type="success" trailing>
+          <strong>Supplied</strong> (prefilled)
+        </Indicator>
+      </dd>
+      <dt>Endorsement 3358</dt>
+      <dd>
+        <Indicator type="error" trailing>
           <strong>Missing</strong>
-        </dd>
-      </DescripionList>
-    </Todo>
+        </Indicator>
+      </dd>
+    </DescripionList>
     <AUbutton as="secondary">Upload missing document</AUbutton>
 
     <AUheading level={2} size="lg">
-      Requirements met to export to Malaysia
+      <Indicator type="success">Requirements met to export to Malaysia</Indicator>
     </AUheading>
-    <Todo>
-      <div> styling needs work 👇 </div>
-      <DescripionList>
-        <dt>Cold treatment certificate</dt>
-        <dd>
+    <DescripionList split>
+      <dt>Cold treatment certificate</dt>
+      <dd>
+        <Indicator type="success" trailing>
           <strong>Supplied</strong> (prefilled)
-        </dd>
-      </DescripionList>
-    </Todo>
+        </Indicator>
+      </dd>
+    </DescripionList>
 
     <AUheading level={2} size="lg">
       Declaration

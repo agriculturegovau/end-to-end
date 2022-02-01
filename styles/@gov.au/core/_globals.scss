@@ -44,7 +44,7 @@
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 // SASS VERSIONING
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-@use "sass:math";
+@use 'sass:math';
 
 $name: '@gov.au/core';
 $version: '4.0.0';
@@ -83,11 +83,7 @@ $dependencies: ();
   @return if(
     $index,
     str-slice($string, 1, $index - 1) + $replace +
-      AU-replace(
-        str-slice($string, $index + str-length($search)),
-        $search,
-        $replace
-      ),
+      AU-replace(str-slice($string, $index + str-length($search)), $search, $replace),
     $string
   );
 }
@@ -116,9 +112,7 @@ $dependencies: ();
   $encoded: '';
   $slice: 2000;
   $index: 0;
-  $loops: ceil(
-    math.div(str-length($svg), $slice)
-  ); // Chunk up string in order to avoid "stack level too deep" error
+  $loops: ceil(math.div(str-length($svg), $slice)); // Chunk up string in order to avoid "stack level too deep" error
 
   @for $i from 1 through $loops {
     $chunk: str-slice($svg, $index, $index + $slice - 1);
@@ -284,8 +278,7 @@ $dependencies: ();
     $return: 0;
 
     @for $quarter from 0 to 24 {
-      $return: $return +
-        math.div(AU-pow($logarithm, $quarter), AU-factorial($quarter));
+      $return: $return + math.div(AU-pow($logarithm, $quarter), AU-factorial($quarter));
     }
 
     @return $return;
@@ -317,17 +310,12 @@ $dependencies: ();
     $rgb: nth($rgba, $i);
     $rgb: math.div($rgb, 255);
 
-    $rgb: if(
-      $rgb < 0.03928,
-      math.div($rgb, 12.92),
-      AU-pow(math.div($rgb + 0.055, 1.055), 2.4)
-    );
+    $rgb: if($rgb < 0.03928, math.div($rgb, 12.92), AU-pow(math.div($rgb + 0.055, 1.055), 2.4));
 
     $rgba2: append($rgba2, $rgb);
   }
 
-  @return 0.2126 * nth($rgba2, 1) + 0.7152 * nth($rgba2, 2) + 0.0722 *
-    nth($rgba2, 3);
+  @return 0.2126 * nth($rgba2, 1) + 0.7152 * nth($rgba2, 2) + 0.0722 * nth($rgba2, 3);
 }
 
 /**
@@ -346,12 +334,7 @@ $dependencies: ();
  *
  * @return {integer}              - The contrast ratio
  */
-@function AU-color-contrast(
-  $foreground,
-  $background,
-  $silent: false,
-  $rounded: true
-) {
+@function AU-color-contrast($foreground, $background, $silent: false, $rounded: true) {
   @if type-of($foreground) != 'color' {
     @error "Elementary, my dear Watson; the AU-color-contrast function only takes a color as first argument!";
   }
@@ -422,10 +405,8 @@ $dependencies: ();
   $a11yLightness: lightness($toMakeA11y);
   $minHexDiff: math.div(100, 255); // 255 Colors / 100% HSL
 
-  $isBlackBgContrast: AU-color-contrast(#000, $background, true, false) >=
-    $ratio;
-  $isWhiteBgContrast: AU-color-contrast(#fff, $background, true, false) >=
-    $ratio;
+  $isBlackBgContrast: AU-color-contrast(#000, $background, true, false) >= $ratio;
+  $isWhiteBgContrast: AU-color-contrast(#fff, $background, true, false) >= $ratio;
   $minLightness: 0;
   $maxLightness: 100;
   $isDarkColor: false;
@@ -497,12 +478,7 @@ $dependencies: ();
   // Loop through the $colors list
   @each $color in $colors {
     $colorContrast: AU-color-contrast($color, $background, true, false);
-    $lowestContrast: AU-color-contrast(
-      $current-lowest,
-      $background,
-      true,
-      false
-    );
+    $lowestContrast: AU-color-contrast($current-lowest, $background, true, false);
 
     // If the constast is lower make it the new lowest
     @if $colorContrast < $lowestContrast {
@@ -710,12 +686,7 @@ $dependencies: ();
   $fontsize-rem: math.div($fontsize-px, $AU-rem);
 
   // Change the lineheight if it doesn't hit a AU-unit e.g. 40px font size with 1.5 lineheight = 50px should be 52px
-  $lineheight-pixel: round(
-      math.div(
-        map-get($AU-lineheight-map, $lineheight-key) * $fontsize-px,
-        $AU-unit
-      )
-    ) * $AU-unit;
+  $lineheight-pixel: round(math.div(map-get($AU-lineheight-map, $lineheight-key) * $fontsize-px, $AU-unit)) * $AU-unit;
   $lineheight: math.div($lineheight-pixel, $fontsize-px);
 
   // Mixin output
@@ -756,10 +727,9 @@ $AU-unit: 4 !default;
  * AU-font stack
  * AU-font-monospace stack
  */
-$AU-font: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial,
-  sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !default;
-$AU-font-monospace: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo,
-  Courier, monospace !default;
+$AU-font: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+  'Segoe UI Emoji', 'Segoe UI Symbol' !default;
+$AU-font-monospace: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace !default;
 
 /**
  * AU-fontsize-map
@@ -807,46 +777,23 @@ $AU-color-lowest-contrast: AU-color-lowest-contrast(
 );
 
 // Override the background if it's not accessible and generate shades
-$AU-color-background: AU-color-a11y(
-  $AU-color-background,
-  $AU-color-lowest-contrast
-);
+$AU-color-background: AU-color-a11y($AU-color-background, $AU-color-lowest-contrast);
 $AU-color-background-shade: darken($AU-color-background, 4%);
 $AU-color-background-alt: darken($AU-color-background, 8%);
 $AU-color-background-alt-shade: darken($AU-color-background, 12%);
 $AU-color-foreground-alt-hint: #61696b !default;
 
 // Generated border and muted colours
-$AU-color-foreground-muted: mix(
-  $AU-color-foreground-text,
-  $AU-color-background
-);
-$AU-color-foreground-border: mix(
-  $AU-color-foreground-text,
-  $AU-color-background
-);
+$AU-color-foreground-muted: mix($AU-color-foreground-text, $AU-color-background);
+$AU-color-foreground-border: mix($AU-color-foreground-text, $AU-color-background);
 
 // If the background is light
 @if (lightness($AU-color-background) > 50) {
-  $AU-color-foreground-muted: AU-color-a11y(
-    $AU-color-foreground-muted,
-    $AU-color-background-alt-shade
-  );
-  $AU-color-foreground-border: AU-color-a11y(
-    $AU-color-foreground-border,
-    $AU-color-background-alt-shade,
-    'large'
-  );
+  $AU-color-foreground-muted: AU-color-a11y($AU-color-foreground-muted, $AU-color-background-alt-shade);
+  $AU-color-foreground-border: AU-color-a11y($AU-color-foreground-border, $AU-color-background-alt-shade, 'large');
 } @else {
-  $AU-color-foreground-muted: AU-color-a11y(
-    $AU-color-foreground-muted,
-    $AU-color-background
-  );
-  $AU-color-foreground-border: AU-color-a11y(
-    $AU-color-foreground-border,
-    $AU-color-background,
-    'large'
-  );
+  $AU-color-foreground-muted: AU-color-a11y($AU-color-foreground-muted, $AU-color-background);
+  $AU-color-foreground-border: AU-color-a11y($AU-color-foreground-border, $AU-color-background, 'large');
 }
 
 /**
@@ -863,45 +810,26 @@ $AU-colordark-lowest-contrast: AU-color-lowest-contrast(
 );
 
 // Override the background if it's not accessible and generate shades
-$AU-colordark-background: AU-color-a11y(
-  $AU-colordark-background,
-  $AU-colordark-lowest-contrast
-);
+$AU-colordark-background: AU-color-a11y($AU-colordark-background, $AU-colordark-lowest-contrast);
 $AU-colordark-background-shade: darken($AU-colordark-background, 4%);
 $AU-colordark-background-alt: darken($AU-colordark-background, 8%);
 $AU-colordark-background-alt-shade: darken($AU-colordark-background, 12%);
 
 // Generated border and muted colours
-$AU-colordark-foreground-muted: mix(
-  $AU-colordark-foreground-text,
-  $AU-colordark-background
-);
-$AU-colordark-foreground-border: mix(
-  $AU-colordark-foreground-text,
-  $AU-colordark-background
-);
+$AU-colordark-foreground-muted: mix($AU-colordark-foreground-text, $AU-colordark-background);
+$AU-colordark-foreground-border: mix($AU-colordark-foreground-text, $AU-colordark-background);
 
 // If the background is light
 @if (lightness($AU-colordark-background) > 50) {
-  $AU-colordark-foreground-muted: AU-color-a11y(
-    $AU-colordark-foreground-muted,
-    $AU-colordark-background-alt-shade
-  );
+  $AU-colordark-foreground-muted: AU-color-a11y($AU-colordark-foreground-muted, $AU-colordark-background-alt-shade);
   $AU-colordark-foreground-border: AU-color-a11y(
     $AU-colordark-foreground-border,
     $AU-colordark-background-alt-shade,
     'large'
   );
 } @else {
-  $AU-colordark-foreground-muted: AU-color-a11y(
-    $AU-colordark-foreground-muted,
-    $AU-colordark-background
-  );
-  $AU-colordark-foreground-border: AU-color-a11y(
-    $AU-colordark-foreground-border,
-    $AU-colordark-background,
-    'large'
-  );
+  $AU-colordark-foreground-muted: AU-color-a11y($AU-colordark-foreground-muted, $AU-colordark-background);
+  $AU-colordark-foreground-border: AU-color-a11y($AU-colordark-foreground-border, $AU-colordark-background, 'large');
 }
 
 /**
@@ -911,6 +839,13 @@ $AU-color-error: #d60000 !default;
 $AU-color-success: #0b996c !default;
 $AU-color-warning: #f69900 !default;
 $AU-color-info: #00bfe9 !default;
+
+:root {
+  --AU-color-error: #{$AU-color-error};
+  --AU-color-success: #{$AU-color-success};
+  --AU-color-warning: #{$AU-color-warning};
+  --AU-color-info: #{$AU-color-info};
+}
 
 /**
  * AU-border-radius styles

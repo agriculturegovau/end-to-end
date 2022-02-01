@@ -7,6 +7,14 @@ import { ButtonGroup } from 'components/button-group';
 import AUcheckbox from 'components/@gov.au/AUcheckbox';
 import DescripionList from 'components/DescriptionList';
 import Todo from 'components/Todo';
+import Indicator, {
+  ErrorSVG,
+  IndicatorC,
+  IndicatorComponent,
+  InfoSVG,
+  SuccessSVG,
+  WarningSVG,
+} from 'components/Indicator';
 
 const Page: NextPage = () => (
   <WizardLayout
@@ -31,7 +39,31 @@ const Page: NextPage = () => (
       <DescripionList>
         <dt>Cold treatment certificate</dt>
         <dd>
-          <strong>Supplied</strong> (prefilled)
+          <Indicator type="error">
+            <strong>Supplied</strong> (prefilled)
+          </Indicator>
+
+          <IndicatorC>supplied</IndicatorC>
+          <IndicatorC type="success">supplied</IndicatorC>
+          <IndicatorC type="warning">supplied</IndicatorC>
+          <IndicatorC type="error">supplied</IndicatorC>
+          <IndicatorC type="info">supplied</IndicatorC>
+          <IndicatorComponent>
+            <SuccessSVG />
+            &nbsp;Supplied (prefilled)
+          </IndicatorComponent>
+          <IndicatorComponent>
+            <ErrorSVG />
+            &nbsp;Supplied (prefilled)
+          </IndicatorComponent>
+          <IndicatorComponent>
+            <InfoSVG />
+            &nbsp;Supplied (prefilled)
+          </IndicatorComponent>
+          <IndicatorComponent>
+            <WarningSVG />
+            &nbsp;Supplied (prefilled)
+          </IndicatorComponent>
         </dd>
         <dt>Endorsement 3358</dt>
         <dd>

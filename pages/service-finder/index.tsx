@@ -17,8 +17,8 @@ const Page: LayoutPage = () => (
       happen next to reach their objective.
     </p>
     <p>
-      <strong>Context</strong>: From our discovery work, we know that exporters want to be confident they're doing the
-      right thing when interacting with the department.
+      <strong>Context:</strong> From our discovery work, we know that exporters want to be confident they&apos;re doing
+      the right thing when interacting with the department.
     </p>
     <p>
       The combined legislative and regularity context, complicated and disconnected supporting information and high

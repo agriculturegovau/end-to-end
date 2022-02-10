@@ -20,7 +20,7 @@ const Page: LayoutPage = () => (
     </p>
     <p>By designing a service that:</p>
     <ul>
-      <li>responds to changes to an export business's circumstances in real-time</li>
+      <li>responds to changes to an export business&apos;s circumstances in real-time</li>
       <li>proactively reaches provides guidance and support relevant to their situation,</li>
     </ul>
     <p>

@@ -50,15 +50,15 @@ export const flows = {
 };
 
 export const indexContents = new Map<keyof typeof flows, string>([
-  ['register-establishment', 'Register establishment'],
-  ['service-finder', 'Service finder'],
+  //['register-establishment', 'Register establishment'], replace this
+  ['service-finder', 'Interactive guidance'],
   ['account-preferences', 'Account preferences'],
-  ['book-a-call', 'Book a call with finance'],
-  ['eligible-new-market', 'Eligible for new market'],
-  ['book-an-inspection', 'Book an inspection'],
+  ['book-a-call', 'Book a call'],
+  ['book-an-inspection', 'Book an appointment'],
   ['changed-market-requirements', 'Changed market requirements'],
-  ['make-payment', 'Make payment'],
-  ['new-market-opportunity', 'New market opportunity'],
+  ['eligible-new-market', 'New market eligibility'],
+  //['make-payment', 'Make payment'],
+  //['new-market-opportunity', 'New market eligibility'],
 ]);
 
 const Details = styled.details`

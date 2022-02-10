@@ -5,11 +5,32 @@ import { LayoutPage } from 'components/LayoutPage';
 const Page: LayoutPage = () => (
   <IntroLayout
     heading="Account preferences"
-    superheading="End to end service prototype"
+    superheading="Export Service Tranche 1 concepts"
     cta={{ href: '/account-preferences/sign-in', label: 'Get started' }}
   >
-    Imagining you’ve created an export account for your current business, walk us through what you would do on the next
-    few screens.
+    <p>
+      Giving people visibility, choice and control around how we communicate with them and how their information is
+      used.
+    </p>
+
+    <p>
+      <strong>Purpose:</strong> provide streamlined and personalised interactions with services from one central place.
+    </p>
+
+    <p>
+      <strong>Context:</strong> Businesses who export agricultural goods from Australia have to interact with multiple
+      different systems in different places to satisfy export requirements.
+    </p>
+
+    <p>
+      The experience is confusing, disjointed and inconsistent, between systems and department areas. Many processes are
+      manual, requiring people to provide the same information repeatedly.
+    </p>
+
+    <p>
+      Clients need and expect more efficiency and transparency from the department. Being uninformed about changes,
+      status of applications and timeframes, can have significant financial implications on an export business.
+    </p>
   </IntroLayout>
 );
 

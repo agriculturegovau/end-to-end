@@ -4,13 +4,27 @@ import { LayoutPage } from 'components/LayoutPage';
 
 const Page: LayoutPage = () => (
   <IntroLayout
-    heading="Scenario 1"
-    superheading="End to end service prototype"
+    heading="Concept: Interactive guidance"
+    superheading="Export Service Tranche 1 concepts"
     cta={{ href: '/service-finder/previous-exports', label: 'Get started' }}
   >
-    Production of your goods has exceeded your expectations this season. You decide to explore your options of what to
-    do with your excess goods. You’ve never exported anything before. You decide to go and search online to find out how
-    to export your goods.
+    <p>
+      Enabling users to choose criteria relevant to their circumstances and providing tailored, service-related content
+      relevant to their goals.
+    </p>
+    <p>
+      <strong>Purpose:</strong> support users to feel confident that they know what to do, how to do it and what will
+      happen next to reach their objective.
+    </p>
+    <p>
+      <strong>Context</strong>: From our discovery work, we know that exporters want to be confident they're doing the
+      right thing when interacting with the department.
+    </p>
+    <p>
+      The combined legislative and regularity context, complicated and disconnected supporting information and high
+      business stakes (including potential loss of market access) drive high user motivation for certainty in task
+      completion.
+    </p>
   </IntroLayout>
 );
 

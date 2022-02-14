@@ -6,7 +6,9 @@ import AlmostAUCard, { AlmostAUCardList } from 'components/@gov.au/AlmostAUCard'
 import { ButtonGroup } from 'components/button-group';
 import WrapperLayout from 'components/layouts/WrapperLayout';
 import { LayoutPage } from 'components/LayoutPage';
-import StaticImage from 'components/StaticImage';
+import StaticImage, { imageURL } from 'components/StaticImage';
+
+const heroImage = imageURL('/farm-landscape-medium.jpg');
 
 const Home: LayoutPage = () => (
   <main id="content" className="au-body">
@@ -14,8 +16,8 @@ const Home: LayoutPage = () => (
       style={{
         ...{ background: 'rgb(245,245,245)' },
         ...{
-          background:
-            'linear-gradient(90deg, rgba(245,245,245,1) 0%, rgba(245,245,245,1) 50%, rgba(245,245,245,0) 100%), url(/farm-landscape-medium.jpg)',
+          background: `linear-gradient(90deg, rgba(245,245,245,1) 0%, rgba(245,245,245,1) 50%, rgba(245,245,245,0) 100%), url(${heroImage})`,
+          //background: `linear-gradient(90deg, rgba(245,245,245,1) 0%, rgba(245,245,245,1) 50%, rgba(245,245,245,0) 100%), url(${heroImage})`,
         },
         backgroundPositionX: 'right',
         backgroundPositionY: 'bottom',
@@ -26,13 +28,13 @@ const Home: LayoutPage = () => (
         <div className="row">
           <div className="col-md-8 col-xs-12" style={{ marginBottom: '3em', marginTop: '3em' }}>
             <AUheading size="xxl" level="1" style={{ marginTop: '1rem' }}>
-              A simpler way to manage export transactions
+              Manage export transactions securely online
             </AUheading>
 
-            <p>Access and manage your agricultural export requirements in one place.</p>
+            <p>Access and manage your agricultural export requirements in one place</p>
 
             <ButtonGroup style={{ marginTop: '1em' }}>
-              <AUbutton>How to get started</AUbutton>
+              <AUbutton>Create an account</AUbutton>
               <AUbutton as="secondary">Sign in</AUbutton>
             </ButtonGroup>
           </div>
@@ -54,12 +56,12 @@ const Home: LayoutPage = () => (
           <AlmostAUCard
             heading={
               <>
-                <StaticImage src="/portrait-icon.png" width={60} height={60} alt="portrait icon" />
+                <StaticImage src="/homepage-establishment.png" width={60} height={60} alt="Establishment icon" />
                 <br />
                 Establishment details
               </>
             }
-            style={{ border: '0', boxShadow: 'none' }}
+            shadow={false}
           >
             Get a single view of the establishment details you have registered with the department, including staff
             listed in management and control.
@@ -67,12 +69,17 @@ const Home: LayoutPage = () => (
           <AlmostAUCard
             heading={
               <>
-                <StaticImage src="/portrait-icon.png" width={60} height={60} alt="portrait icon" />
+                <StaticImage
+                  src="/homepage-document-question.png"
+                  width={60}
+                  height={60}
+                  alt="document question icon"
+                />
                 <br />
                 Variation requests
               </>
             }
-            style={{ border: '0', boxShadow: 'none' }}
+            shadow={false}
           >
             Save time and effort using pre-filled establishment details when you apply to vary a registration, approved
             arrangement or operations.
@@ -80,28 +87,28 @@ const Home: LayoutPage = () => (
           <AlmostAUCard
             heading={
               <>
-                <StaticImage src="/portrait-icon.png" width={60} height={60} alt="portrait icon" />
+                <StaticImage src="/homepage-data.png" width={60} height={60} alt="data icon" />
                 <br />
-                Data dashboard
+                Data transparency
               </>
             }
-            style={{ border: '0', boxShadow: 'none' }}
+            shadow={false}
           >
-            Monitor your risk profile and improve regulatory efficiencies. Connect business performance data to your
-            account for convenience and access.
+            One place for all your performance data. Experience more efficient regulation processes and monitor your key
+            compliance risks.
           </AlmostAUCard>
           <AlmostAUCard
             heading={
               <>
-                <StaticImage src="/portrait-icon.png" width={60} height={60} alt="portrait icon" />
+                <StaticImage src="/homepage-document-tick.png" width={60} height={60} alt="document tick icon" />
                 <br />
                 Corrective actions
               </>
             }
-            style={{ border: '0', boxShadow: 'none' }}
+            shadow={false}
           >
-            Access and manage open corrective action requests (CARs). Get a single view of the CARs history for an
-            establishment.
+            View and respond to open corrective actions requests (CARs). Access closed CARs, and track your activity
+            history securely online.
           </AlmostAUCard>
         </AlmostAUCardList>
       </div>
@@ -110,16 +117,39 @@ const Home: LayoutPage = () => (
 
       <div className="row">
         <AlmostAUCardList>
-          <AlmostAUCard heading={<Link href="/todo">About the Export Service</Link>}>
-            Deserunt anim non sunt irure do ex nulla sunt. Id exercitation dolore culpa.
+          <AlmostAUCard heading={<Link href="/todo">About the Export Service</Link>} shadow>
+            Learn more about how we&apos;re supporting Australian exporters – now and into the future.
           </AlmostAUCard>
 
-          <AlmostAUCard heading={<Link href="/todo">How to get started</Link>}>
-            Deserunt anim non sunt irure do ex nulla sunt. Id exercitation dolore culpa.
+          <AlmostAUCard
+            heading={
+              <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                <Link href="/todo">Participate in research</Link>
+
+                <div>
+                  <StaticImage src="/homepage-external-link.png" width={16} height={16} alt="external link icon" />
+                </div>
+              </div>
+            }
+            shadow
+          >
+            We run research activities with exporters to help us expand and improve this service to meet your needs.
           </AlmostAUCard>
 
-          <AlmostAUCard heading={<Link href="/todo">Contact us</Link>}>
-            Deserunt anim non sunt irure do ex nulla sunt. Id exercitation dolore culpa.
+          <AlmostAUCard
+            heading={
+              <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                <Link href="/todo">Engage with us</Link>
+
+                <div>
+                  <StaticImage src="/homepage-external-link.png" width={16} height={16} alt="external link icon" />
+                </div>
+              </div>
+            }
+            shadow
+          >
+            We want to hear from you. Help shape our policies and decisions. Share your ideas through our consultation
+            forums.
           </AlmostAUCard>
         </AlmostAUCardList>
       </div>

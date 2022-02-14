@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const SiteMainNav = () => (
   <>
@@ -49,10 +49,7 @@ const SiteMainNav = () => (
           <div className="col-md-12">
             <div id="main-nav-default" className="au-main-nav__content">
               <div className="au-main-nav__menu">
-                <div
-                  className="au-main-nav__menu-inner"
-                  style={{ height: '52px' }}
-                />
+                <div className="au-main-nav__menu-inner" style={{ height: '52px' }} />
               </div>
             </div>
           </div>
@@ -60,6 +57,6 @@ const SiteMainNav = () => (
       </div>
     </nav>
   </>
-)
+);
 
-export default SiteMainNav
+export default SiteMainNav;

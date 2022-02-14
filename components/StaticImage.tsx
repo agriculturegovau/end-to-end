@@ -3,6 +3,8 @@ import Image, { ImageLoaderProps, ImageProps } from 'next/image';
 
 const isProd = process.env.NODE_ENV === 'production';
 
+export const imageURL = (src: string) => (isProd ? `/end-to-end${src}` : src);
+
 const StaticLoader = (props: ImageLoaderProps) => props.src;
 
 const StaticImage: typeof Image = ({ loader = StaticLoader, ...props }: ImageProps) => {

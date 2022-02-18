@@ -20,9 +20,7 @@ const SiteFooter = () => {
             <div className="col-sm-12">
               <ul className="au-link-list au-link-list--inline">
                 <li style={{ marginRight: '1em' }}>
-                  <a href={'https://www.awe.gov.au/about'} rel={'external'}>
-                    About
-                  </a>
+                  <Link href="/homepage/about">About</Link>
                 </li>
                 <li style={{ marginRight: '1em' }}>
                   <a href={'https://www.awe.gov.au/about/commitment/accessibility'} rel={'external'}>
@@ -35,7 +33,7 @@ const SiteFooter = () => {
                   </a>
                 </li>
                 <li style={{ marginRight: '1em' }}>
-                  <Link href={'/todo'}>Privacy</Link>
+                  <a href={'https://agriculture-exports.awe.gov.au/account/help/privacy'}>Privacy</a>
                 </li>
               </ul>
             </div>

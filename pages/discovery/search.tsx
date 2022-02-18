@@ -8,7 +8,7 @@ const Page: LayoutPage = () => (
   <IntroLayout heading="Concept: Discovery content with step-by-step guidance" logo={null}>
     <Link href="/discovery/homepage">
       <a>
-        <StaticImage src="/discovery-search.png" width="1440" height="900" />
+        <StaticImage src="/discovery-search.png" width="1440" height="1044" />
       </a>
     </Link>
   </IntroLayout>

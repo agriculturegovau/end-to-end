@@ -8,7 +8,7 @@ import WrapperLayout from 'components/layouts/WrapperLayout';
 import { LayoutPage } from 'components/LayoutPage';
 import StaticImage, { imageURL } from 'components/StaticImage';
 
-const heroImage = imageURL('/homepage-hero.png');
+const heroImage = imageURL('/homepage-harvest-medium.jpg');
 
 const Home: LayoutPage = () => (
   <main id="content" className="au-body">
@@ -16,10 +16,10 @@ const Home: LayoutPage = () => (
       style={{
         ...{ background: 'rgb(245,245,245)' },
         ...{
-          background: `linear-gradient(90deg, rgba(245,245,245,1) 0%, rgba(245,245,245,1) 50%, rgba(245,245,245,0) 100%), url(${heroImage})`,
+          background: `linear-gradient(90deg, rgba(245, 245, 245,1) 0%, rgba(245, 245, 245,1) 50%, rgba(245, 245, 245, 0.75) calc(50vw + 100px), rgba(245,245,245,0) 100%), url(${heroImage})`,
         },
-        backgroundPositionX: 'center',
-        backgroundPositionY: 'bottom 68%',
+        backgroundPositionX: 'right',
+        backgroundPositionY: 'center',
         backgroundRepeat: 'no-repeat',
       }}
     >
@@ -33,7 +33,9 @@ const Home: LayoutPage = () => (
             <p>Access and manage your agricultural export requirements in one place</p>
 
             <ButtonGroup style={{ marginTop: '1em' }}>
-              <AUbutton>Create an account</AUbutton>
+              <Link passHref href="https://agriculture-exports.awe.gov.au/account/help/">
+                <AUbutton link>Create an account</AUbutton>
+              </Link>
               <AUbutton as="secondary">Sign in</AUbutton>
             </ButtonGroup>
           </div>
@@ -116,14 +118,20 @@ const Home: LayoutPage = () => (
 
       <div className="row">
         <AlmostAUCardList className="col-xs-12">
-          <AlmostAUCard heading={<Link href="/todo">About the Export Service</Link>} shadow>
+          <AlmostAUCard heading={<Link href="/homepage/about">About the Export Service</Link>} shadow>
             Learn more about how we&apos;re supporting Australian exporters – now and into the future.
           </AlmostAUCard>
 
           <AlmostAUCard
             heading={
               <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <Link href="/todo">Participate in research</Link>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://www.awe.gov.au/biosecurity-trade/market-access-trade/transforming-export-services"
+                >
+                  Participate in research
+                </a>
 
                 <div>
                   <StaticImage src="/homepage-external-link.png" width={16} height={16} alt="external link icon" />
@@ -138,7 +146,9 @@ const Home: LayoutPage = () => (
           <AlmostAUCard
             heading={
               <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <Link href="/todo">Engage with us</Link>
+                <a target="_blank" rel="noopener noreferrer" href="https://haveyoursay.awe.gov.au/">
+                  Engage with us
+                </a>
 
                 <div>
                   <StaticImage src="/homepage-external-link.png" width={16} height={16} alt="external link icon" />

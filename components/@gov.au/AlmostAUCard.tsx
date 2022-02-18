@@ -32,14 +32,8 @@ export const AlmostAUCardListUL = styled.ul<Required<CardListProps>>`
 `;
 
 const AlmostAUCardListLI = styled.li`
-  margin: 0 12px;
-
   & .au-card {
     height: 100%;
-  }
-
-  @media (min-width: 768px) {
-    margin: 0;
   }
 `;
 

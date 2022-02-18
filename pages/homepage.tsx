@@ -8,7 +8,7 @@ import WrapperLayout from 'components/layouts/WrapperLayout';
 import { LayoutPage } from 'components/LayoutPage';
 import StaticImage, { imageURL } from 'components/StaticImage';
 
-const heroImage = imageURL('/farm-landscape-medium.jpg');
+const heroImage = imageURL('/homepage-hero.png');
 
 const Home: LayoutPage = () => (
   <main id="content" className="au-body">
@@ -18,8 +18,8 @@ const Home: LayoutPage = () => (
         ...{
           background: `linear-gradient(90deg, rgba(245,245,245,1) 0%, rgba(245,245,245,1) 50%, rgba(245,245,245,0) 100%), url(${heroImage})`,
         },
-        backgroundPositionX: 'right',
-        backgroundPositionY: 'bottom',
+        backgroundPositionX: 'center',
+        backgroundPositionY: 'bottom 68%',
         backgroundRepeat: 'no-repeat',
       }}
     >
@@ -51,7 +51,7 @@ const Home: LayoutPage = () => (
       </div>
 
       <div className="row" style={{ marginTop: 0 }}>
-        <AlmostAUCardList>
+        <AlmostAUCardList className="col-xs-12">
           <AlmostAUCard
             heading={
               <>
@@ -115,7 +115,7 @@ const Home: LayoutPage = () => (
       <hr style={{ margin: '3em 0' }} />
 
       <div className="row">
-        <AlmostAUCardList>
+        <AlmostAUCardList className="col-xs-12">
           <AlmostAUCard heading={<Link href="/todo">About the Export Service</Link>} shadow>
             Learn more about how we&apos;re supporting Australian exporters – now and into the future.
           </AlmostAUCard>

@@ -10,8 +10,8 @@ import Link from 'next/link';
 
 const Contents = styled.div`
   margin-top: 2em;
-  border-left: 2px solid var(--AU-color-foreground-action);
-  padding: 0 2em;
+  border-left: 3px solid var(--AU-color-foreground-action);
+  padding: 0 1em;
 
   & ul {
     list-style: none;

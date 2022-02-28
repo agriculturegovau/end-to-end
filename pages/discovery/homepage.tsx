@@ -1,12 +1,6 @@
 import AUbutton from 'components/@gov.au/AUbutton';
-import { WizardLayout } from 'components/layouts/WizardLayout';
 import Link from 'next/link';
-import type { NextPage } from 'next';
 import AUheading from 'components/@gov.au/AUheading';
-import AUcheckbox from 'components/@gov.au/AUcheckbox';
-import AUformGroup from 'components/@gov.au/AUformGroup';
-import AUcallout from 'components/@gov.au/AUcallout';
-import Todo from 'components/Todo';
 import AlmostAUCard, { AlmostAUCardList } from 'components/@gov.au/AlmostAUCard';
 import Hr from 'components/Hr';
 import { LayoutPage } from 'components/LayoutPage';
@@ -64,7 +58,7 @@ const Home: LayoutPage = () => (
         Information for
       </AUheading>
       <AlmostAUCardList columns={3}>
-        <AlmostAUCard heading={<Link href="/todo">New exporters</Link>} shadow>
+        <AlmostAUCard heading={<Link href="/discovery/guide">New exporters</Link>} shadow>
           Follow our step-by-step guide to help you succeed as an agricultural exporter.
         </AlmostAUCard>
 

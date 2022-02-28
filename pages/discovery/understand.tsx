@@ -84,8 +84,8 @@ const Home: NextPage = () => (
       <li>organic produce</li>
       <li>meat and meat products</li>
       <li>milk and milk products.</li>
-      <li>To export products in any of these categories, you&apos;ll need to follow product-specific export rules.</li>
     </ul>
+    <p>To export products in any of these categories, you&apos;ll need to follow product-specific export rules.</p>
 
     <AUheading level={2} size="xl" id="goods">
       Goods that aren&apos;t regulated
@@ -95,7 +95,6 @@ const Home: NextPage = () => (
       requirements you need to meet.
     </p>
     <p>Non-prescribed goods include:</p>
-
     <ul>
       <li>animal by-products - such as wool, feathers, skins and hides, and inedible blood products</li>
       <li>processed foods</li>
@@ -104,30 +103,28 @@ const Home: NextPage = () => (
       <li>pet food</li>
       <li>rendered animal products</li>
       <li>processed animal manure and fertilisers.</li>
-      <li>
-        There are no Australian export rules you need to follow for products in any of these categories. But you may
-        need to meet specific requirements in the importing country.
-      </li>
     </ul>
+    <p>
+      There are no Australian export rules you need to follow for products in any of these categories. But you may need
+      to meet specific requirements in the importing country.
+    </p>
 
     <AUheading level={2} size="xl" id="other">
       Goods handled by other departments
     </AUheading>
-
     <p>Some types of agricultural goods are handled by other Australian government departments. These include:</p>
-
     <ul>
       <li>Animal vaccine and veterinary medicine</li>
       <li>Human vaccine and human therapeutics</li>
       <li>Australian wine.</li>
-      <li>
-        You won&apos;t need to engage with the Department of Agriculture, Water and the Environment to export products
-        in any of these categories. Check which department handles the exports.
-      </li>
     </ul>
+    <p>
+      You won&apos;t need to engage with the Department of Agriculture, Water and the Environment to export products in
+      any of these categories. Check which department handles the exports.
+    </p>
 
     <AUheading level={3} size="md">
-      <Link href="/todo">Step 2 - Confirm the importing country’s rules</Link>
+      <Link href="/todo">Step 2 - Confirm the importing country’s rules →</Link>
     </AUheading>
 
     <AUcallout>

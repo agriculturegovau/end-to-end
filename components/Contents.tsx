@@ -15,14 +15,7 @@ export const flows = {
     'confirm',
     'establishment-added',
   ],
-  ['account-preferences']: [
-    'sign-in',
-    'welcome',
-    'personalisation',
-    'notification-preferences',
-    'sharing-preferences',
-    'success',
-  ],
+  ['account-preferences']: ['welcome', 'personalisation', 'notification-preferences', 'sharing-preferences', 'success'],
   ['book-a-call']: ['push-notification', 'email-inbox', 'sign-in', 'payment-summary', 'book-a-call', 'booked'],
   ['eligible-new-market']: [
     'push-notification',

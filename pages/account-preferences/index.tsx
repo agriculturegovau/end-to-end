@@ -6,7 +6,7 @@ const Page: LayoutPage = () => (
   <IntroLayout
     heading="Account preferences"
     superheading="Export Service Tranche 1 concepts"
-    cta={{ href: '/account-preferences/sign-in', label: 'Get started' }}
+    cta={{ href: '/account-preferences/welcome', label: 'Get started' }}
   >
     <p>
       Giving people visibility, choice and control around how we communicate with them and how their information is

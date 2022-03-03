@@ -48,10 +48,10 @@ export const indexContents = new Map<keyof typeof flows, string>([
   ['discovery', 'Discovery'],
   ['service-finder', 'Interactive guidance'],
   ['account-preferences', 'Account preferences'],
-  ['book-a-call', 'Book a call'],
   ['book-an-inspection', 'Book an appointment'],
   ['changed-market-requirements', 'Changed market requirements'],
   ['eligible-new-market', 'New market eligibility'],
+  ['book-a-call', 'Book a call'],
   //['make-payment', 'Make payment'],
   //['new-market-opportunity', 'New market eligibility'],
 ]);

@@ -30,7 +30,7 @@ const Home: NextPage = () => (
     }
   >
     <p>
-      Your goods will be inspected at the agreed time and location. Inspections take around 2 hours and cost $3,700.00.
+      Your goods will be inspected at the agreed time and location. Inspections take around 2 hours and cost $500.00.
     </p>
     <p>After the inspection, you’ll recieve a report via email along with an invoice for payment.</p>
 

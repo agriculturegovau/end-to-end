@@ -4,9 +4,9 @@ import { LayoutPage } from 'components/LayoutPage';
 
 const Page: LayoutPage = () => (
   <IntroLayout
-    heading="Concept: Support hand-offs – book an appointment"
+    heading="Support hand-offs – book an appointment"
     superheading="Export Service Tranche 1 concepts"
-    cta={{ href: '/book-an-inspection/sign-in', label: 'Get started' }}
+    cta={{ href: '/book-an-inspection/select-date', label: 'Get started' }}
   >
     <p>Enabling users to book in-person services and support when and where they need it.</p>
     <p>

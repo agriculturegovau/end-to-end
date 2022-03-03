@@ -4,9 +4,7 @@ import Link from 'next/link';
 import type { NextPage } from 'next';
 import { ButtonGroup } from 'components/button-group';
 import AUheading from 'components/@gov.au/AUheading';
-import styled from '@emotion/styled';
 import Calendar from 'components/Calendar';
-import AUradio from 'components/@gov.au/AUradio';
 import AUcheckbox from 'components/@gov.au/AUcheckbox';
 import AUformGroup from 'components/@gov.au/AUformGroup';
 
@@ -14,7 +12,7 @@ const Home: NextPage = () => (
   <WizardLayout title="Book an inspection" backbreadcrumb={false}>
     <p style={{ fontSize: '1.2em' }}>Choose a date and time that’s convenient for you. </p>
     <p>
-      Inspections take around 2 hours and cost $3,700.00. After the inspection, you’ll recieve a report via email along
+      Inspections take around 2 hours and cost $500.00. After the inspection, you’ll recieve a report via email along
       with an invoice for payment.
     </p>
 

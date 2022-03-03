@@ -4,19 +4,18 @@ import { LayoutPage } from 'components/LayoutPage';
 
 const Page: LayoutPage = () => (
   <IntroLayout
-    heading="Concept: Proactive service delivery – changed market requirements"
+    heading="Proactive service delivery – changed market requirements"
     superheading="Export Service Tranche 1 concepts"
     cta={{ href: '/changed-market-requirements/push-notification', label: 'Get started' }}
   >
     <p>
-      <strong>Purpose:</strong>
-      provide streamlined and personalised interactions with services from one central place.
+      <strong>Purpose:</strong> provide streamlined and personalised interactions with services from one central place.
     </p>
 
     <p>
-      <strong>Context:</strong>
-      Policy and importing country requirements are not always communicated to clients in a timely way. The
-      communications can arrive via multiple channels, and the regulatory requirements can be difficult to understand.
+      <strong>Context:</strong> Policy and importing country requirements are not always communicated to clients in a
+      timely way. The communications can arrive via multiple channels, and the regulatory requirements can be difficult
+      to understand.
     </p>
     <p>By designing a service that:</p>
     <ul>

@@ -4,9 +4,9 @@ import { LayoutPage } from 'components/LayoutPage';
 
 const Page: LayoutPage = () => (
   <IntroLayout
-    heading="Concept: Discovery content with step-by-step guidance"
+    heading="Discovery content with step-by-step guidance"
     superheading="Export Service Tranche 1 concepts"
-    cta={{ href: '/discovery/search', label: 'Get started' }}
+    cta={{ href: '/discovery/homepage', label: 'Get started' }}
   >
     <p>Enabling users to:</p>
     <ul>

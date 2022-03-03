@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 
 export const flows = {
-  ['discovery']: ['search', 'homepage', 'guide', 'understand', 'create-account'],
+  ['discovery']: ['homepage', 'guide', 'understand', 'create-account'],
   ['register-establishment']: [
     'dashboard',
     'register-establishment',

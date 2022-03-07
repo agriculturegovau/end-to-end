@@ -4,7 +4,7 @@ import { LayoutPage } from 'components/LayoutPage';
 
 const Page: LayoutPage = () => (
   <IntroLayout
-    heading="Concept: Information sharing – new market eligibility"
+    heading="Information sharing – new market eligibility"
     superheading="Export Service Tranche 1 concepts"
     cta={{ href: '/eligible-new-market/push-notification', label: 'Get started' }}
   >

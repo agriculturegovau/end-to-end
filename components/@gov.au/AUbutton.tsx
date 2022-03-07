@@ -1,19 +1,19 @@
-import React, { forwardRef } from 'react'
-import clsx from 'clsx'
+import React, { forwardRef } from 'react';
+import clsx from 'clsx';
 
-type ComponentType = React.ElementType | keyof JSX.IntrinsicElements
+type ComponentType = React.ElementType | keyof JSX.IntrinsicElements;
 
 interface IAUbutton {
-  linkComponent?: ComponentType
-  link?: string | boolean
-  as?: 'primary' | 'secondary' | 'tertiary'
-  dark?: boolean
-  type?: string
-  block?: boolean
-  children: React.ReactNode
+  linkComponent?: ComponentType;
+  link?: string | boolean;
+  as?: 'primary' | 'secondary' | 'tertiary';
+  dark?: boolean;
+  type?: string;
+  block?: boolean;
+  children: React.ReactNode;
 }
 
-type AUbuttonFC = React.ComponentProps<'button'> & IAUbutton // TODO: Make this accept props for the value of 'linkComponent'
+type AUbuttonFC = React.ComponentProps<'button'> & IAUbutton; // TODO: Make this accept props for the value of 'linkComponent'
 
 const AUbutton = forwardRef<HTMLButtonElement, AUbuttonFC>(
   (
@@ -30,15 +30,15 @@ const AUbutton = forwardRef<HTMLButtonElement, AUbuttonFC>(
     }: AUbuttonFC,
     ref
   ) => {
-    let ButtonComponent: ComponentType = 'button'
+    let ButtonComponent: ComponentType = 'button';
 
     if (link) {
-      ButtonComponent = linkComponent
+      ButtonComponent = linkComponent;
 
       if (!link) {
-        const attributeName = linkComponent === 'a' ? 'href' : 'to' // Qns for design system team: Why does the attribute change? Why 'to'? Should this be configurable?
+        const attributeName = linkComponent === 'a' ? 'href' : 'to'; // Qns for design system team: Why does the attribute change? Why 'to'? Should this be configurable?
         // @ts-ignore
-        otherProps[attributeName] = link
+        otherProps[attributeName] = link;
       }
     }
 
@@ -48,21 +48,16 @@ const AUbutton = forwardRef<HTMLButtonElement, AUbuttonFC>(
       as !== 'primary' && `au-btn--${as}`,
       block && 'au-btn--block',
       dark && 'au-btn--dark',
-    ])
+    ]);
 
     return (
-      <ButtonComponent
-        ref={ref}
-        type={type}
-        className={classNames}
-        {...otherProps}
-      >
+      <ButtonComponent ref={ref} type={type} className={classNames} {...otherProps}>
         {children}
       </ButtonComponent>
-    )
+    );
   }
-)
+);
 
-AUbutton.displayName = 'AUbutton'
+AUbutton.displayName = 'AUbutton';
 
-export default AUbutton
+export default AUbutton;

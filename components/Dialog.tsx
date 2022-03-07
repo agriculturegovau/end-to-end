@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import React, { useState } from 'react';
 
 const DialogComponent = styled.div`
+  cursor: auto;
   position: relative;
   background: white;
 
@@ -15,6 +16,7 @@ const DialogComponent = styled.div`
 `;
 
 const Backdrop = styled.div`
+  cursor: pointer;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -34,6 +36,18 @@ export interface DialogProps<T> {
   open?: boolean;
 }
 
+export interface DialogContext {
+  showing: boolean;
+  setShowing: (showing: boolean) => void;
+}
+
+export const DialogContext = React.createContext<DialogContext>({
+  showing: false,
+  setShowing: (showing) => {
+    return;
+  },
+});
+
 const Dialog = <T,>(props: DialogProps<T> & React.ComponentProps<'div'>) => {
   const { trigger, open = false, ...dialogProps } = props;
   const [showingDialog, setDialog] = useState(open);
@@ -45,17 +59,24 @@ const Dialog = <T,>(props: DialogProps<T> & React.ComponentProps<'div'>) => {
       {trigger(showDialog)}
 
       {showingDialog ? (
-        <Backdrop
-          onClickCapture={(e) => {
-            if (e.currentTarget !== e.target) {
-              return;
-            }
-
-            hideDialog();
+        <DialogContext.Provider
+          value={{
+            showing: showingDialog,
+            setShowing: setDialog,
           }}
         >
-          <DialogComponent {...dialogProps} />
-        </Backdrop>
+          <Backdrop
+            onClickCapture={(e) => {
+              if (e.currentTarget !== e.target) {
+                return;
+              }
+
+              hideDialog();
+            }}
+          >
+            <DialogComponent {...dialogProps} />
+          </Backdrop>
+        </DialogContext.Provider>
       ) : null}
     </>
   );

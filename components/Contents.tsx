@@ -23,8 +23,6 @@ export const flows = {
     'sign-in',
     'introduction',
     'apply',
-    'servicensw-login',
-    'servicensw-agree',
     'confirm',
     'success',
   ],

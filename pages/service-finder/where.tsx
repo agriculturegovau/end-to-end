@@ -70,14 +70,7 @@ const Home: NextPage = () => {
       </AUheading>
 
       <AUformGroup>
-        <AUlabel
-          text={
-            <>
-              Add one or more countries. <Link href="/todo">Learn more about your options</Link>.
-            </>
-          }
-          htmlFor="service_finder_where_search"
-        />
+        <AUlabel text="Add one or more countries." htmlFor="service_finder_where_search" />
         <Split>
           <input
             type="text"
@@ -121,7 +114,7 @@ const Home: NextPage = () => {
       </Tags>
 
       <div style={{ marginTop: '2em' }}>
-        <AUcheckbox id="not_sure" label="I'm not sure" block />
+        Or <Link href="/todo">learn more about your options</Link>.
       </div>
 
       <Hr />

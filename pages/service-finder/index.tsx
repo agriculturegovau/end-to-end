@@ -4,9 +4,9 @@ import { LayoutPage } from 'components/LayoutPage';
 
 const Page: LayoutPage = () => (
   <IntroLayout
-    heading="Concept: Interactive guidance"
+    heading="Interactive guidance"
     superheading="Export Service Tranche 1 concepts"
-    cta={{ href: '/service-finder/previous-exports', label: 'Get started' }}
+    cta={{ href: '/service-finder/homepage', label: 'Get started' }}
   >
     <p>
       Enabling users to choose criteria relevant to their circumstances and providing tailored, service-related content

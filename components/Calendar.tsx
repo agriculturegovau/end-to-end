@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 
@@ -11,6 +11,14 @@ interface CellProps {
   selected?: boolean;
   available?: boolean;
 }
+
+export interface CalendarContext {
+  setDate: (date: string, active: boolean) => void;
+}
+
+export const CalendarContext = React.createContext<CalendarContext>({
+  setDate: () => {},
+});
 
 const CellComponent = styled.div<CellProps>`
   padding: 6px 10px;
@@ -58,12 +66,24 @@ const CalendarComponent2Header = styled.div`
   }
 `;
 
-const Cell: React.FC<React.ComponentProps<'div'> & CellProps> = (props) => {
+const Cell: React.FC<React.ComponentProps<'div'> & CellProps & { children?: string }> = (props) => {
   const { available, selected } = props;
   const [sel, setSel] = useState(selected);
+  const { setDate } = useContext(CalendarContext);
 
   return available ? (
-    <CellComponent {...props} selected={sel} onClick={() => setSel(!sel)} />
+    <CellComponent
+      {...props}
+      selected={sel}
+      onClick={() => {
+        const selected = !sel;
+        setSel(selected);
+
+        if (props.children !== undefined) {
+          setDate(props.children, selected);
+        }
+      }}
+    />
   ) : (
     <CellComponent {...props} />
   );
@@ -100,14 +120,10 @@ const CalendarA: React.FC<React.ComponentProps<'div'>> = ({ children, ...props }
     <Cell>4</Cell>
     <Cell available>5</Cell>
     <Cell available>6</Cell>
-    <Cell available selected>
-      7
-    </Cell>
+    <Cell available>7</Cell>
     <Cell available>8</Cell>
     <Cell>9</Cell>
-    <Cell available selected>
-      10
-    </Cell>
+    <Cell available>10</Cell>
     <Cell available>11</Cell>
     <Cell>12</Cell>
     <Cell>13</Cell>
@@ -198,17 +214,7 @@ const CalendarB: React.FC<React.ComponentProps<'div'>> = ({ children, ...props }
   </CalendarComponent>
 );
 
-const Calendar: React.FC<React.ComponentProps<'div'>> = ({ children, ...props }) => (
-  <>
-    <CalendarA {...props} />
-    {/*
-    <CalendarB {...props} />
-    <br />
-    {children}
-    <input type="date" id="calendar"></input>;
-    */}
-  </>
-);
+const Calendar: React.FC<React.ComponentProps<'div'>> = ({ children, ...props }) => <CalendarA {...props} />;
 
 Calendar.displayName = 'Calendar';
 

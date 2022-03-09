@@ -9,7 +9,7 @@ import Link from 'next/link';
 const App = styled.div``;
 
 const Aside = styled.div`
-  grid-area: 'logo';
+  grid-area: logo;
   background-color: var(--custom-colordark-background-alt);
 
   @media (min-width: 768px) {
@@ -18,7 +18,7 @@ const Aside = styled.div`
 `;
 
 const Contents = styled.div`
-  grid-area: 'contents';
+  grid-area: contents;
 `;
 
 const Main = styled.main`

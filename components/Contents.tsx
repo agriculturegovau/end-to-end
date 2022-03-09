@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
+import Badge from './Badge';
 
 export const flows = {
   ['discovery']: ['homepage', 'guide', 'understand', 'create-account'],
@@ -102,6 +103,41 @@ const References: React.FC<{
   );
 };
 
+const PrototypeBadgeContainer = styled.div`
+  --badge-size: 225px;
+
+  position: absolute;
+  overflow: hidden;
+  width: var(--badge-size);
+  height: var(--badge-size);
+  display: block;
+  top: 0;
+  right: 0;
+`;
+
+const PrototypeBadge = styled.div`
+  background-color: var(--AU-color-success);
+  color: white;
+  position: relative;
+  width: var(--badge-size);
+  height: var(--badge-size);
+  box-shadow: -4px 3px 10px #00000038;
+  z-index: 3;
+
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: flex-end;
+  transform: rotate(45deg) translate(0, calc(0px - var(--badge-size) * 0.706));
+`;
+
+const Proto = styled.div`
+  padding: 2px 0.5rem;
+  margin: 1em;
+  border: solid 2px #fff;
+  border-radius: 6px;
+`;
+
 const OverlayComponent = styled.div`
   background-color: var(--AU-color-background);
   background-color: #e8eaec;
@@ -114,7 +150,7 @@ const OverlayComponent = styled.div`
   bottom: 0;
   width: 20em;
   box-shadow: -4px 3px 10px #00000038;
-  z-index: 3;
+  z-index: 4;
   border: 2px dashed #f31dc5;
   display: flex;
   flex-flow: column;
@@ -175,6 +211,11 @@ export const OverlayCapture: React.FC = ({ children }) => {
           </span>
         </OverlayComponent>
       ) : null}
+      <PrototypeBadgeContainer>
+        <PrototypeBadge>
+          <Proto>prototype</Proto>
+        </PrototypeBadge>
+      </PrototypeBadgeContainer>
       {children}
     </>
   );

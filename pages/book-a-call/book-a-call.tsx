@@ -8,7 +8,6 @@ import Calendar, { CalendarContext } from 'components/Calendar';
 import AUcheckbox from 'components/@gov.au/AUcheckbox';
 import AUformGroup from 'components/@gov.au/AUformGroup';
 import Hr from 'components/Hr';
-import Todo from 'components/Todo';
 import { useState } from 'react';
 
 const Home: NextPage = () => {

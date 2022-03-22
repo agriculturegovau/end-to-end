@@ -4,7 +4,7 @@ import AUcallout from 'components/@gov.au/AUcallout';
 import AUheading from 'components/@gov.au/AUheading';
 import { ButtonGroup } from 'components/button-group';
 import { WizardLayout } from 'components/layouts/WizardLayout';
-import Sequence from 'components/Sequence';
+import { TodoLink } from 'components/Todo';
 import type { NextPage } from 'next';
 import Link from 'next/link';
 
@@ -27,7 +27,7 @@ const Home: NextPage = () => (
     breadcrumbs={[
       {
         text: 'Home',
-        link: '/todo',
+        link: '/discovery/homepage',
       },
       { text: 'New exporters', link: '/discovery/guide' },
       { text: 'Understand the export rules for your product' },
@@ -124,7 +124,7 @@ const Home: NextPage = () => (
     </p>
 
     <AUheading level={3} size="md">
-      <Link href="/todo">Step 2 - Confirm the importing country’s rules →</Link>
+      <TodoLink href="/todo">Step 2 - Confirm the importing country’s rules →</TodoLink>
     </AUheading>
 
     <AUcallout>

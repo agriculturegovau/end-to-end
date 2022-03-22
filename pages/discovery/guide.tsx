@@ -4,6 +4,7 @@ import AUheading from 'components/@gov.au/AUheading';
 import { ButtonGroup } from 'components/button-group';
 import { WizardLayout } from 'components/layouts/WizardLayout';
 import Sequence from 'components/Sequence';
+import { TodoLink } from 'components/Todo';
 import type { NextPage } from 'next';
 import Link from 'next/link';
 
@@ -37,7 +38,7 @@ const Home: NextPage = () => (
 
       <li>
         <AUheading level={2} size="lg">
-          <Link href="/todo">Confirm the importing country’s rules</Link>
+          <TodoLink href="/todo">Confirm the importing country’s rules</TodoLink>
         </AUheading>
         <p>
           The country you wish to export to may have additional rules. Find out what the importing country requirements
@@ -47,7 +48,7 @@ const Home: NextPage = () => (
 
       <li>
         <AUheading level={2} size="lg">
-          <Link href="/todo">Register, list or get accredited with us</Link>
+          <TodoLink href="/todo">Register, list or get accredited with us</TodoLink>
         </AUheading>
         <p>
           You may need to register or list your establishment, or get your property accredited with the Department.
@@ -58,7 +59,7 @@ const Home: NextPage = () => (
 
       <li>
         <AUheading level={2} size="lg">
-          <Link href="/todo">Check if you need a permit</Link>
+          <TodoLink href="/todo">Check if you need a permit</TodoLink>
         </AUheading>
         <p>
           You only need an export permit if you’re exporting prescribed goods over a certain volume. Check the volume of
@@ -69,7 +70,7 @@ const Home: NextPage = () => (
 
       <li>
         <AUheading level={2} size="lg">
-          <Link href="/todo">Arrange your shipping</Link>
+          <TodoLink href="/todo">Arrange your shipping</TodoLink>
         </AUheading>
         <p>
           Book a freight forwarder to transport your goods. They’ll also manage the collection of your shipment and
@@ -80,7 +81,7 @@ const Home: NextPage = () => (
 
       <li>
         <AUheading level={2} size="lg">
-          <Link href="/todo">Apply for export documents</Link>
+          <TodoLink href="/todo">Apply for export documents</TodoLink>
         </AUheading>
         <p>
           Request documents you need to export such as certificates and permits. You can apply for documents in our
@@ -91,7 +92,7 @@ const Home: NextPage = () => (
 
       <li>
         <AUheading level={2} size="lg">
-          <Link href="/todo">Get an inspection</Link>
+          <TodoLink href="/todo">Get an inspection</TodoLink>
         </AUheading>
         <p>
           Your products, documents and transport unit may need to be inspected before you export them. Here’s how to
@@ -102,7 +103,7 @@ const Home: NextPage = () => (
 
       <li>
         <AUheading level={2} size="lg">
-          <Link href="/todo">Export your products</Link>
+          <TodoLink href="/todo">Export your products</TodoLink>
         </AUheading>
         <p>If you’ve followed the steps in our guide and your goods meet all requirements, you’re ready to export.</p>
         <p style={{ fontSize: '0.9em' }}>1 - 3 days</p>

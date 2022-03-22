@@ -5,7 +5,7 @@ import StaticImage from 'components/StaticImage';
 import Link from 'next/link';
 
 const Page: LayoutPage = () => (
-  <IntroLayout heading="Book a call with finance" logo={null}>
+  <IntroLayout heading="Support hand-offs – book a call" logo={null}>
     <Link href="/book-a-call/email-inbox">
       <a>
         <StaticImage src="/book-a-call_push-notification.png" width="425" height="860" />

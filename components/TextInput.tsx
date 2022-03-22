@@ -7,7 +7,7 @@ import AUhintText from './@gov.au/AUhintText';
 
 interface ITextInput {
   id: string;
-  label: string;
+  label: React.ComponentProps<typeof AUlabel>['text'];
   type?: string;
   error?: any;
   status?: 'valid' | 'invalid';

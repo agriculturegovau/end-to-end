@@ -7,6 +7,7 @@ import { LayoutPage } from 'components/LayoutPage';
 import WrapperLayout from 'components/layouts/WrapperLayout';
 import { imageURL } from 'components/StaticImage';
 import { ButtonGroup } from 'components/button-group';
+import { TodoLink } from 'components/Todo';
 
 const heroImage = imageURL('/farm-landscape-medium.jpg');
 
@@ -44,10 +45,10 @@ const Home: LayoutPage = () => (
         <AlmostAUCard heading={<Link href="/service-finder/previous-exports">Help me export</Link>} shadow>
           Answer a few quick questions to find export info and services specific to your needs.
         </AlmostAUCard>
-        <AlmostAUCard heading={<Link href="/todo">Micor</Link>} shadow>
+        <AlmostAUCard heading={<TodoLink href="/todo">Micor</TodoLink>} shadow>
           Check importing country requirements.
         </AlmostAUCard>
-        <AlmostAUCard heading={<Link href="/todo">EXDOC</Link>} shadow>
+        <AlmostAUCard heading={<TodoLink href="/todo">EXDOC</TodoLink>} shadow>
           Manage export documentation for primary produce.
         </AlmostAUCard>
       </AlmostAUCardList>
@@ -58,23 +59,23 @@ const Home: LayoutPage = () => (
         Information for
       </AUheading>
       <AlmostAUCardList columns={3}>
-        <AlmostAUCard heading={<Link href="/todo">New exporters</Link>} shadow>
+        <AlmostAUCard heading={<TodoLink href="/todo">New exporters</TodoLink>} shadow>
           Follow our step-by-step guide to help you succeed as an agricultural exporter.
         </AlmostAUCard>
 
-        <AlmostAUCard heading={<Link href="/todo">Registered establishments</Link>} shadow>
+        <AlmostAUCard heading={<TodoLink href="/todo">Registered establishments</TodoLink>} shadow>
           How to register your establishment and maintain compliant operations.
         </AlmostAUCard>
 
-        <AlmostAUCard heading={<Link href="/todo">Authorised officers</Link>} shadow>
+        <AlmostAUCard heading={<TodoLink href="/todo">Authorised officers</TodoLink>} shadow>
           Guidelines on policies and processes to follow if you’re an authorised officer.
         </AlmostAUCard>
 
-        <AlmostAUCard heading={<Link href="/todo">Accredited properties</Link>} shadow>
+        <AlmostAUCard heading={<TodoLink href="/todo">Accredited properties</TodoLink>} shadow>
           Accreditation information for farms and packhouses to meet importing country requirements for horticulture.
         </AlmostAUCard>
 
-        <AlmostAUCard heading={<Link href="/todo">Small businesses</Link>} shadow>
+        <AlmostAUCard heading={<TodoLink href="/todo">Small businesses</TodoLink>} shadow>
           Initiatives and support for small exporting businesses.
         </AlmostAUCard>
       </AlmostAUCardList>

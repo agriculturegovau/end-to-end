@@ -16,7 +16,7 @@ const Home: NextPage = () => (
         <p>
           Date: Thursday 16 December 2021
           <br />
-          Time: 9.00am - 9.15 am
+          Time: 9:00am - 9:15 am
           <br />
           <Link href="/todo">Add to calendar</Link>
         </p>

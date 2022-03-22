@@ -47,7 +47,7 @@ const Tags = styled.div`
 
 const Home: NextPage = () => {
   const countryField = useRef<HTMLInputElement>(null);
-  const [countries, setCountries] = useState<string[]>([]);
+  const [countries, setCountries] = useState<string[]>(['Zuy']);
   const addCountry = (country: string) => setCountries([...countries, country]);
   const delCountry = (country: string) => setCountries(countries.filter((c) => c !== country));
 

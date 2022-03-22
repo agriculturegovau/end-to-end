@@ -11,6 +11,7 @@ import styled from '@emotion/styled';
 import TextInput from 'components/TextInput';
 import { useRef, useState } from 'react';
 import { css } from '@emotion/react';
+import { TodoText } from 'components/Todo';
 
 const labels = [
   'Animal by-products (such as wool, feathers or bones)',
@@ -118,6 +119,7 @@ const ExpandedInfo = ({ label, n }: { label: string; n: number }) => {
 
 const ExportOption = ({ label, n }: { label: string; n: number }) => {
   const [ticked, setTicked] = useState(false);
+  const expandable = label === 'Fresh fruit and/or vegetables';
 
   return (
     <>
@@ -127,10 +129,23 @@ const ExportOption = ({ label, n }: { label: string; n: number }) => {
         }}
         checked={ticked}
         id={`export_option_${n}`}
-        label={label}
+        label={
+          expandable ? (
+            <span
+              style={{
+                fontWeight: 'bold',
+                textDecoration: 'underline',
+              }}
+            >
+              {label}
+            </span>
+          ) : (
+            label
+          )
+        }
         block
       />
-      {label === 'Fresh fruit and/or vegetables' ? ticked ? <ExpandedInfo label={label} n={n} /> : null : null}
+      {expandable ? ticked ? <ExpandedInfo label={label} n={n} /> : null : null}
     </>
   );
 };

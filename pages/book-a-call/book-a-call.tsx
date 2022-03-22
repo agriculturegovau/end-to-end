@@ -44,11 +44,11 @@ const Home: NextPage = () => {
             <p>Select an available time on this date.</p>
 
             <AUformGroup style={{ marginTop: '1em' }}>
-              <AUcheckbox type="radio" name="call-date" id="a" label="9.00am - 9.15am" block />
-              <AUcheckbox type="radio" name="call-date" id="b" label="9.15am - 9.30am" block />
-              <AUcheckbox type="radio" name="call-date" id="c" label="1.00pm - 1.15pm" block />
-              <AUcheckbox type="radio" name="call-date" id="d" label="1.15pm - 1.30pm" block />
-              <AUcheckbox type="radio" name="call-date" id="e" label="2.30pm - 2.45pm" block />
+              <AUcheckbox type="radio" name="call-date" id="a" label="9:00am - 9:15am" block />
+              <AUcheckbox type="radio" name="call-date" id="b" label="9:15am - 9:30am" block />
+              <AUcheckbox type="radio" name="call-date" id="c" label="1:00pm - 1:15pm" block />
+              <AUcheckbox type="radio" name="call-date" id="d" label="1:15pm - 1:30pm" block />
+              <AUcheckbox type="radio" name="call-date" id="e" label="2:30pm - 2:45pm" block />
             </AUformGroup>
           </>
         ) : null}

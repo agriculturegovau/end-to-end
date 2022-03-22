@@ -5,7 +5,7 @@ import StaticImage from 'components/StaticImage';
 import Link from 'next/link';
 
 const Page: LayoutPage = () => (
-  <IntroLayout heading="Eligible for new market" logo={null}>
+  <IntroLayout heading="Concept: information sharing" logo={null}>
     <Link href="/eligible-new-market/sign-in">
       <a>
         <StaticImage src="/eligible-market_email-inbox.png" width="1440" height="900" />

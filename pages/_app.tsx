@@ -8,8 +8,7 @@ import { OverlayCapture } from 'components/Contents';
 const App = ({ Component, pageProps }: LayoutPageProps) => {
   const Layout = Component.getLayout ?? DefaultLayout;
 
-  const title = 'Department of Agriculture, Water and the Environment | Register non-prescribed goods';
-  const url = 'https://agriculture-exports.awe.gov.au/exportlistings';
+  const title = 'Department of Agriculture, Water and the Environment | End-to-end prototype';
 
   return (
     <>
@@ -17,7 +16,6 @@ const App = ({ Component, pageProps }: LayoutPageProps) => {
         <title>{title}</title>
         <meta property="og:site_name" content={title} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={url} />
         <meta property="og:image" content="/og-image.png" />
       </Head>
       <OverlayCapture>

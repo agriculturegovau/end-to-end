@@ -8,7 +8,7 @@ import { LayoutPage } from 'components/LayoutPage';
 import WrapperLayout from 'components/layouts/WrapperLayout';
 import { imageURL } from 'components/StaticImage';
 import { ButtonGroup } from 'components/button-group';
-import { TodoLink } from 'components/Todo';
+import Todo, { TodoLink } from 'components/Todo';
 
 const heroImage = imageURL('/farm-landscape-medium.jpg');
 
@@ -90,14 +90,14 @@ const Home: LayoutPage = () => (
         <p>Find rules, requirements, guidance and updates by commodity area.</p>
 
         <AlmostAUCardList columns={4}>
-          <AlmostAUCard heading="Dairy" shadow />
-          <AlmostAUCard heading="Eggs and egg products" shadow />
-          <AlmostAUCard heading="Fish and fish products" shadow />
-          <AlmostAUCard heading="Live animals" shadow />
-          <AlmostAUCard heading="Meats" shadow />
-          <AlmostAUCard heading="Organic and biodynamic" shadow />
-          <AlmostAUCard heading="Plant and plant products" shadow />
-          <AlmostAUCard heading="Other products" shadow />
+          <AlmostAUCard heading={<TodoLink>Dairy</TodoLink>} shadow />
+          <AlmostAUCard heading={<TodoLink>Eggs and egg products</TodoLink>} shadow />
+          <AlmostAUCard heading={<TodoLink>Fish and fish products</TodoLink>} shadow />
+          <AlmostAUCard heading={<TodoLink>Live animals</TodoLink>} shadow />
+          <AlmostAUCard heading={<TodoLink>Meats</TodoLink>} shadow />
+          <AlmostAUCard heading={<TodoLink>Organic and biodynamic</TodoLink>} shadow />
+          <AlmostAUCard heading={<TodoLink>Plant and plant products</TodoLink>} shadow />
+          <AlmostAUCard heading={<TodoLink>Other products</TodoLink>} shadow />
         </AlmostAUCardList>
       </section>
     </div>
@@ -107,13 +107,13 @@ const Home: LayoutPage = () => (
         Resources
       </AUheading>
       <AlmostAUCardList>
-        <AlmostAUCard heading="Certificates, declarations and forms" shadow>
+        <AlmostAUCard heading={<TodoLink>Certificates, declarations and forms</TodoLink>} shadow>
           Apply for certificates and documents you need to export agricultural products.
         </AlmostAUCard>
-        <AlmostAUCard heading="Fees and charges" shadow>
+        <AlmostAUCard heading={<TodoLink>Fees and charges</TodoLink>} shadow>
           Learn about our fees and charges for agricultural services and documents.
         </AlmostAUCard>
-        <AlmostAUCard heading="Insights and updates" shadow>
+        <AlmostAUCard heading={<TodoLink>Insights and updates</TodoLink>} shadow>
           Get the latest market insights and changes to importing country requirements.
         </AlmostAUCard>
       </AlmostAUCardList>

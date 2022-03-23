@@ -15,7 +15,7 @@ const Home: NextPage = () => (
     breadcrumbs={[
       {
         text: 'Home',
-        link: '/todo',
+        link: '/discovery/homepage',
       },
       { text: 'New exporters' },
     ]}

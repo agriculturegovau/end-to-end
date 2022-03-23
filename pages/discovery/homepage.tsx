@@ -8,7 +8,7 @@ import { LayoutPage } from 'components/LayoutPage';
 import WrapperLayout from 'components/layouts/WrapperLayout';
 import { imageURL } from 'components/StaticImage';
 import { ButtonGroup } from 'components/button-group';
-import Todo, { TodoLink } from 'components/Todo';
+import { TodoLink } from 'components/Todo';
 
 const heroImage = imageURL('/farm-landscape-medium.jpg');
 

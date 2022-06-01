@@ -38,9 +38,7 @@ const Page: NextPage = () => (
 
     <div style={{ marginTop: '3em' }}>
       <ButtonGroup>
-        <Link passHref href="/service-finder/where">
-          <AUbutton link>Continue</AUbutton>
-        </Link>
+        <AUbutton link="/service-finder/where">Continue</AUbutton>
         <AUbutton as="secondary">Cancel</AUbutton>
       </ButtonGroup>
     </div>

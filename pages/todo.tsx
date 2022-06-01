@@ -15,7 +15,6 @@ const Page: LayoutPage = () => {
       <ButtonGroup style={{ marginTop: '2em' }}>
         <AUbutton
           dark
-          link
           as="tertiary"
           onClick={() => {
             router.back();
@@ -23,11 +22,9 @@ const Page: LayoutPage = () => {
         >
           ← Back
         </AUbutton>
-        <Link passHref href="/">
-          <AUbutton dark link>
-            Start over again
-          </AUbutton>
-        </Link>
+        <AUbutton dark link={'/'}>
+          Start over again
+        </AUbutton>
       </ButtonGroup>
     </IntroLayout>
   );

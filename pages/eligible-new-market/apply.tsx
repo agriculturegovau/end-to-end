@@ -95,9 +95,7 @@ const SNSWDialog: React.FC = () => {
         </AUcallout>
 
         <ButtonGroup style={{ marginTop: '2em' }}>
-          <Link passHref href="/eligible-new-market/confirm">
-            <ServiceNSWButton link>Agree and send</ServiceNSWButton>
-          </Link>
+          <ServiceNSWButton link="/eligible-new-market/confirm">Agree and send</ServiceNSWButton>
 
           <AUbutton as="secondary" onClick={() => setShowing(false)}>
             Cancel

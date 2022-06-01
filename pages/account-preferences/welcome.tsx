@@ -21,9 +21,7 @@ const Page: NextPage = () => (
     <Hr />
 
     <ButtonGroup>
-      <Link passHref href="/account-preferences/personalisation">
-        <AUbutton link>Set up account preferences</AUbutton>
-      </Link>
+      <AUbutton link="/account-preferences/personalisation">Set up account preferences</AUbutton>
       <AUbutton as="secondary">Remind me later</AUbutton>
     </ButtonGroup>
   </WizardLayout>

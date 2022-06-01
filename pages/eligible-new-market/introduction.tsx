@@ -36,9 +36,7 @@ const Home: NextPage = () => (
     </DescripionList>
 
     <div style={{ marginTop: '3em' }}>
-      <Link passHref href="/eligible-new-market/apply">
-        <AUbutton link>Apply to export</AUbutton>
-      </Link>
+      <AUbutton link="/eligible-new-market/apply">Apply to export</AUbutton>
     </div>
   </WizardLayout>
 );

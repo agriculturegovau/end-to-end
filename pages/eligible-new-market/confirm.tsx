@@ -55,10 +55,7 @@ const Home: NextPage = () => (
     </AUformGroup>
     <div style={{ marginTop: '3em' }}>
       <ButtonGroup>
-        <Link passHref href="/eligible-new-market/success">
-          <AUbutton link>Apply now</AUbutton>
-        </Link>
-
+        <AUbutton link="/eligible-new-market/success">Apply now</AUbutton>
         <AUbutton as="secondary">Cancel</AUbutton>
       </ButtonGroup>
     </div>

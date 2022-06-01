@@ -66,9 +66,7 @@ const Home: NextPage = () => (
     </Sequence>
 
     <div style={{ marginTop: '3em' }}>
-      <Link passHref href="/register-establishment/establishment-details">
-        <AUbutton link>Register an establishment</AUbutton>
-      </Link>
+      <AUbutton link="/register-establishment/establishment-details">Register an establishment</AUbutton>
     </div>
   </WizardLayout>
 );

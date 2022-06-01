@@ -100,9 +100,7 @@ const Home: NextPage = () => {
 
       <div style={{ marginTop: '3em' }}>
         <ButtonGroup>
-          <Link passHref href="/changed-market-requirements/submitted">
-            <AUbutton link>Submit document</AUbutton>
-          </Link>
+          <AUbutton link="/changed-market-requirements/submitted">Submit document</AUbutton>
           <AUbutton as="secondary">Cancel</AUbutton>
         </ButtonGroup>
       </div>

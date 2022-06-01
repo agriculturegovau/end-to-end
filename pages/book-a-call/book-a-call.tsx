@@ -60,9 +60,7 @@ const Home: NextPage = () => {
           {dates.length === 0 ? (
             <AUbutton disabled>Book a call</AUbutton>
           ) : (
-            <Link passHref href="/book-a-call/booked">
-              <AUbutton link>Book a call</AUbutton>
-            </Link>
+            <AUbutton link="/book-a-call/booked">Book a call</AUbutton>
           )}
           <AUbutton as="secondary">Cancel</AUbutton>
         </ButtonGroup>

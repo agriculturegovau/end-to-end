@@ -20,9 +20,7 @@ const Page: NextPage = () => (
     <p style={{ fontSize: '1.2em' }}>Access our export services and manage your transactions with us.</p>
 
     <div style={{ marginTop: '3em' }}>
-      <Link passHref href="/eligible-new-market/introduction">
-        <AUbutton link>Sign in</AUbutton>
-      </Link>
+      <AUbutton link="/eligible-new-market/introduction">Sign in</AUbutton>
     </div>
 
     <Hr />

@@ -51,9 +51,7 @@ const Home: NextPage = () => (
       <p>Learn how to access the Export Service, using your myGovID and relationship authorisation manager.</p>
 
       <ButtonGroup style={{ marginTop: '1em' }}>
-        <Link passHref href="https://agriculture-exports.awe.gov.au/account/help/">
-          <AUbutton link>Create an account</AUbutton>
-        </Link>
+        <AUbutton link="https://agriculture-exports.awe.gov.au/account/help/">Create an account</AUbutton>
         <AUbutton as="secondary">Sign in</AUbutton>
       </ButtonGroup>
     </AUcallout>

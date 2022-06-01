@@ -159,9 +159,7 @@ const Page: NextPage = () => (
         Create an export service account to save your details and results. From your account, you can also choose to
         receive updates, insights and advice.
       </p>
-      <Link passHref href="/service-finder/create-account">
-        <AUbutton link>Save and create an account</AUbutton>
-      </Link>
+      <AUbutton link="/service-finder/create-account">Save and create an account</AUbutton>
     </AUcallout>
   </WizardLayout>
 );

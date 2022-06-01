@@ -32,9 +32,7 @@ const Home: LayoutPage = () => (
             <p>Access and manage your agricultural export requirements in one place</p>
 
             <ButtonGroup style={{ marginTop: '1em' }}>
-              <Link passHref href="https://agriculture-exports.awe.gov.au/account/help/">
-                <AUbutton link>Create an account</AUbutton>
-              </Link>
+              <AUbutton link="https://agriculture-exports.awe.gov.au/account/help/">Create an account</AUbutton>
               <AUbutton as="secondary">Sign in</AUbutton>
             </ButtonGroup>
           </div>

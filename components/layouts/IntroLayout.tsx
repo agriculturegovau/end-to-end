@@ -39,11 +39,9 @@ export const IntroLayout: React.FC<IntroLayoutProps> = ({ superheading, heading,
           <div style={{ fontSize: '1.2em', maxWidth: '36em' }}>{children}</div>
 
           {cta ? (
-            <Link passHref href={cta.href}>
-              <AUbutton dark link>
-                {cta.label || 'Get started'}
-              </AUbutton>
-            </Link>
+            <AUbutton dark link={cta.href}>
+              {cta.label || 'Get started'}
+            </AUbutton>
           ) : null}
         </section>
       </Main>

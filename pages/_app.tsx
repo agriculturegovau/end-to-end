@@ -1,9 +1,10 @@
-import '../styles/styles.scss';
 import Head from 'next/head';
-import DefaultLayout from 'components/layouts/DefaultLayout';
-import React from 'react';
+import { DefaultLayout } from 'components/layouts/DefaultLayout';
 import { LayoutPageProps } from 'components/LayoutPage';
 import { OverlayCapture } from 'components/Contents';
+import { theme } from '@ag.ds-next/ag-branding';
+import { Core } from '@ag.ds-next/core';
+import { InternalLink } from 'components/InternalLink';
 
 const App = ({ Component, pageProps }: LayoutPageProps) => {
   const Layout = Component.getLayout ?? DefaultLayout;
@@ -17,19 +18,17 @@ const App = ({ Component, pageProps }: LayoutPageProps) => {
         <meta property="og:site_name" content={title} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/og-image.png" />
+        <meta name="description" content="Supporting Australian agricultural exports" />
       </Head>
       <OverlayCapture>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <Core theme={theme} linkComponent={InternalLink}>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </Core>
       </OverlayCapture>
     </>
   );
-};
-
-// IMPORTANT - This code disables Next's Automatic Static Optimization. Don't delete it.
-App.getInitialProps = async () => {
-  return {};
 };
 
 export default App;

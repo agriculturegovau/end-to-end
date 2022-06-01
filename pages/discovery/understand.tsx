@@ -134,9 +134,7 @@ const Home: NextPage = () => (
       <p>Get updates, insights and advice to get you started as an exporter.</p>
 
       <ButtonGroup style={{ marginTop: '1em' }}>
-        <Link passHref href="/discovery/create-account">
-          <AUbutton link>Create an account</AUbutton>
-        </Link>
+        <AUbutton link="/discovery/create-account">Create an account</AUbutton>
         <AUbutton as="secondary">Sign in</AUbutton>
       </ButtonGroup>
     </AUcallout>

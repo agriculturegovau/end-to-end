@@ -48,9 +48,7 @@ const Page: NextPage = () => (
     <Hr />
 
     <ButtonGroup style={{ marginTop: '1em' }}>
-      <Link passHref href="/make-payment/paypal">
-        <AUbutton link>Pay now</AUbutton>
-      </Link>
+      <AUbutton link="/make-payment/paypal">Pay now</AUbutton>
       <AUbutton as="secondary">Cancel</AUbutton>
     </ButtonGroup>
   </WizardLayout>

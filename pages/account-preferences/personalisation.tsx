@@ -97,9 +97,7 @@ const Page: NextPage = () => (
     <Hr />
 
     <ButtonGroup>
-      <Link passHref href="/account-preferences/notification-preferences">
-        <AUbutton link>Apply and continue</AUbutton>
-      </Link>
+      <AUbutton link="/account-preferences/notification-preferences">Apply and continue</AUbutton>
       <AUbutton as="secondary">Skip</AUbutton>
       <AUbutton as="tertiary">Cancel</AUbutton>
     </ButtonGroup>

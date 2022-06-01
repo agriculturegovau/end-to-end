@@ -8,9 +8,7 @@ const Page: NextPage = () => (
   <WizardLayout title="Paypal" backbreadcrumb={false}>
     <Todo>
       <div>
-        <Link passHref href="/make-payment/paid">
-          <AUbutton link>Pay</AUbutton>
-        </Link>
+        <AUbutton link="/make-payment/paid">Pay</AUbutton>
       </div>
     </Todo>
   </WizardLayout>

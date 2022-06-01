@@ -56,10 +56,7 @@ const Page: NextPage = () => (
     <AUcheckbox name="new_markets" id="new_markets2" label="Export navel oranges to Malaysia" block />
     <div style={{ marginTop: '3em' }}>
       <ButtonGroup>
-        <Link passHref href="/new-market-opportunity/apply">
-          <AUbutton link>Apply to export</AUbutton>
-        </Link>
-
+        <AUbutton link="/new-market-opportunity/apply">Apply to export</AUbutton>
         <AUbutton as="secondary">Cancel</AUbutton>
       </ButtonGroup>
     </div>

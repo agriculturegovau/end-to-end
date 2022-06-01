@@ -1,9 +1,9 @@
 import AUbutton from 'components/@gov.au/AUbutton';
 import { WizardLayout } from 'components/layouts/WizardLayout';
-import Link from 'next/link';
 import type { NextPage } from 'next';
 import AUheading from 'components/@gov.au/AUheading';
 import DescripionList from 'components/DescriptionList';
+import { IntroText } from 'components/IntroText';
 
 const Home: NextPage = () => (
   <WizardLayout
@@ -11,15 +11,14 @@ const Home: NextPage = () => (
     backbreadcrumb={false}
     breadcrumbs={[
       {
-        text: 'Home',
-        link: '/todo',
+        label: 'Home',
+        href: '/todo',
       },
-      { text: 'Market eligibility: pressure-treated boonberries - Fantasia' },
+      { label: 'Market eligibility: pressure-treated boonberries - Fantasia' },
     ]}
   >
-    <p style={{ fontSize: '1.2em' }}>
-      From 8 December 2021, Fantasia will be importing pressure-treated boonberries from Australia.
-    </p>
+    <IntroText>From 8 December 2021, Fantasia will be importing pressure-treated boonberries from Australia.</IntroText>
+
     <AUheading size="lg" level={2}>
       Importing country requirements
     </AUheading>
@@ -36,9 +35,7 @@ const Home: NextPage = () => (
     </DescripionList>
 
     <div style={{ marginTop: '3em' }}>
-      <Link passHref href="/eligible-new-market/apply">
-        <AUbutton link>Apply to export</AUbutton>
-      </Link>
+      <AUbutton link="/eligible-new-market/apply">Apply to export</AUbutton>
     </div>
   </WizardLayout>
 );

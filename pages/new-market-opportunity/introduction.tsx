@@ -1,12 +1,11 @@
 import AUbutton from 'components/@gov.au/AUbutton';
 import { WizardLayout } from 'components/layouts/WizardLayout';
-import Link from 'next/link';
 import type { NextPage } from 'next';
 import AUheading from 'components/@gov.au/AUheading';
-import Hr from 'components/Hr';
 import { ButtonGroup } from 'components/button-group';
 import AUcheckbox from 'components/@gov.au/AUcheckbox';
 import DescripionList from 'components/DescriptionList';
+import { IntroText } from 'components/IntroText';
 
 const Page: NextPage = () => (
   <WizardLayout
@@ -14,15 +13,13 @@ const Page: NextPage = () => (
     backbreadcrumb={false}
     breadcrumbs={[
       {
-        text: 'Home',
-        link: '/todo',
+        label: 'Home',
+        href: '/todo',
       },
-      { text: 'Market opportunity: Export navel oranges to Canada and Malaysia' },
+      { label: 'Market opportunity: Export navel oranges to Canada and Malaysia' },
     ]}
   >
-    <p style={{ fontSize: '1.2em' }}>
-      From 8 December 2021, Canada and Malaysia will be importing navel oranges from Australia.
-    </p>
+    <IntroText>From 8 December 2021, Canada and Malaysia will be importing navel oranges from Australia.</IntroText>
 
     <AUheading level={2} size="lg">
       Requirements to export to Canada
@@ -56,10 +53,7 @@ const Page: NextPage = () => (
     <AUcheckbox name="new_markets" id="new_markets2" label="Export navel oranges to Malaysia" block />
     <div style={{ marginTop: '3em' }}>
       <ButtonGroup>
-        <Link passHref href="/new-market-opportunity/apply">
-          <AUbutton link>Apply to export</AUbutton>
-        </Link>
-
+        <AUbutton link="/new-market-opportunity/apply">Apply to export</AUbutton>
         <AUbutton as="secondary">Cancel</AUbutton>
       </ButtonGroup>
     </div>

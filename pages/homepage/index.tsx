@@ -1,58 +1,38 @@
 import AUbutton from 'components/@gov.au/AUbutton';
-import Link from 'next/link';
 import AUheading from 'components/@gov.au/AUheading';
 import AlmostAUCard, { AlmostAUCardList } from 'components/@gov.au/AlmostAUCard';
 import { ButtonGroup } from 'components/button-group';
 import WrapperLayout from 'components/layouts/WrapperLayout';
 import { LayoutPage } from 'components/LayoutPage';
 import StaticImage, { imageURL } from 'components/StaticImage';
+import { HeroBanner } from '@ag.ds-next/hero-banner';
+import { Content } from '@ag.ds-next/content';
+import { TextLink } from '@ag.ds-next/text';
+import Hr from 'components/Hr';
+import { Stack } from '@ag.ds-next/box';
 
 const heroImage = imageURL('/homepage-harvest-medium.jpg');
 
 const Home: LayoutPage = () => (
-  <main id="content" className="au-body">
-    <div
-      style={{
-        ...{ background: 'rgb(245,245,245)' },
-        ...{
-          background: `linear-gradient(90deg, rgba(245, 245, 245,1) 0%, rgba(245, 245, 245,1) 50%, rgba(245, 245, 245, 0.75) calc(50vw + 100px), rgba(245,245,245,0) 100%), url(${heroImage})`,
-        },
-        backgroundPositionX: 'right',
-        backgroundPositionY: 'center',
-        backgroundRepeat: 'no-repeat',
-      }}
+  <>
+    <HeroBanner
+      title="Get help to grow and manage your export business"
+      subTitle="Find digital services, guidance and support to export agricultural products."
+      image={<img src={heroImage} alt="hero image" />}
     >
-      <div className="container">
-        <div className="row">
-          <div className="col-md-8 col-xs-12" style={{ marginBottom: '3em', marginTop: '3em' }}>
-            <AUheading size="xxl" level="1" style={{ marginTop: '1rem' }}>
-              Manage export transactions securely online
-            </AUheading>
+      <ButtonGroup style={{ marginTop: '1em' }}>
+        <AUbutton>Create an account</AUbutton>
+        <AUbutton as="secondary">Sign in</AUbutton>
+      </ButtonGroup>
+    </HeroBanner>
 
-            <p>Access and manage your agricultural export requirements in one place</p>
+    <Content>
+      <Stack gap={3}>
+        <AUheading size="xl" level="2" paddingTop={1}>
+          Benefits of having an account
+        </AUheading>
 
-            <ButtonGroup style={{ marginTop: '1em' }}>
-              <Link passHref href="https://agriculture-exports.awe.gov.au/account/help/">
-                <AUbutton link>Create an account</AUbutton>
-              </Link>
-              <AUbutton as="secondary">Sign in</AUbutton>
-            </ButtonGroup>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <section className="container">
-      <div className="row">
-        <div className="col-md-8 col-xs-12" style={{ marginBottom: '3em' }}>
-          <AUheading size="xl" level="2" style={{ marginTop: '1rem' }}>
-            Benefits of having an account
-          </AUheading>
-        </div>
-      </div>
-
-      <div className="row" style={{ marginTop: 0 }}>
-        <AlmostAUCardList className="col-xs-12">
+        <AlmostAUCardList>
           <AlmostAUCard
             heading={
               <>
@@ -111,26 +91,24 @@ const Home: LayoutPage = () => (
             history securely online.
           </AlmostAUCard>
         </AlmostAUCardList>
-      </div>
 
-      <hr style={{ margin: '3em 0' }} />
+        <Hr />
 
-      <div className="row">
-        <AlmostAUCardList className="col-xs-12">
-          <AlmostAUCard heading={<Link href="/homepage/about">About the Export Service</Link>} shadow>
+        <AlmostAUCardList>
+          <AlmostAUCard heading={<TextLink href="/homepage/about">About the Export Service</TextLink>} shadow>
             Learn more about how we&apos;re supporting Australian exporters – now and into the future.
           </AlmostAUCard>
 
           <AlmostAUCard
             heading={
               <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <a
+                <TextLink
                   target="_blank"
                   rel="noopener noreferrer"
                   href="https://www.awe.gov.au/biosecurity-trade/market-access-trade/transforming-export-services"
                 >
                   Participate in research
-                </a>
+                </TextLink>
 
                 <div>
                   <StaticImage src="/homepage-external-link.png" width={16} height={16} alt="external link icon" />
@@ -145,9 +123,9 @@ const Home: LayoutPage = () => (
           <AlmostAUCard
             heading={
               <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <a target="_blank" rel="noopener noreferrer" href="https://haveyoursay.awe.gov.au/">
+                <TextLink target="_blank" rel="noopener noreferrer" href="https://haveyoursay.awe.gov.au/">
                   Engage with us
-                </a>
+                </TextLink>
 
                 <div>
                   <StaticImage src="/homepage-external-link.png" width={16} height={16} alt="external link icon" />
@@ -160,9 +138,9 @@ const Home: LayoutPage = () => (
             forums.
           </AlmostAUCard>
         </AlmostAUCardList>
-      </div>
-    </section>
-  </main>
+      </Stack>
+    </Content>
+  </>
 );
 
 Home.getLayout = WrapperLayout;

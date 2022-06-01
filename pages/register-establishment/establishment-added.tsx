@@ -11,14 +11,14 @@ const Home: NextPage = () => (
     backbreadcrumb={false}
     breadcrumbs={[
       {
-        text: 'Home',
-        link: '/todo',
+        label: 'Home',
+        href: '/todo',
       },
       {
-        text: 'Get started',
-        link: '/todo',
+        label: 'Get started',
+        href: '/todo',
       },
-      { text: 'Register an establishment' },
+      { label: 'Register an establishment' },
     ]}
     frontmatter={
       <AUAlert title="Your application to register an establishment was submitted" type="success">

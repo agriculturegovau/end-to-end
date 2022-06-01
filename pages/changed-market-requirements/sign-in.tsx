@@ -1,9 +1,9 @@
 import AUbutton from 'components/@gov.au/AUbutton';
 import { WizardLayout } from 'components/layouts/WizardLayout';
-import Link from 'next/link';
 import type { NextPage } from 'next';
 import AUheading from 'components/@gov.au/AUheading';
 import Hr from 'components/Hr';
+import { IntroText } from 'components/IntroText';
 
 const Page: NextPage = () => (
   <WizardLayout
@@ -11,18 +11,16 @@ const Page: NextPage = () => (
     backbreadcrumb={false}
     breadcrumbs={[
       {
-        text: 'Home',
-        link: '/todo',
+        label: 'Home',
+        href: '/todo',
       },
-      { text: 'Sign in' },
+      { label: 'Sign in' },
     ]}
   >
-    <p style={{ fontSize: '1.2em' }}>Access our export services and manage your transactions with us.</p>
+    <IntroText>Access our export services and manage your transactions with us.</IntroText>
 
     <div style={{ marginTop: '3em' }}>
-      <Link passHref href="/changed-market-requirements/upload-document">
-        <AUbutton link>Sign in</AUbutton>
-      </Link>
+      <AUbutton link="/changed-market-requirements/upload-document">Sign in</AUbutton>
     </div>
 
     <Hr />

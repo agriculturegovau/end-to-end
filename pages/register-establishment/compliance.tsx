@@ -9,6 +9,7 @@ import AUformGroup from 'components/@gov.au/AUformGroup';
 import Hr from 'components/Hr';
 import AUfieldset from 'components/@gov.au/AUfieldset';
 import { Navigator, registerEstablishmentPages } from 'components/wizard/navigator';
+import { IntroText } from 'components/IntroText';
 
 const Home: NextPage = () => (
   <WizardLayout
@@ -20,9 +21,7 @@ const Home: NextPage = () => (
       </div>
     }
   >
-    <p style={{ fontSize: '1.2em' }}>
-      To add new people to management control, we need to assess and approve them first.
-    </p>
+    <IntroText>To add new people to management control, we need to assess and approve them first.</IntroText>
 
     <p>
       All people who manage or control exporting agricultural goods from Australia need to be of a trustworthy nature,
@@ -170,9 +169,7 @@ const Home: NextPage = () => (
 
     <div style={{ marginTop: '3em' }}>
       <ButtonGroup>
-        <Link passHref href="/register-establishment/confirm">
-          <AUbutton link>Continue</AUbutton>
-        </Link>
+        <AUbutton link="/register-establishment/confirm">Continue</AUbutton>
         <AUbutton as="secondary">Save and continue later</AUbutton>
         <AUbutton as="tertiary">Cancel</AUbutton>
       </ButtonGroup>

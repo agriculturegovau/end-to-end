@@ -1,27 +1,27 @@
 import AUbutton from 'components/@gov.au/AUbutton';
 import { WizardLayout } from 'components/layouts/WizardLayout';
-import Link from 'next/link';
 import type { NextPage } from 'next';
-import AUheading from 'components/@gov.au/AUheading';
 import { ButtonGroup } from 'components/button-group';
 import styled from '@emotion/styled';
 import { useState } from 'react';
 import StaticImage from 'components/StaticImage';
 import Hr from 'components/Hr';
+import { Text, TextLink } from '@ag.ds-next/text';
+import { Body } from '@ag.ds-next/body';
+import { Stack } from '@ag.ds-next/box';
+import { IntroText } from 'components/IntroText';
 
 const Upload = styled.section`
+  padding: 4rem 0;
   background: #f5f5f5;
   border: 3px dashed #808080;
   border-radius: 8px;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
 `;
 
 const Documents = styled.section`
   padding: 2rem 0;
 `;
+
 const Document = styled.div`
   margin-top: 1em;
   border-radius: 8px;
@@ -40,42 +40,42 @@ const Home: NextPage = () => {
 
   return (
     <WizardLayout title="Upload citrus sweetness certificate" backbreadcrumb={false}>
-      <p style={{ fontSize: '1.2em' }}>
+      <IntroText>
         Submit your third party certificate to continue exporting to Zuy by 7 January 2022 to maintain market access.
-      </p>
+      </IntroText>
+      <Body>
+        <h2>Why we need this</h2>
+        <p>
+          Zuy recently changed their import requirements for citrus. You need to provide a copy of your citrus sweetness
+          certificate provided as evidence of your compliance.
+        </p>
+        <p>
+          For more information on the new legislation and how it affects Australian agricultural exporters, see{' '}
+          <TextLink href="/todo">Zuy import legislation for Australian exporters.</TextLink>
+        </p>
 
-      <AUheading size="lg" level={2}>
-        Why we need this
-      </AUheading>
-      <p>
-        Zuy recently changed their import requirements for citrus. You need to provide a copy of your citrus sweetness
-        certificate provided as evidence of your compliance.
-      </p>
-      <p>
-        For more information on the new legislation and how it affects Australian agricultural exporters, see{' '}
-        <Link href="/todo">Zuy import legislation for Australian exporters.</Link>
-      </p>
+        <h3>Upload files (required)</h3>
 
-      <AUheading size="md" level={3} style={{ marginTop: '2em' }}>
-        Upload files (required)
-      </AUheading>
-      <p style={{ marginTop: '.5rem', marginBottom: '.5rem' }}>
-        Formats accepted: .png, .jpg, .pdf, .docx, .xls. Total file size must not exceed 100 MB.
-      </p>
+        <p>Formats accepted: .png, .jpg, .pdf, .docx, .xls. Total file size must not exceed 100 MB.</p>
+      </Body>
 
       <Upload>
-        <div>
-          <StaticImage src="/upload-icon.png" height={48} width={48} />
-        </div>
-        <div>Drag and drop files here or select files from your device.</div>
-        <AUbutton
-          as="secondary"
-          onClick={(e) => {
-            setDocuments(documents.length + 1);
-          }}
-        >
-          Select files
-        </AUbutton>
+        <Stack gap={1} justifyContent="center" alignItems="center">
+          <div>
+            <StaticImage src="/upload-icon.png" height={48} width={48} />
+          </div>
+
+          <div>Drag and drop files here or select files from your device.</div>
+
+          <AUbutton
+            as="secondary"
+            onClick={(e) => {
+              setDocuments(documents.length + 1);
+            }}
+          >
+            Select files
+          </AUbutton>
+        </Stack>
       </Upload>
 
       {documents.length > 0 ? (
@@ -100,9 +100,7 @@ const Home: NextPage = () => {
 
       <div style={{ marginTop: '3em' }}>
         <ButtonGroup>
-          <Link passHref href="/changed-market-requirements/submitted">
-            <AUbutton link>Submit document</AUbutton>
-          </Link>
+          <AUbutton link="/changed-market-requirements/submitted">Submit document</AUbutton>
           <AUbutton as="secondary">Cancel</AUbutton>
         </ButtonGroup>
       </div>

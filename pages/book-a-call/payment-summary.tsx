@@ -1,6 +1,5 @@
 import AUbutton from 'components/@gov.au/AUbutton';
 import { WizardLayout } from 'components/layouts/WizardLayout';
-import Link from 'next/link';
 import type { NextPage } from 'next';
 import AUheading from 'components/@gov.au/AUheading';
 import Hr from 'components/Hr';
@@ -8,6 +7,7 @@ import { ButtonGroup } from 'components/button-group';
 import AUformGroup from 'components/@gov.au/AUformGroup';
 import AUcheckbox from 'components/@gov.au/AUcheckbox';
 import styled from '@emotion/styled';
+import { IntroText } from 'components/IntroText';
 
 const Invoice = styled.div`
   margin-top: 2em;
@@ -95,7 +95,7 @@ const InvoiceTotals = styled.div`
 
 const Page: NextPage = () => (
   <WizardLayout title="Pay your document processing" backbreadcrumb={false}>
-    <p style={{ fontSize: '1.2em' }}>You need to pay for the processing of your documents, before you can export.</p>
+    <IntroText>You need to pay for the processing of your documents, before you can export.</IntroText>
 
     <Invoice>
       <InvoiceHeading>
@@ -170,9 +170,7 @@ const Page: NextPage = () => (
 
     <div style={{ marginTop: '3em' }}>
       <ButtonGroup>
-        <Link passHref href="/book-a-call/book-a-call">
-          <AUbutton link>Continue</AUbutton>
-        </Link>
+        <AUbutton link="/book-a-call/book-a-call">Continue</AUbutton>
         <AUbutton as="secondary">Cancel</AUbutton>
       </ButtonGroup>
     </div>

@@ -1,16 +1,16 @@
 import * as React from 'react';
-import WrapperLayout from './WrapperLayout';
+import Main from 'components/layouts/Main';
+import WrapperLayout from 'components/layouts/WrapperLayout';
+import { Content } from '@ag.ds-next/content';
 
-export const Main: React.FC<React.ComponentProps<'section'>> = ({ ...props }) => (
-  <main id="content">
-    <section className="container au-body" {...props} />
-  </main>
-);
+interface LayoutProps {
+  ContentComponent?: React.FC;
+}
 
-const DefaultLayout: React.FC = ({ children }) => (
+export const DefaultLayout: React.FC<LayoutProps> = ({ children, ContentComponent = Content }) => (
   <WrapperLayout>
-    <Main>{children}</Main>
+    <Main>
+      <ContentComponent>{children}</ContentComponent>
+    </Main>
   </WrapperLayout>
 );
-
-export default DefaultLayout;

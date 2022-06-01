@@ -1,8 +1,11 @@
 import * as React from 'react';
-import clsx from 'clsx';
 import AUHeading from 'components/@gov.au/AUheading';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
+import { Card, CardInner, CardList } from '@ag.ds-next/card';
+import { Stack } from '@ag.ds-next/box';
+import { Heading } from '@ag.ds-next/heading';
+import { Columns } from '@ag.ds-next/columns';
 
 interface CardListProps {
   columns?: number;
@@ -37,7 +40,7 @@ const AlmostAUCardListLI = styled.li`
   }
 `;
 
-export const AlmostAUCardList: React.FC<CardListProps & React.ComponentProps<'ul'>> = ({
+export const AlmostAUCardListOld: React.FC<CardListProps & React.ComponentProps<'ul'>> = ({
   columns,
   children,
   style,
@@ -75,7 +78,7 @@ const AlmostAUCardBody = styled.div<CardComponentProps>`
       : css``};
 `;
 
-const AlmostAUCard: React.FC<CardProps & CardComponentProps & React.ComponentProps<'div'>> = ({
+const AlmostAUCardOld: React.FC<CardProps & CardComponentProps & React.ComponentProps<'div'>> = ({
   shadow,
   heading,
   footer,
@@ -93,6 +96,31 @@ const AlmostAUCard: React.FC<CardProps & CardComponentProps & React.ComponentPro
   </AlmostAUCardBody>
 );
 
-AlmostAUCard.displayName = 'AUcard';
+AlmostAUCardOld.displayName = 'AUcard';
+
+export const AlmostAUCardList: React.FC<CardListProps> = ({ columns, children }) => {
+  const columnCount = (columns === undefined ? React.Children.count(children) : columns) as React.ComponentProps<
+    typeof CardList
+  >['templateColumns'];
+
+  return <CardList templateColumns={columnCount}>{children}</CardList>;
+};
+
+const AlmostAUCard: React.FC<CardProps & CardComponentProps & React.ComponentProps<'div'>> = ({
+  shadow,
+  heading,
+  footer,
+  style,
+  children,
+}) => (
+  <Card shadow={shadow}>
+    <CardInner>
+      <Stack gap={1}>
+        <Heading type="h3">{heading}</Heading>
+        {children}
+      </Stack>
+    </CardInner>
+  </Card>
+);
 
 export default AlmostAUCard;

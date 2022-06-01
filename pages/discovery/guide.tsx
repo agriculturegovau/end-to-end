@@ -1,12 +1,13 @@
+import { Text, TextLink } from '@ag.ds-next/text';
 import AUbutton from 'components/@gov.au/AUbutton';
 import AUcallout from 'components/@gov.au/AUcallout';
 import AUheading from 'components/@gov.au/AUheading';
 import { ButtonGroup } from 'components/button-group';
+import { IntroText } from 'components/IntroText';
 import { WizardLayout } from 'components/layouts/WizardLayout';
 import Sequence from 'components/Sequence';
 import { TodoLink } from 'components/Todo';
 import type { NextPage } from 'next';
-import Link from 'next/link';
 
 const Home: NextPage = () => (
   <WizardLayout
@@ -14,25 +15,25 @@ const Home: NextPage = () => (
     backbreadcrumb={false}
     breadcrumbs={[
       {
-        text: 'Home',
-        link: '/discovery/homepage',
+        label: 'Home',
+        href: '/discovery/homepage',
       },
-      { text: 'New exporters' },
+      { label: 'New exporters' },
     ]}
   >
-    <p style={{ fontSize: '1.2em' }}>
+    <IntroText>
       Follow these steps to export goods from Australia to another country. Our guide can also help you understand how
       long the process takes.
-    </p>
+    </IntroText>
 
     <Sequence style={{ marginTop: '2em' }}>
       <li>
         <AUheading level={2} size="lg">
-          <Link href="/discovery/understand">Understand the export rules for your products</Link>
+          <TextLink href="/discovery/understand">Understand the export rules for your products</TextLink>
         </AUheading>
         <p>
-          The rules and requirements differ, depending on the type of goods you plan to export. Here’s how to know which
-          ones apply to you.
+          The rules and requirements differ, depending on the type of goods you plan to export. Here&apos;s how to know
+          which ones apply to you.
         </p>
       </li>
 
@@ -117,9 +118,7 @@ const Home: NextPage = () => (
       <p>Get updates, insights and advice to get you started as an exporter.</p>
 
       <ButtonGroup style={{ marginTop: '1em' }}>
-        <Link passHref href="/discovery/create-account">
-          <AUbutton link>Create an account</AUbutton>
-        </Link>
+        <AUbutton link="/discovery/create-account">Create an account</AUbutton>
         <AUbutton as="secondary">Sign in</AUbutton>
       </ButtonGroup>
     </AUcallout>

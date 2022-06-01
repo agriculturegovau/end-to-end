@@ -1,6 +1,5 @@
 import AUbutton from 'components/@gov.au/AUbutton';
 import { WizardLayout } from 'components/layouts/WizardLayout';
-import Link from 'next/link';
 import type { NextPage } from 'next';
 import AUheading from 'components/@gov.au/AUheading';
 import DescripionList from 'components/DescriptionList';
@@ -8,6 +7,8 @@ import styled from '@emotion/styled';
 import AUcallout from 'components/@gov.au/AUcallout';
 import Sequence from 'components/Sequence';
 import { Navigator, serviceFinderPages } from 'components/wizard/navigator';
+import { IntroText } from 'components/IntroText';
+import { TextLink } from '@ag.ds-next/text';
 
 const Card = styled.div`
   margin-top: 1em;
@@ -34,9 +35,7 @@ const Page: NextPage = () => (
       </div>
     }
   >
-    <p style={{ fontSize: '1.2em' }}>
-      There are regulations around getting oranges out of Australia. Zuy has import requirements.{' '}
-    </p>
+    <IntroText>There are regulations around getting oranges out of Australia. Zuy has import requirements. </IntroText>
 
     <AUheading size="lg" level={2}>
       Your details
@@ -46,22 +45,22 @@ const Page: NextPage = () => (
       <dt>Experience</dt>
       <SplitDD>
         <span>New exporter</span>
-        <Link href="/todo">Change</Link>
+        <TextLink href="/todo">Change</TextLink>
       </SplitDD>
       <dt>Products</dt>
       <SplitDD>
         <span>Navel oranges, Valencia oranges</span>
-        <Link href="/todo">Change</Link>
+        <TextLink href="/todo">Change</TextLink>
       </SplitDD>
       <dt>Role in supply chain</dt>
       <SplitDD>
         <span>Producer of agricultural products</span>
-        <Link href="/todo">Change</Link>
+        <TextLink href="/todo">Change</TextLink>
       </SplitDD>
       <dt>Destination country</dt>
       <SplitDD>
         <span>Zuy</span>
-        <Link href="/todo">Change</Link>
+        <TextLink href="/todo">Change</TextLink>
       </SplitDD>
     </DescripionList>
 
@@ -111,7 +110,7 @@ const Page: NextPage = () => (
     </Sequence>
 
     <div style={{ marginTop: '1em' }}>
-      <Link href="/todo">Read the full guide →</Link>
+      <TextLink href="/todo">Read the full guide →</TextLink>
     </div>
 
     <AUheading size="xl" level={2}>
@@ -120,7 +119,7 @@ const Page: NextPage = () => (
 
     <Card>
       <AUheading level={3} size="md">
-        <Link href="/todo">Market trends for oranges in Zuy</Link>
+        <TextLink href="/todo">Market trends for oranges in Zuy</TextLink>
       </AUheading>
       <p>
         Austrade can tell you about market trends, challenges and opportunities for selling oranges to Zuy. This
@@ -130,7 +129,7 @@ const Page: NextPage = () => (
 
     <Card>
       <AUheading level={3} size="md">
-        <Link href="/todo">State and territory government support</Link>
+        <TextLink href="/todo">State and territory government support</TextLink>
       </AUheading>
       <p>
         Your local government agency will have a range of resources and guidance about exporting oranges from your state
@@ -140,7 +139,7 @@ const Page: NextPage = () => (
 
     <Card>
       <AUheading level={3} size="md">
-        <Link href="/todo">International freight assistance</Link>
+        <TextLink href="/todo">International freight assistance</TextLink>
       </AUheading>
       <p>
         The International Freight Assistance Mechanism (IFAM) is an emergency support measure, to keep global air links
@@ -148,7 +147,7 @@ const Page: NextPage = () => (
       </p>
     </Card>
     <div style={{ marginTop: '1em' }}>
-      <Link href="/todo">More resources to help you get started as an exporter →</Link>
+      <TextLink href="/todo">More resources to help you get started as an exporter →</TextLink>
     </div>
 
     <AUcallout>
@@ -159,9 +158,7 @@ const Page: NextPage = () => (
         Create an export service account to save your details and results. From your account, you can also choose to
         receive updates, insights and advice.
       </p>
-      <Link passHref href="/service-finder/create-account">
-        <AUbutton link>Save and create an account</AUbutton>
-      </Link>
+      <AUbutton link="/service-finder/create-account">Save and create an account</AUbutton>
     </AUcallout>
   </WizardLayout>
 );

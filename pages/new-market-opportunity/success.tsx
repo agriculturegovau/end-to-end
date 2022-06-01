@@ -20,10 +20,10 @@ const Home: NextPage = () => (
     }
     breadcrumbs={[
       {
-        text: 'Home',
-        link: '/todo',
+        label: 'Home',
+        href: '/todo',
       },
-      { text: 'Apply to export navel oranges to Canada and Malaysia' },
+      { label: 'Apply to export navel oranges to Canada and Malaysia' },
     ]}
   >
     <p>

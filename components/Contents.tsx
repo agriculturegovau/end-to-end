@@ -1,3 +1,5 @@
+import { Body } from '@ag.ds-next/body';
+import { TextLink } from '@ag.ds-next/text';
 import styled from '@emotion/styled';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -93,7 +95,7 @@ const References: React.FC<{
         {paths.map(([page, path]) => {
           return (
             <Li active={path === router.pathname} key={path}>
-              <Link href={path}>{page}</Link>
+              <TextLink href={path}>{page}</TextLink>
             </Li>
           );
         })}
@@ -115,7 +117,7 @@ const PrototypeBadgeContainer = styled.div`
 `;
 
 const PrototypeBadge = styled.div`
-  background-color: var(--AU-color-success);
+  background-color: var(--agds-success);
   color: white;
   position: relative;
   width: var(--badge-size);
@@ -138,7 +140,7 @@ const Proto = styled.div`
 `;
 
 const OverlayComponent = styled.div`
-  background-color: var(--AU-color-background);
+  background-color: var(--agds-background-body);
   background-color: #e8eaec;
   padding: 2em;
   position: fixed;
@@ -154,6 +156,12 @@ const OverlayComponent = styled.div`
   display: flex;
   flex-flow: column;
   justify-content: flex-start;
+
+  & code {
+    background-color: #f5f5f5;
+    padding: 1rem;
+    border-radius: 4px;
+  }
 `;
 
 export const OverlayCapture: React.FC = ({ children }) => {

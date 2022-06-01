@@ -1,29 +1,13 @@
-import React, { forwardRef } from 'react'
-import clsx from 'clsx'
+import { FormStack } from '@ag.ds-next/form-stack';
+import { ControlGroup } from '@ag.ds-next/control-input';
+import React from 'react';
 
-interface IAUformGroup {
-  status?: 'valid' | 'invalid'
-  children: React.ReactNode
-}
+export const AUformGroup: React.FC<{ style?: any }> = ({ children }) => <FormStack>{children}</FormStack>;
 
-type AUformGroupFC = React.ComponentProps<'div'> & IAUformGroup
+export const FormGroup: React.FC<React.ComponentProps<typeof ControlGroup>> = ({ children, ...controlProps }) => (
+  <FormStack>
+    <ControlGroup {...controlProps}>{children}</ControlGroup>
+  </FormStack>
+);
 
-const AUformGroup = forwardRef<HTMLDivElement, AUformGroupFC>(
-  ({ status, className = '', children, ...otherProps }: AUformGroupFC, ref) => {
-    const classNames = clsx([
-      'au-form-group',
-      className,
-      status === 'invalid' && 'au-form-group--invalid',
-    ])
-
-    return (
-      <div ref={ref} className={classNames} {...otherProps}>
-        {children}
-      </div>
-    )
-  }
-)
-
-AUformGroup.displayName = 'AUformGroup'
-
-export default AUformGroup
+export default AUformGroup;

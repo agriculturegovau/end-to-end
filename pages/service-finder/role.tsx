@@ -1,12 +1,12 @@
 import AUbutton from 'components/@gov.au/AUbutton';
 import { WizardLayout } from 'components/layouts/WizardLayout';
-import Link from 'next/link';
 import type { NextPage } from 'next';
 import AUformGroup from 'components/@gov.au/AUformGroup';
 import AUcheckbox from 'components/@gov.au/AUcheckbox';
 import { ButtonGroup } from 'components/button-group';
 import Hr from 'components/Hr';
 import { Navigator, serviceFinderPages } from 'components/wizard/navigator';
+import { IntroText } from 'components/IntroText';
 
 const labels = [
   'I produce an agricultural product I want to export',
@@ -25,7 +25,7 @@ const Page: NextPage = () => (
       </div>
     }
   >
-    <p style={{ fontSize: '1.2em' }}>Tell us which aspects of export you’re interested in.</p>
+    <IntroText>Tell us which aspects of export you’re interested in.</IntroText>
     <p>Select all that apply</p>
 
     <AUformGroup style={{ marginTop: '2em' }}>
@@ -38,9 +38,7 @@ const Page: NextPage = () => (
 
     <div style={{ marginTop: '3em' }}>
       <ButtonGroup>
-        <Link passHref href="/service-finder/where">
-          <AUbutton link>Continue</AUbutton>
-        </Link>
+        <AUbutton link="/service-finder/where">Continue</AUbutton>
         <AUbutton as="secondary">Cancel</AUbutton>
       </ButtonGroup>
     </div>

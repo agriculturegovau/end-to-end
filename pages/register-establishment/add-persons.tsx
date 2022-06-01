@@ -8,6 +8,7 @@ import styled from '@emotion/styled';
 import Hr from 'components/Hr';
 import TextInput from 'components/TextInput';
 import { Navigator, registerEstablishmentPages } from 'components/wizard/navigator';
+import { IntroText } from 'components/IntroText';
 
 const Step = styled.div`
   border: 1px solid black;
@@ -23,9 +24,9 @@ const Home: NextPage = () => (
       </div>
     }
   >
-    <p style={{ fontSize: '1.2em' }}>
-      Lorem ipsum dolor sit amet, laoreet necessitatibus sed in, ut quem latine eligendi vim, noster utamur sit an.{' '}
-    </p>
+    <IntroText>
+      Lorem ipsum dolor sit amet, laoreet necessitatibus sed in, ut quem latine eligendi vim, noster utamur sit an.
+    </IntroText>
 
     <AUheading level={2} size="xl">
       Person 1 (the applicant)
@@ -80,9 +81,7 @@ const Home: NextPage = () => (
 
     <div style={{ marginTop: '3em' }}>
       <ButtonGroup>
-        <Link passHref href="/register-establishment/compliance">
-          <AUbutton link>Continue</AUbutton>
-        </Link>
+        <AUbutton link="/register-establishment/compliance">Continue</AUbutton>
         <AUbutton as="secondary">Save and continue later</AUbutton>
         <AUbutton as="tertiary">Cancel</AUbutton>
       </ButtonGroup>

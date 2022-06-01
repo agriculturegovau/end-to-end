@@ -1,16 +1,17 @@
 import AUbutton from 'components/@gov.au/AUbutton';
 import { WizardLayout } from 'components/layouts/WizardLayout';
-import Link from 'next/link';
 import type { NextPage } from 'next';
 import { ButtonGroup } from 'components/button-group';
 import AUheading from 'components/@gov.au/AUheading';
 import AUformGroup from 'components/@gov.au/AUformGroup';
-import AUlabel from 'components/@gov.au/AUlabel';
 import styled from '@emotion/styled';
 import Hr from 'components/Hr';
 import { useRef, useState } from 'react';
 import { css } from '@emotion/react';
 import { Navigator, serviceFinderPages } from 'components/wizard/navigator';
+import { IntroText } from 'components/IntroText';
+import TextInput from 'components/TextInput';
+import { TextLink } from '@ag.ds-next/text';
 
 const Split = styled.div`
   display: flex;
@@ -24,14 +25,14 @@ const Split = styled.div`
 `;
 
 const Tag = styled.span<{ secondary?: boolean }>`
-  border: 1px solid var(--AU-color-foreground-action);
+  border: 1px solid var(--agds-foreground-action);
   ${(props) =>
     props.secondary === true
       ? css`
           border-color: transparent;
         `
       : css``};
-  color: var(--AU-color-foreground-action);
+  color: var(--agds-foreground-action);
   border-radius: 4px;
   padding: 0 8px;
 
@@ -59,47 +60,37 @@ const Home: NextPage = () => {
         </div>
       }
     >
-      <p style={{ fontSize: '1.2em' }}>
-        Import conditions vary depending on the country, product and the end use of a product.
-      </p>
+      <IntroText>Import conditions vary depending on the country, product and the end use of a product.</IntroText>
 
       <AUheading size="lg" level={2}>
         Search for destination countries
       </AUheading>
 
-      <AUformGroup>
-        <AUlabel text="Add one or more countries." htmlFor="service_finder_where_search" />
-        <Split>
-          <input
-            type="text"
-            id="service_finder_where_search"
-            className="au-text-input au-text-input--width-xl"
-            placeholder="Search countries"
-            ref={countryField}
-          />
+      <TextInput label="Add one or more countries." placeholder="Search countries" ref={countryField} />
 
-          <AUbutton
-            as="secondary"
-            onClick={(e) => {
-              if (countryField === null) {
-                return;
-              }
+      <ButtonGroup>
+        <AUbutton
+          as="secondary"
+          onClick={(e) => {
+            if (countryField === null) {
+              return;
+            }
 
-              if (countryField.current === null) {
-                return;
-              }
+            if (countryField.current === null) {
+              return;
+            }
 
-              const country = countryField.current.value;
-              if (country !== undefined && country.length > 0) {
-                countryField.current.value = '';
-                addCountry(country);
-              }
-            }}
-          >
-            Add country
-          </AUbutton>
-        </Split>
-      </AUformGroup>
+            const country = countryField.current.value;
+            if (country !== undefined && country.length > 0) {
+              countryField.current.value = '';
+              addCountry(country);
+            }
+          }}
+        >
+          Add country
+        </AUbutton>
+      </ButtonGroup>
+
       <Tags style={{ marginTop: '1em' }}>
         {countries.map((country, n) => (
           <Tag key={`tag-${n}`}>
@@ -112,16 +103,14 @@ const Home: NextPage = () => {
       </Tags>
 
       <div style={{ marginTop: '2em' }}>
-        Or <Link href="/todo">learn more about your options</Link>.
+        Or <TextLink href="/todo">learn more about your options</TextLink>.
       </div>
 
       <Hr />
 
       <div style={{ marginTop: '3em' }}>
         <ButtonGroup>
-          <Link passHref href="/service-finder/results">
-            <AUbutton link>Continue</AUbutton>
-          </Link>
+          <AUbutton link="/service-finder/results">Continue</AUbutton>
           <AUbutton as="secondary">Cancel</AUbutton>
         </ButtonGroup>
       </div>

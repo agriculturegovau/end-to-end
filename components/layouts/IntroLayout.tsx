@@ -1,51 +1,63 @@
 import React from 'react';
-import AUheading from '../@gov.au/AUheading';
 import LogoDAWE from 'components/LogoDAWE';
-import AUbutton from 'components/@gov.au/AUbutton';
-import Link from 'next/link';
-import styled from '@emotion/styled';
+import { Body } from '@ag.ds-next/body';
+import Main from 'components/layouts/Main';
+import { App } from 'components/layouts/App';
+import { ButtonGroup, ButtonLink } from '@ag.ds-next/button';
+import { Heading } from '@ag.ds-next/heading';
+import { Flex, Stack } from '@ag.ds-next/box';
+import { tokens } from '@ag.ds-next/core';
 
 type IntroLayoutProps = {
   superheading?: string;
   heading: string;
   cta?: { label?: string; href: string };
   logo?: React.ReactNode;
+  extraContent?: React.ReactNode;
 };
 
-const App = styled.div``;
+const CustomContent: React.FC = ({ children }) => (
+  <Flex as="section" justifyContent="center" alignItems="center" minHeight="100vh">
+    <Stack width="100%" maxWidth={tokens.maxWidth.container} gap={1}>
+      {children}
+    </Stack>
+  </Flex>
+);
 
-const Main = styled.main`
-  color: var(--AU-color-background);
-  background-color: var(--AU-colordark-background);
-  display: flex;
-  align-items: center;
-  min-height: 100vh;
-`;
-
-export const IntroLayout: React.FC<IntroLayoutProps> = ({ superheading, heading, cta, children, logo }) => {
+export const IntroLayout: React.FC<IntroLayoutProps> = ({
+  superheading,
+  heading,
+  cta,
+  children,
+  logo,
+  extraContent = null,
+}) => {
   return (
-    <App className="App">
-      <Main id="content">
-        <section className="container" style={{ fontSize: '1.2em' }}>
+    <App palette="dark">
+      <Main background="body">
+        <CustomContent>
           {logo === undefined ? <LogoDAWE /> : logo}
           {superheading ? (
-            <AUheading size="lg" level={1}>
+            <Heading as="h1" fontSize={'xl'} paddingTop={2}>
               {superheading}
-            </AUheading>
+            </Heading>
           ) : null}
-          <AUheading size="xxxl" level={2}>
+          <Heading as="h2" fontSize={'xxxl'}>
             {heading}
-          </AUheading>
-          <div style={{ fontSize: '1.2em', maxWidth: '36em' }}>{children}</div>
+          </Heading>
+
+          <Body paddingY={2} css={{ ['--typography-sm']: '1.4rem' }}>
+            {children}
+          </Body>
 
           {cta ? (
-            <Link passHref href={cta.href}>
-              <AUbutton dark link>
-                {cta.label || 'Get started'}
-              </AUbutton>
-            </Link>
+            <ButtonGroup>
+              <ButtonLink href={cta.href}>{cta.label ?? 'Get started'}</ButtonLink>
+            </ButtonGroup>
           ) : null}
-        </section>
+
+          {extraContent}
+        </CustomContent>
       </Main>
     </App>
   );

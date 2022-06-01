@@ -1,6 +1,5 @@
 import AUbutton from 'components/@gov.au/AUbutton';
 import { WizardLayout } from 'components/layouts/WizardLayout';
-import Link from 'next/link';
 import type { NextPage } from 'next';
 import AUformGroup from 'components/@gov.au/AUformGroup';
 import AUcheckbox from 'components/@gov.au/AUcheckbox';
@@ -11,7 +10,8 @@ import styled from '@emotion/styled';
 import TextInput from 'components/TextInput';
 import { useRef, useState } from 'react';
 import { css } from '@emotion/react';
-import { TodoText } from 'components/Todo';
+import { IntroText } from 'components/IntroText';
+import { Stack } from '@ag.ds-next/box';
 
 const labels = [
   'Animal by-products (such as wool, feathers or bones)',
@@ -37,14 +37,14 @@ const Split = styled.div`
 `;
 
 const Tag = styled.span<{ secondary?: boolean }>`
-  border: 1px solid var(--AU-color-foreground-action);
+  border: 1px solid var(--agds-foreground-action);
   ${(props) =>
     props.secondary === true
       ? css`
           border-color: transparent;
         `
       : css``};
-  color: var(--AU-color-foreground-action);
+  color: var(--agds-foreground-action);
   border-radius: 4px;
   padding: 0 8px;
 
@@ -57,61 +57,64 @@ const Tags = styled.div`
 `;
 
 const ExtraInformation = styled.div`
-  border-left: 3px solid var(--AU-color-foreground-action);
+  border-left: 3px solid var(--agds-foreground-action);
   padding: 1em;
   margin: 1em;
 `;
 
 const ExpandedInfo = ({ label, n }: { label: string; n: number }) => {
   const tagsField = useRef<HTMLInputElement>(null);
-  const [tags, setTags] = useState<string[]>([]);
+  const [tags, setTags] = useState<string[]>(['TODO: fix me']);
   const addTag = (tag: string) => setTags([...tags, tag]);
   const delTag = (tag: string) => setTags(tags.filter((c) => c !== tag));
 
   return (
     <>
       <ExtraInformation>
-        <TextInput
-          id={`export_option_${n}_extra`}
-          label="Search for specific fruits or vegetables (optional)"
-          hint="Add one or more products"
-          type="text"
-          width="md"
-          ref={tagsField}
-        >
-          <AUbutton
-            as="secondary"
-            style={{ marginLeft: '1em', marginTop: '.25rem' }}
-            onClick={() => {
-              if (tagsField === null) {
-                return;
-              }
+        <Stack gap={1}>
+          <TextInput
+            id={`export_option_${n}_extra`}
+            label="Search for specific fruits or vegetables (optional)"
+            hint="Add one or more products"
+            type="text"
+            width="md"
+            ref={tagsField}
+          />
 
-              if (tagsField.current === null) {
-                return;
-              }
+          <ButtonGroup>
+            <AUbutton
+              as="secondary"
+              onClick={() => {
+                if (tagsField === null) {
+                  return;
+                }
 
-              const tag = tagsField.current.value;
-              if (tag !== undefined && tag.length > 0) {
-                tagsField.current.value = '';
-                addTag(tag);
-              }
-            }}
-          >
-            Add product
-          </AUbutton>
-        </TextInput>
+                if (tagsField.current === null) {
+                  return;
+                }
 
-        <Tags style={{ marginTop: '1em' }}>
-          {tags.map((tag, n) => (
-            <Tag key={`tag-${n}`}>
-              {tag}{' '}
-              <span style={{ cursor: 'pointer' }} onClick={() => delTag(tag)}>
-                ⨯
-              </span>
-            </Tag>
-          ))}
-        </Tags>
+                const tag = tagsField.current.value;
+                if (tag !== undefined && tag.length > 0) {
+                  tagsField.current.value = '';
+                  addTag(tag);
+                }
+              }}
+            >
+              Add product
+            </AUbutton>
+          </ButtonGroup>
+
+          <Tags>
+            {tags.map((tag, n) => (
+              <Tag key={`tag-${n}`}>
+                {tag}{' '}
+                <span style={{ cursor: 'pointer' }} onClick={() => delTag(tag)}>
+                  ⨯
+                </span>
+              </Tag>
+            ))}
+          </Tags>
+        </Stack>
       </ExtraInformation>
     </>
   );
@@ -160,9 +163,9 @@ const Page: NextPage = () => (
       </div>
     }
   >
-    <p style={{ fontSize: '1.2em' }}>
+    <IntroText>
       Export requirements differ, depending on the type of product you want to export from Australia.
-    </p>
+    </IntroText>
     <p>Select all that apply</p>
 
     <AUformGroup style={{ marginTop: '2em' }}>
@@ -175,9 +178,7 @@ const Page: NextPage = () => (
 
     <div style={{ marginTop: '3em' }}>
       <ButtonGroup>
-        <Link passHref href="/service-finder/role">
-          <AUbutton link>Continue</AUbutton>
-        </Link>
+        <AUbutton link="/service-finder/role">Continue</AUbutton>
         <AUbutton as="secondary">Cancel</AUbutton>
       </ButtonGroup>
     </div>

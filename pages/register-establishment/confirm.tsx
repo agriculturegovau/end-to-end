@@ -9,6 +9,7 @@ import DescripionList from 'components/DescriptionList';
 import styled from '@emotion/styled';
 import AUcheckbox from 'components/@gov.au/AUcheckbox';
 import { Navigator, registerEstablishmentPages } from 'components/wizard/navigator';
+import { IntroText } from 'components/IntroText';
 
 const Split = styled.div`
   display: flex;
@@ -26,9 +27,9 @@ const Home: NextPage = () => (
       </div>
     }
   >
-    <p style={{ fontSize: '1.2em' }}>
+    <IntroText>
       Lorem ipsum dolor sit amet, laoreet necessitatibus sed in, ut quem latine eligendi vim, noster utamur sit an.{' '}
-    </p>
+    </IntroText>
 
     <Split>
       <AUheading level={2} size="lg">
@@ -136,9 +137,7 @@ const Home: NextPage = () => (
 
     <div style={{ marginTop: '3em' }}>
       <ButtonGroup>
-        <Link passHref href="/register-establishment/establishment-added">
-          <AUbutton link>Register establishment</AUbutton>
-        </Link>
+        <AUbutton link="/register-establishment/establishment-added">Register establishment</AUbutton>
         <AUbutton as="secondary">Save and continue later</AUbutton>
         <AUbutton as="tertiary">Cancel</AUbutton>
       </ButtonGroup>

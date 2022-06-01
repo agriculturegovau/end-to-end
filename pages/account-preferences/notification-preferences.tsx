@@ -9,6 +9,7 @@ import AUcallout from 'components/@gov.au/AUcallout';
 import AUformGroup from 'components/@gov.au/AUformGroup';
 import AUcheckbox from 'components/@gov.au/AUcheckbox';
 import { Navigator, preferencesPages } from 'components/wizard/navigator';
+import { IntroText } from 'components/IntroText';
 
 const Page: NextPage = () => (
   <WizardLayout
@@ -17,7 +18,7 @@ const Page: NextPage = () => (
     navigator={<Navigator pages={preferencesPages} progress={1} />}
     frontmatter={<strong>Set up account preferences</strong>}
   >
-    <p style={{ fontSize: '1.2em' }}>Choose how you get notified about your export account activity.</p>
+    <IntroText>Choose how you get notified about your export account activity.</IntroText>
 
     <AUcallout>
       <AUheading level={3} size="md">
@@ -52,9 +53,7 @@ const Page: NextPage = () => (
     <Hr />
 
     <ButtonGroup>
-      <Link passHref href="/account-preferences/sharing-preferences">
-        <AUbutton link>Apply and continue</AUbutton>
-      </Link>
+      <AUbutton link="/account-preferences/sharing-preferences">Apply and continue</AUbutton>
       <AUbutton as="secondary">Skip</AUbutton>
       <AUbutton as="tertiary">Cancel</AUbutton>
     </ButtonGroup>

@@ -37,10 +37,7 @@ const SNSWDialog: React.FC = () => {
         </AUcallout>
 
         <ButtonGroup style={{ marginTop: '2em' }}>
-          <Link passHref href="/new-market-opportunity/confirm">
-            <AUbutton link>Agree and send</AUbutton>
-          </Link>
-
+          <AUbutton link="/new-market-opportunity/confirm">Agree and send</AUbutton>
           <AUbutton>Cancel</AUbutton>
         </ButtonGroup>
       </>
@@ -83,10 +80,10 @@ const Page: NextPage = () => (
     backbreadcrumb={false}
     breadcrumbs={[
       {
-        text: 'Home',
-        link: '/todo',
+        label: 'Home',
+        href: '/todo',
       },
-      { text: 'Apply to export' },
+      { label: 'Apply to export' },
     ]}
   >
     <AUcallout>

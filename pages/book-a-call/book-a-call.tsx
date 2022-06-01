@@ -9,6 +9,9 @@ import AUcheckbox from 'components/@gov.au/AUcheckbox';
 import AUformGroup from 'components/@gov.au/AUformGroup';
 import Hr from 'components/Hr';
 import { useState } from 'react';
+import { Text, TextLink } from '@ag.ds-next/text';
+import { Box } from '@ag.ds-next/box';
+import { IntroText } from 'components/IntroText';
 
 const Home: NextPage = () => {
   const [dates, setDates] = useState<string[]>([]);
@@ -23,10 +26,12 @@ const Home: NextPage = () => {
 
   return (
     <WizardLayout title="Book a call to talk to finance support" backbreadcrumb={false}>
-      <p style={{ fontSize: '1.2em' }}>We can call you on XXXX XXX 123 at a time that suits you.</p>
-      <p>
-        <Link href="/todo">Change phone number</Link>
-      </p>
+      <IntroText>We can call you on XXXX XXX 123 at a time that suits you.</IntroText>
+
+      <Box>
+        <TextLink href="/todo">Change phone number</TextLink>
+      </Box>
+
       <Hr />
 
       <AUheading level={2} size="lg">
@@ -60,9 +65,7 @@ const Home: NextPage = () => {
           {dates.length === 0 ? (
             <AUbutton disabled>Book a call</AUbutton>
           ) : (
-            <Link passHref href="/book-a-call/booked">
-              <AUbutton link>Book a call</AUbutton>
-            </Link>
+            <AUbutton link="/book-a-call/booked">Book a call</AUbutton>
           )}
           <AUbutton as="secondary">Cancel</AUbutton>
         </ButtonGroup>

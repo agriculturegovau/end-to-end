@@ -1,6 +1,5 @@
 import AUbutton from 'components/@gov.au/AUbutton';
 import { WizardLayout } from 'components/layouts/WizardLayout';
-import Link from 'next/link';
 import type { NextPage } from 'next';
 import { ButtonGroup } from 'components/button-group';
 import AUheading from 'components/@gov.au/AUheading';
@@ -9,6 +8,7 @@ import AUformGroup from 'components/@gov.au/AUformGroup';
 import styled from '@emotion/styled';
 import Hr from 'components/Hr';
 import { Navigator, registerEstablishmentPages } from 'components/wizard/navigator';
+import { IntroText } from 'components/IntroText';
 
 const Step = styled.div`
   border: 1px solid black;
@@ -24,9 +24,9 @@ const Home: NextPage = () => (
       </div>
     }
   >
-    <p style={{ fontSize: '1.2em' }}>
+    <IntroText>
       Lorem ipsum dolor sit amet, laoreet necessitatibus sed in, ut quem latine eligendi vim, noster utamur sit an.{' '}
-    </p>
+    </IntroText>
 
     <AUheading level={2} size="xl">
       Which commodities would you like to be registered for?
@@ -49,9 +49,7 @@ const Home: NextPage = () => (
 
     <div style={{ marginTop: '3em' }}>
       <ButtonGroup>
-        <Link passHref href="/register-establishment/add-persons">
-          <AUbutton link>Continue</AUbutton>
-        </Link>
+        <AUbutton link="/register-establishment/add-persons">Continue</AUbutton>
         <AUbutton as="secondary">Save and continue later</AUbutton>
         <AUbutton as="tertiary">Cancel</AUbutton>
       </ButtonGroup>

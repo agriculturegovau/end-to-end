@@ -1,9 +1,8 @@
 import React from 'react';
 import BackBreadcrumb from '../BackBreadcrumb';
 import AUheading from '../@gov.au/AUheading';
-import { IAUlinkListItem } from 'components/@gov.au/AUlinkList';
 import AUbreadcrumbs from 'components/@gov.au/AUbreadcrumbs';
-import clsx from 'clsx';
+import { ColumnContent } from 'components/ColumnContent';
 
 type WizardLayoutProps = {
   title: string;
@@ -11,7 +10,7 @@ type WizardLayoutProps = {
   children: React.ReactNode | React.ReactNode[];
   backHref?: string;
 
-  breadcrumbs?: IAUlinkListItem[];
+  breadcrumbs?: React.ComponentProps<typeof AUbreadcrumbs>['items'];
   backbreadcrumb?: boolean;
   navigator?: React.ReactNode;
 };
@@ -26,23 +25,16 @@ export const WizardLayout = ({
   navigator,
 }: WizardLayoutProps) => {
   return (
-    <div className="row">
-      {navigator ? <div className="col-md-3 col-xs-12">{navigator}</div> : null}
+    <ColumnContent navigator={navigator}>
+      {breadcrumbs ? <AUbreadcrumbs items={breadcrumbs} /> : null}
+      {backbreadcrumb ? <BackBreadcrumb backHref={backHref} /> : null}
+      {frontmatter === undefined ? null : frontmatter}
 
-      <div
-        className={clsx('col-md-8', 'col-xs-12', { ['col-xs-offset-1']: !!navigator })}
-        style={{ marginBottom: '3em' }}
-      >
-        {breadcrumbs ? <AUbreadcrumbs label="bc" items={breadcrumbs} /> : null}
-        {backbreadcrumb ? <BackBreadcrumb backHref={backHref} /> : null}
-        {frontmatter === undefined ? null : frontmatter}
+      <AUheading size="xxl" level="1" paddingTop={1}>
+        {title}
+      </AUheading>
 
-        <AUheading size="xxl" level="1" style={{ marginTop: '1rem' }}>
-          {title}
-        </AUheading>
-
-        {children}
-      </div>
-    </div>
+      {children}
+    </ColumnContent>
   );
 };

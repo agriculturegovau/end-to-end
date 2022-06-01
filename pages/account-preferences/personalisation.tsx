@@ -1,23 +1,24 @@
 import AUbutton from 'components/@gov.au/AUbutton';
 import { WizardLayout } from 'components/layouts/WizardLayout';
-import Link from 'next/link';
-import type { NextPage } from 'next';
 import Hr from 'components/Hr';
 import { ButtonGroup } from 'components/button-group';
 import AUheading from 'components/@gov.au/AUheading';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { Navigator, preferencesPages } from 'components/wizard/navigator';
+import { LayoutPage } from 'components/LayoutPage';
+import { Text } from '@ag.ds-next/text';
+import { IntroText } from 'components/IntroText';
 
 const Tag = styled.span<{ secondary?: boolean }>`
-  border: 1px solid var(--AU-color-foreground-action);
+  border: 1px solid var(--agds-foreground-action);
   ${(props) =>
     props.secondary === true
       ? css`
           border-color: transparent;
         `
       : css``};
-  color: var(--AU-color-foreground-action);
+  color: var(--agds-foreground-action);
   border-radius: 4px;
   padding: 0 8px;
 `;
@@ -39,20 +40,20 @@ const Section = styled.section`
   }
 `;
 
-const Page: NextPage = () => (
+const Page: LayoutPage = () => (
   <WizardLayout
     title="Personalisation preferences"
     navigator={<Navigator pages={preferencesPages} progress={0} />}
     backbreadcrumb={false}
     frontmatter={<strong>Set up account preferences</strong>}
   >
-    <p style={{ fontSize: '1.2em' }}>Choose how we personalise your export service experience to meet your needs.</p>
+    <IntroText>Choose how we personalise your export service experience to meet your needs.</IntroText>
 
     <Section>
       <AUheading level={2} size="md">
         Locations
       </AUheading>
-      <p>You’ll be updated on information for the following regions:</p>
+      <Text as="p">You&apos;ll be updated on information for the following regions:</Text>
       <Tags>
         <Tag>Riverina, NSW</Tag>
         <Tag>Riverland, SA</Tag>
@@ -64,7 +65,7 @@ const Page: NextPage = () => (
       <AUheading level={2} size="md">
         Products
       </AUheading>
-      <p>Stay updated on information and export requirements for:</p>
+      <Text as="p">Stay updated on information and export requirements for:</Text>
       <Tags>
         <Tag>Oranges</Tag>
         <Tag>Grapefruit</Tag>
@@ -76,7 +77,7 @@ const Page: NextPage = () => (
       <AUheading level={2} size="md">
         Roles in the supply chain
       </AUheading>
-      <p>Get updates based on the following roles:</p>
+      <Text as="p">Get updates based on the following roles:</Text>
       <Tags>
         <Tag>Producers of agricultural products</Tag>
         <Tag secondary>+ Add role</Tag>
@@ -87,7 +88,7 @@ const Page: NextPage = () => (
       <AUheading level={2} size="md">
         Destination country
       </AUheading>
-      <p>Stay updated on opportunities and requirements for the following destination markets:</p>
+      <Text as="p">Stay updated on opportunities and requirements for the following destination markets:</Text>
       <Tags>
         <Tag>Zuy</Tag>
         <Tag secondary>+ Add import market</Tag>
@@ -97,9 +98,7 @@ const Page: NextPage = () => (
     <Hr />
 
     <ButtonGroup>
-      <Link passHref href="/account-preferences/notification-preferences">
-        <AUbutton link>Apply and continue</AUbutton>
-      </Link>
+      <AUbutton link="/account-preferences/notification-preferences">Apply and continue</AUbutton>
       <AUbutton as="secondary">Skip</AUbutton>
       <AUbutton as="tertiary">Cancel</AUbutton>
     </ButtonGroup>

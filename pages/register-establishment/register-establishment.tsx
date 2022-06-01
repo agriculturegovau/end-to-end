@@ -4,6 +4,7 @@ import Link from 'next/link';
 import type { NextPage } from 'next';
 import AUheading from 'components/@gov.au/AUheading';
 import Sequence from 'components/Sequence';
+import { IntroText } from 'components/IntroText';
 
 const Home: NextPage = () => (
   <WizardLayout
@@ -11,19 +12,19 @@ const Home: NextPage = () => (
     backbreadcrumb={false}
     breadcrumbs={[
       {
-        text: 'Home',
-        link: '/todo',
+        label: 'Home',
+        href: '/todo',
       },
       {
-        text: 'Get started',
-        link: '/todo',
+        label: 'Get started',
+        href: '/todo',
       },
-      { text: 'Register an establishment' },
+      { label: 'Register an establishment' },
     ]}
   >
-    <p style={{ fontSize: '1.2em' }}>
+    <IntroText>
       Lorem ipsum dolor sit amet, laoreet necessitatibus sed in, ut quem latine eligendi vim, noster utamur sit an.{' '}
-    </p>
+    </IntroText>
 
     <Sequence style={{ marginTop: '2em' }}>
       <li>
@@ -66,9 +67,7 @@ const Home: NextPage = () => (
     </Sequence>
 
     <div style={{ marginTop: '3em' }}>
-      <Link passHref href="/register-establishment/establishment-details">
-        <AUbutton link>Register an establishment</AUbutton>
-      </Link>
+      <AUbutton link="/register-establishment/establishment-details">Register an establishment</AUbutton>
     </div>
   </WizardLayout>
 );

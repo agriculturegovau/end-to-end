@@ -1,9 +1,9 @@
 import { WizardLayout } from 'components/layouts/WizardLayout';
-import Link from 'next/link';
 import type { NextPage } from 'next';
 import AUheading from 'components/@gov.au/AUheading';
 import AUcallout from 'components/@gov.au/AUcallout';
 import AUAlert from 'components/@gov.au/AUAlert';
+import { TextLink } from '@ag.ds-next/text';
 
 const Home: NextPage = () => (
   <WizardLayout
@@ -18,7 +18,7 @@ const Home: NextPage = () => (
           <br />
           Time: 9:00am - 9:15 am
           <br />
-          <Link href="/todo">Add to calendar</Link>
+          <TextLink href="/todo">Add to calendar</TextLink>
         </p>
 
         <p>

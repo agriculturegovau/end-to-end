@@ -27,7 +27,7 @@ const CellComponent = styled.div<CellProps>`
   ${(props) =>
     props.selected
       ? css`
-          background-color: var(--AU-color-foreground-action);
+          background-color: var(--agds-foreground-action);
           color: white;
         `
       : css``}
@@ -35,7 +35,7 @@ const CellComponent = styled.div<CellProps>`
   ${(props) =>
     props.available
       ? css`
-          border: 1px solid var(--AU-color-foreground-action);
+          border: 1px solid var(--agds-foreground-action);
           &:hover {
             cursor: pointer;
           }
@@ -44,7 +44,7 @@ const CellComponent = styled.div<CellProps>`
 `;
 
 const CalendarComponent2 = styled.div`
-  border: 1px solid var(--custom-color-foreground-hint);
+  border: 1px solid var(--agds-light-border);
   border-radius: 5px;
   width: fit-content;
   display: grid;

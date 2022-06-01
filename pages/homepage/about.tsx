@@ -1,10 +1,10 @@
 import AUbutton from 'components/@gov.au/AUbutton';
 import { WizardLayout } from 'components/layouts/WizardLayout';
-import Link from 'next/link';
 import AUheading from 'components/@gov.au/AUheading';
 import { ButtonGroup } from 'components/button-group';
 import { NextPage } from 'next';
 import AUcallout from 'components/@gov.au/AUcallout';
+import { IntroText } from 'components/IntroText';
 
 const Home: NextPage = () => (
   <WizardLayout
@@ -12,16 +12,16 @@ const Home: NextPage = () => (
     backbreadcrumb={false}
     breadcrumbs={[
       {
-        text: 'Home',
-        link: '/homepage',
+        label: 'Home',
+        href: '/homepage',
       },
-      { text: 'About the Export Service' },
+      { label: 'About the Export Service' },
     ]}
   >
-    <p style={{ fontSize: '1.2em' }}>
+    <IntroText>
       We&apos;re building a service to help Australians export. Exporters will be able to create an account and from
       there, they&apos;ll be able to manage interactions with us.
-    </p>
+    </IntroText>
 
     <AUheading size="xl" level="2" style={{ marginTop: '1em' }}>
       Services you can use now
@@ -51,9 +51,7 @@ const Home: NextPage = () => (
       <p>Learn how to access the Export Service, using your myGovID and relationship authorisation manager.</p>
 
       <ButtonGroup style={{ marginTop: '1em' }}>
-        <Link passHref href="https://agriculture-exports.awe.gov.au/account/help/">
-          <AUbutton link>Create an account</AUbutton>
-        </Link>
+        <AUbutton link="https://agriculture-exports.awe.gov.au/account/help/">Create an account</AUbutton>
         <AUbutton as="secondary">Sign in</AUbutton>
       </ButtonGroup>
     </AUcallout>

@@ -1,6 +1,5 @@
 import AUbutton from 'components/@gov.au/AUbutton';
 import { WizardLayout } from 'components/layouts/WizardLayout';
-import Link from 'next/link';
 import type { NextPage } from 'next';
 import AUheading from 'components/@gov.au/AUheading';
 import AUcallout from 'components/@gov.au/AUcallout';
@@ -8,10 +7,11 @@ import { ButtonGroup } from 'components/button-group';
 import AUformGroup from 'components/@gov.au/AUformGroup';
 import AUcheckbox from 'components/@gov.au/AUcheckbox';
 import Hr from 'components/Hr';
+import { IntroText } from 'components/IntroText';
 
 const Page: NextPage = () => (
   <WizardLayout title="Payment details" backbreadcrumb={false}>
-    <p style={{ fontSize: '1.2em' }}>You need to make a payment towards the inspection of your goods.</p>
+    <IntroText>You need to make a payment towards the inspection of your goods.</IntroText>
 
     <AUcallout>
       <AUheading level={2} size="md">
@@ -48,9 +48,7 @@ const Page: NextPage = () => (
     <Hr />
 
     <ButtonGroup style={{ marginTop: '1em' }}>
-      <Link passHref href="/make-payment/paypal">
-        <AUbutton link>Pay now</AUbutton>
-      </Link>
+      <AUbutton link="/make-payment/paypal">Pay now</AUbutton>
       <AUbutton as="secondary">Cancel</AUbutton>
     </ButtonGroup>
   </WizardLayout>

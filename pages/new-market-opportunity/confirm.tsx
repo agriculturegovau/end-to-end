@@ -1,13 +1,14 @@
 import AUbutton from 'components/@gov.au/AUbutton';
 import { WizardLayout } from 'components/layouts/WizardLayout';
-import Link from 'next/link';
 import type { NextPage } from 'next';
 import AUheading from 'components/@gov.au/AUheading';
 import { ButtonGroup } from 'components/button-group';
 import AUcheckbox from 'components/@gov.au/AUcheckbox';
 import DescripionList from 'components/DescriptionList';
-import Todo from 'components/Todo';
 import Indicator from 'components/Indicator';
+import { Text } from '@ag.ds-next/text';
+import { Body } from '@ag.ds-next/body';
+import { IntroText } from 'components/IntroText';
 
 const Page: NextPage = () => (
   <WizardLayout
@@ -15,18 +16,20 @@ const Page: NextPage = () => (
     backbreadcrumb={false}
     breadcrumbs={[
       {
-        text: 'Home',
-        link: '/todo',
+        label: 'Home',
+        href: '/todo',
       },
-      { text: 'Confirm and apply' },
+      { label: 'Confirm and apply' },
     ]}
   >
-    <p style={{ fontSize: '1.2em' }}>Confirm the details below and supply any missing documentation before applying.</p>
+    <IntroText>Confirm the details below and supply any missing documentation before applying.</IntroText>
 
     <AUheading level={2} size="lg">
       <Indicator type="error">Requirements not met to export to Canada</Indicator>
     </AUheading>
-    <p>Upload the missing document to apply for this market opportunity.</p>
+
+    <Text as="p">Upload the missing document to apply for this market opportunity.</Text>
+
     <DescripionList split>
       <dt>Cold treatment certificate</dt>
       <dd>
@@ -41,7 +44,9 @@ const Page: NextPage = () => (
         </Indicator>
       </dd>
     </DescripionList>
-    <AUbutton as="secondary">Upload missing document</AUbutton>
+    <ButtonGroup>
+      <AUbutton as="secondary">Upload missing document</AUbutton>
+    </ButtonGroup>
 
     <AUheading level={2} size="lg">
       <Indicator type="success">Requirements met to export to Malaysia</Indicator>
@@ -59,15 +64,17 @@ const Page: NextPage = () => (
       Declaration
     </AUheading>
 
-    <p>I declare that:</p>
-    <ul style={{ marginBottom: '2em' }}>
-      <li>I am an authorised person in management and control of the business.</li>
-      <li>I have conducted appropriate due diligence to compile the information set out in this application.</li>
-      <li>
-        I have read and understood the privacy notice and consent to the collection, use and disclosure of my personal
-        information as outlined in the privacy notice.
-      </li>
-    </ul>
+    <Body>
+      <p>I declare that:</p>
+      <ul style={{ marginBottom: '2em' }}>
+        <li>I am an authorised person in management and control of the business.</li>
+        <li>I have conducted appropriate due diligence to compile the information set out in this application.</li>
+        <li>
+          I have read and understood the privacy notice and consent to the collection, use and disclosure of my personal
+          information as outlined in the privacy notice.
+        </li>
+      </ul>
+    </Body>
 
     <AUcheckbox
       name="export_confirm"
@@ -78,10 +85,7 @@ const Page: NextPage = () => (
 
     <div style={{ marginTop: '3em' }}>
       <ButtonGroup>
-        <Link passHref href="/new-market-opportunity/success">
-          <AUbutton link>Confirm and apply</AUbutton>
-        </Link>
-
+        <AUbutton link="/new-market-opportunity/success">Confirm and apply</AUbutton>
         <AUbutton as="secondary">Cancel</AUbutton>
       </ButtonGroup>
     </div>

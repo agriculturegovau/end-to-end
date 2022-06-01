@@ -25,12 +25,12 @@ export const IndicatorComponent = styled.span<IndicatorProps>`
   justify-content: flex-start;
 
   ${Path} {
-    fill: var(--AU-colordark-foreground-text);
+    fill: var(--agds-dark-foreground-text);
   }
 
   ${Svg} {
     border-radius: 100%;
-    background-color: var(--AU-color-${(props) => props.type}, var(--AU-color-info));
+    background-color: var(--agds-${(props) => props.type}, var(--agds-info));
 
     ${(props) =>
       props.trailing

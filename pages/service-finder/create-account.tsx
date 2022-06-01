@@ -5,6 +5,7 @@ import AUheading from 'components/@gov.au/AUheading';
 import Hr from 'components/Hr';
 import TextInput from 'components/TextInput';
 import AUformGroup from 'components/@gov.au/AUformGroup';
+import { IntroText } from 'components/IntroText';
 
 const Page: NextPage = () => (
   <WizardLayout
@@ -12,13 +13,13 @@ const Page: NextPage = () => (
     backbreadcrumb={false}
     breadcrumbs={[
       {
-        text: 'Home',
-        link: '/todo',
+        label: 'Home',
+        href: '/todo',
       },
-      { text: 'Create an account' },
+      { label: 'Create an account' },
     ]}
   >
-    <p style={{ fontSize: '1.2em' }}>Get updates, insights and advice to get you started as an exporter.</p>
+    <IntroText>Get updates, insights and advice to get you started as an exporter.</IntroText>
     <p>
       Stay informed of market news and export events, and choose the way you receive updates and help us tailor services
       to suit your needs.

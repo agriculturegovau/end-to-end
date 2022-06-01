@@ -1,11 +1,11 @@
 import React, { forwardRef } from 'react';
-import clsx from 'clsx';
+import { Button, ButtonLink } from '@ag.ds-next/button';
 
 type ComponentType = React.ElementType | keyof JSX.IntrinsicElements;
 
 interface IAUbutton {
   linkComponent?: ComponentType;
-  link?: string | boolean;
+  link?: string;
   as?: 'primary' | 'secondary' | 'tertiary';
   dark?: boolean;
   type?: string;
@@ -19,41 +19,26 @@ const AUbutton = forwardRef<HTMLButtonElement, AUbuttonFC>(
   (
     {
       linkComponent = 'a',
-      link = false,
+      link,
       as = 'primary',
       dark,
       type = 'button',
       block,
-      className = '',
+      className,
       children,
+      onClick,
       ...otherProps
     }: AUbuttonFC,
     ref
   ) => {
-    let ButtonComponent: ComponentType = 'button';
-
-    if (link) {
-      ButtonComponent = linkComponent;
-
-      if (!link) {
-        const attributeName = linkComponent === 'a' ? 'href' : 'to'; // Qns for design system team: Why does the attribute change? Why 'to'? Should this be configurable?
-        // @ts-ignore
-        otherProps[attributeName] = link;
-      }
-    }
-
-    const classNames = clsx([
-      'au-btn',
-      className,
-      as !== 'primary' && `au-btn--${as}`,
-      block && 'au-btn--block',
-      dark && 'au-btn--dark',
-    ]);
-
-    return (
-      <ButtonComponent ref={ref} type={type} className={classNames} {...otherProps}>
+    return link === undefined ? (
+      <Button onClick={onClick} variant={as} className={className}>
         {children}
-      </ButtonComponent>
+      </Button>
+    ) : (
+      <ButtonLink variant={as} href={link} className={className}>
+        {children}
+      </ButtonLink>
     );
   }
 );

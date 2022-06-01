@@ -1,16 +1,16 @@
 import AUbutton from 'components/@gov.au/AUbutton';
 import { WizardLayout } from 'components/layouts/WizardLayout';
-import Link from 'next/link';
 import type { NextPage } from 'next';
 import { ButtonGroup } from 'components/button-group';
 import AUheading from 'components/@gov.au/AUheading';
 import Calendar from 'components/Calendar';
 import AUcheckbox from 'components/@gov.au/AUcheckbox';
 import AUformGroup from 'components/@gov.au/AUformGroup';
+import { IntroText } from 'components/IntroText';
 
 const Home: NextPage = () => (
   <WizardLayout title="Book an inspection" backbreadcrumb={false}>
-    <p style={{ fontSize: '1.2em' }}>Choose a date and time that’s convenient for you. </p>
+    <IntroText>Choose a date and time that’s convenient for you.</IntroText>
     <p>
       Inspections take around 2 hours and cost $500.00. After the inspection, you’ll recieve a report via email along
       with an invoice for payment.
@@ -37,9 +37,7 @@ const Home: NextPage = () => (
 
     <div style={{ marginTop: '3em' }}>
       <ButtonGroup>
-        <Link passHref href="/book-an-inspection/booked">
-          <AUbutton link>Book inspection</AUbutton>
-        </Link>
+        <AUbutton link="/book-an-inspection/booked">Book inspection</AUbutton>
         <AUbutton as="secondary">Cancel</AUbutton>
       </ButtonGroup>
     </div>

@@ -5,6 +5,7 @@ import AUheading from 'components/@gov.au/AUheading';
 import Link from 'next/link';
 import styled from '@emotion/styled';
 import DescripionList from 'components/DescriptionList';
+import { Text, TextLink } from '@ag.ds-next/text';
 
 const Split = styled.div`
   margin-top: 2em;
@@ -19,7 +20,9 @@ const Home: NextPage = () => (
     backbreadcrumb={false}
     frontmatter={
       <AUAlert title="Your preferences were set successfully" type="success">
-        <p>You&apos;ll receive updates from us based on your personalisation and notifications preferences.</p>
+        <Text as="p">
+          You&apos;ll receive updates from us based on your personalisation and notifications preferences.
+        </Text>
       </AUAlert>
     }
   >
@@ -27,7 +30,7 @@ const Home: NextPage = () => (
       <AUheading level={3} size="lg">
         Personalisation preferences
       </AUheading>
-      <Link href="/todo">Change</Link>
+      <TextLink href="/todo">Change</TextLink>
     </Split>
     <DescripionList fixedTermWidth>
       <dt>Locations</dt>
@@ -47,7 +50,7 @@ const Home: NextPage = () => (
       <AUheading level={3} size="lg">
         Notification preferences
       </AUheading>
-      <Link href="/todo">Change</Link>
+      <TextLink href="/todo">Change</TextLink>
     </Split>
     <DescripionList fixedTermWidth>
       <dt>Alerts and reminders</dt>
@@ -61,7 +64,7 @@ const Home: NextPage = () => (
       <AUheading level={3} size="lg">
         Information sharing preferences
       </AUheading>
-      <Link href="/todo">Change</Link>
+      <TextLink href="/todo">Change</TextLink>
     </Split>
     <DescripionList fixedTermWidth>
       <dt>Linked service</dt>

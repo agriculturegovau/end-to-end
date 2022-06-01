@@ -1,6 +1,7 @@
 import React, { forwardRef } from 'react';
 import clsx from 'clsx';
 import AUerrorText from './AUerrorText';
+import { Radio, Checkbox } from '@ag.ds-next/control-input';
 
 interface IAUcheckbox {
   dark?: boolean;
@@ -15,7 +16,21 @@ interface IAUcheckbox {
 
 type AUcheckboxFC = React.ComponentProps<'input'> & IAUcheckbox;
 
-const AUcheckbox = forwardRef<HTMLInputElement, AUcheckboxFC>(
+interface OldRadioProps {
+  dark?: boolean;
+  alternate?: boolean;
+  small?: boolean;
+  block?: boolean;
+  status?: 'valid' | 'invalid';
+  error?: Error;
+}
+
+interface RadioProps {
+  label?: string | React.ReactNode;
+  name?: string;
+}
+
+const AUcheckboxOld = forwardRef<HTMLInputElement, AUcheckboxFC>(
   (
     {
       dark = false,
@@ -56,6 +71,22 @@ const AUcheckbox = forwardRef<HTMLInputElement, AUcheckboxFC>(
   }
 );
 
-AUcheckbox.displayName = 'AUcheckbox';
+AUcheckboxOld.displayName = 'AUcheckbox';
+
+const AUcheckbox: React.FC<
+  { type?: 'radio' | 'checkbox' } & OldRadioProps &
+    RadioProps &
+    React.ComponentProps<'input'> &
+    React.ComponentProps<typeof Radio>
+> = ({ type, label, name, checked, ref, onChange }) =>
+  type === 'radio' ? (
+    <Radio name={name} checked={checked} ref={ref} onChange={onChange}>
+      {label}
+    </Radio>
+  ) : (
+    <Checkbox name={name} checked={checked} ref={ref} onChange={onChange}>
+      {label}
+    </Checkbox>
+  );
 
 export default AUcheckbox;

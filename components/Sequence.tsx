@@ -24,7 +24,7 @@ const Sequence = styled.ol`
     position: absolute;
     left: -18px;
     top: 36px;
-    background-color: var(--AU-color-background);
+    background-color: var(--agds-background-body);
     border: 2px solid #808080;
     border-radius: 100%;
 

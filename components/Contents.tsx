@@ -115,7 +115,7 @@ const PrototypeBadgeContainer = styled.div`
 `;
 
 const PrototypeBadge = styled.div`
-  background-color: var(--AU-color-success);
+  background-color: var(--agds-success);
   color: white;
   position: relative;
   width: var(--badge-size);
@@ -138,7 +138,7 @@ const Proto = styled.div`
 `;
 
 const OverlayComponent = styled.div`
-  background-color: var(--AU-color-background);
+  background-color: var(--agds-background-body);
   background-color: #e8eaec;
   padding: 2em;
   position: fixed;

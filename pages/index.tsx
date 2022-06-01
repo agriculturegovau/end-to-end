@@ -4,13 +4,15 @@ import LogoDAWE from 'components/LogoDAWE';
 import styled from '@emotion/styled';
 import Hr from 'components/Hr';
 import { indexContents } from 'components/Contents';
-import Link from 'next/link';
+import { Text, TextLink } from '@ag.ds-next/text';
+import { Flex } from '@ag.ds-next/box';
+import { Body } from '@ag.ds-next/body';
 
-const App = styled.div``;
+const App = styled(Flex)``;
 
 const Aside = styled.div`
   grid-area: logo;
-  background-color: var(--custom-colordark-background-alt);
+  background-color: #0a1931;
 
   @media (min-width: 768px) {
     text-align: center;
@@ -22,16 +24,10 @@ const Contents = styled.div`
 `;
 
 const Main = styled.main`
-  color: var(--AU-color-background);
-  background-color: var(--AU-colordark-background);
-  a {
-    color: var(--AU-colordark-foreground-action);
-  }
-  a:hover {
-    color: var(--AU-colordark-foreground-text);
-  }
-
+  color: var(--agds-foreground-text);
+  background-color: var(--agds-background-body);
   min-height: 100vh;
+  min-width: 100vw;
   display: grid;
   grid-template-areas:
     'logo'
@@ -54,20 +50,16 @@ const Main = styled.main`
 `;
 
 const Home: LayoutPage = () => (
-  <App className="App">
+  <App palette="dark" className="App">
     <Main id="content">
       <Aside>
         <LogoDAWE />
       </Aside>
 
       <Contents>
-        <AUheading size="xxxl" level={2}>
-          Contents
-        </AUheading>
-
-        <Hr />
-
-        <section>
+        <Body>
+          <h1>Contents</h1>
+          <hr />
           <p>This is an alpha prototype.</p>
           <p>
             It&apos;s designed to capture key interactions in the tranche 1 view of the agricultural export experience
@@ -81,17 +73,17 @@ const Home: LayoutPage = () => (
             We&apos;ll continue to expand on and evolve the prototype, to define reusable patterns to support a simple,
             intuitive service that meets user needs.
           </p>
-        </section>
 
-        <nav>
-          <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
-            {Array.from(indexContents).map(([root, label]) => (
-              <li key={root}>
-                <Link href={`/${root}`}>{label}</Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
+          <nav style={{ paddingTop: '2em' }}>
+            <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
+              {Array.from(indexContents).map(([root, label]) => (
+                <li key={root}>
+                  <TextLink href={`/${root}`}>{label}</TextLink>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </Body>
       </Contents>
     </Main>
   </App>

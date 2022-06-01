@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 const Todo = styled.div`
-  background-color: var(--AU-color-background);
+  background-color: var(--agds-background-body);
   background-color: #e8eaec;
   padding: 2em;
   box-shadow: 4px 3px 10px #00000038, 0 0 0 3px #221c19;

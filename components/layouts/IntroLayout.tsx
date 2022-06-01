@@ -15,7 +15,7 @@ type IntroLayoutProps = {
 const App = styled.div``;
 
 const Main = styled.main`
-  color: var(--AU-color-background);
+  color: var(--agds-background-body);
   background-color: var(--AU-colordark-background);
   display: flex;
   align-items: center;

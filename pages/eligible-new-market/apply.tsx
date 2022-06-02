@@ -147,10 +147,10 @@ const Home: NextPage = () => (
     backbreadcrumb={false}
     breadcrumbs={[
       {
-        text: 'Home',
-        link: '/todo',
+        label: 'Home',
+        href: '/todo',
       },
-      { text: 'Apply to export to Fantasia' },
+      { label: 'Apply to export to Fantasia' },
     ]}
   >
     <p style={{ fontSize: '1.2em' }}>

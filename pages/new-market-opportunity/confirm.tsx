@@ -15,10 +15,10 @@ const Page: NextPage = () => (
     backbreadcrumb={false}
     breadcrumbs={[
       {
-        text: 'Home',
-        link: '/todo',
+        label: 'Home',
+        href: '/todo',
       },
-      { text: 'Confirm and apply' },
+      { label: 'Confirm and apply' },
     ]}
   >
     <p style={{ fontSize: '1.2em' }}>Confirm the details below and supply any missing documentation before applying.</p>

@@ -1,6 +1,5 @@
 import AUbutton from 'components/@gov.au/AUbutton';
 import { WizardLayout } from 'components/layouts/WizardLayout';
-import Link from 'next/link';
 import type { NextPage } from 'next';
 import AUformGroup from 'components/@gov.au/AUformGroup';
 import AUcheckbox from 'components/@gov.au/AUcheckbox';

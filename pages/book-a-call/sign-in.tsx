@@ -11,10 +11,10 @@ const Page: NextPage = () => (
     backbreadcrumb={false}
     breadcrumbs={[
       {
-        text: 'Home',
-        link: '/todo',
+        label: 'Home',
+        href: '/todo',
       },
-      { text: 'Sign in' },
+      { label: 'Sign in' },
     ]}
   >
     <p style={{ fontSize: '1.2em' }}>Access our export services and manage your transactions with us.</p>

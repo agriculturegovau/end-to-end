@@ -1,9 +1,11 @@
 import React from 'react';
-import AUheading from '../@gov.au/AUheading';
 import LogoDAWE from 'components/LogoDAWE';
-import AUbutton from 'components/@gov.au/AUbutton';
-import Link from 'next/link';
-import styled from '@emotion/styled';
+import { Content } from '@ag.ds-next/content';
+import { Body } from '@ag.ds-next/body';
+import Main from 'components/layouts/Main';
+import { App } from 'components/layouts/App';
+import { ButtonGroup, ButtonLink } from '@ag.ds-next/button';
+import { Heading } from '@ag.ds-next/heading';
 
 type IntroLayoutProps = {
   superheading?: string;
@@ -12,38 +14,31 @@ type IntroLayoutProps = {
   logo?: React.ReactNode;
 };
 
-const App = styled.div``;
-
-const Main = styled.main`
-  color: var(--agds-background-body);
-  background-color: var(--AU-colordark-background);
-  display: flex;
-  align-items: center;
-  min-height: 100vh;
-`;
-
 export const IntroLayout: React.FC<IntroLayoutProps> = ({ superheading, heading, cta, children, logo }) => {
   return (
-    <App className="App">
-      <Main id="content">
-        <section className="container" style={{ fontSize: '1.2em' }}>
+    <App palette="dark">
+      <Main background="body">
+        <Content>
           {logo === undefined ? <LogoDAWE /> : logo}
           {superheading ? (
-            <AUheading size="lg" level={1}>
+            <Heading as="h1" fontSize={'xl'} paddingTop={2}>
               {superheading}
-            </AUheading>
+            </Heading>
           ) : null}
-          <AUheading size="xxxl" level={2}>
+          <Heading as="h2" fontSize={'xxxl'}>
             {heading}
-          </AUheading>
-          <div style={{ fontSize: '1.2em', maxWidth: '36em' }}>{children}</div>
+          </Heading>
+
+          <Body paddingY={2} css={{ ['--typography-sm']: '1.4rem' }}>
+            {children}
+          </Body>
 
           {cta ? (
-            <AUbutton dark link={cta.href}>
-              {cta.label || 'Get started'}
-            </AUbutton>
+            <ButtonGroup>
+              <ButtonLink href={cta.href}>{cta.label ?? 'Get started'}</ButtonLink>
+            </ButtonGroup>
           ) : null}
-        </section>
+        </Content>
       </Main>
     </App>
   );

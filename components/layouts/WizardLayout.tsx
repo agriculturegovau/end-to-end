@@ -11,7 +11,7 @@ type WizardLayoutProps = {
   children: React.ReactNode | React.ReactNode[];
   backHref?: string;
 
-  breadcrumbs?: IAUlinkListItem[];
+  breadcrumbs?: React.ComponentProps<typeof AUbreadcrumbs>['items'];
   backbreadcrumb?: boolean;
   navigator?: React.ReactNode;
 };
@@ -33,7 +33,7 @@ export const WizardLayout = ({
         className={clsx('col-md-8', 'col-xs-12', { ['col-xs-offset-1']: !!navigator })}
         style={{ marginBottom: '3em' }}
       >
-        {breadcrumbs ? <AUbreadcrumbs label="bc" items={breadcrumbs} /> : null}
+        {breadcrumbs ? <AUbreadcrumbs items={breadcrumbs} /> : null}
         {backbreadcrumb ? <BackBreadcrumb backHref={backHref} /> : null}
         {frontmatter === undefined ? null : frontmatter}
 

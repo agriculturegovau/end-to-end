@@ -80,10 +80,10 @@ const Page: NextPage = () => (
     backbreadcrumb={false}
     breadcrumbs={[
       {
-        text: 'Home',
-        link: '/todo',
+        label: 'Home',
+        href: '/todo',
       },
-      { text: 'Apply to export' },
+      { label: 'Apply to export' },
     ]}
   >
     <AUcallout>

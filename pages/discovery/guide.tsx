@@ -14,10 +14,10 @@ const Home: NextPage = () => (
     backbreadcrumb={false}
     breadcrumbs={[
       {
-        text: 'Home',
-        link: '/discovery/homepage',
+        label: 'Home',
+        href: '/discovery/homepage',
       },
-      { text: 'New exporters' },
+      { label: 'New exporters' },
     ]}
   >
     <p style={{ fontSize: '1.2em' }}>

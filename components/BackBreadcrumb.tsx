@@ -1,4 +1,3 @@
-import React from 'react';
 import AUbutton from 'components/@gov.au/AUbutton';
 import { useRouter } from 'next/router';
 

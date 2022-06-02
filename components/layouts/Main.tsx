@@ -1,9 +1,10 @@
+import { Box } from '@ag.ds-next/box';
 import * as React from 'react';
 
-const Main: React.FC = ({ children }) => (
-  <main role="main" css={{ flex: 1 }} id="main-content">
+const Main: React.FC<React.ComponentProps<typeof Box>> = ({ children, ...boxProps }) => (
+  <Box as="main" {...boxProps} role="main" css={{ flex: 1 }} id="main-content">
     {children}
-  </main>
+  </Box>
 );
 
 export default Main;

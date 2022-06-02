@@ -12,10 +12,10 @@ const Page: NextPage = () => (
     backbreadcrumb={false}
     breadcrumbs={[
       {
-        text: 'Home',
-        link: '/todo',
+        label: 'Home',
+        href: '/todo',
       },
-      { text: 'Create an account' },
+      { label: 'Create an account' },
     ]}
   >
     <p style={{ fontSize: '1.2em' }}>Get updates, insights and advice to get you started as an exporter.</p>

@@ -51,12 +51,12 @@ const DescripionList = styled(DescripionListLayout)<{ fixedTermWidth?: boolean; 
       : css`
           dt ~ dt,
           dt ~ dt + dd {
-            border-top: 1px solid var(--AU-color-table-row-border);
+            border-top: 1px solid var(--agds-light-border);
           }
 
           dt:last-of-type,
           dd:last-of-type {
-            border-bottom: 1px solid var(--AU-color-table-row-border);
+            border-bottom: 1px solid var(--agds-light-border);
           }
 
           dt:nth-of-type(odd),
@@ -70,7 +70,7 @@ const DescripionList = styled(DescripionListLayout)<{ fixedTermWidth?: boolean; 
           dt:nth-of-type(odd) + dd + dd + dd + dd + dd + dd + dd + dd,
           dt:nth-of-type(odd) + dd + dd + dd + dd + dd + dd + dd + dd + dd,
           dt:nth-of-type(odd) + dd + dd + dd + dd + dd + dd + dd + dd + dd + dd {
-            background-color: var(--AU-color-table-row);
+            background-color: var(--agds-light-border-muted);
           }
         `}
 `;

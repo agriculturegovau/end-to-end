@@ -10,22 +10,28 @@ const Page: LayoutPage = () => {
   const router = useRouter();
 
   return (
-    <IntroLayout heading="Oops! 🛠">
+    <IntroLayout
+      heading="Oops! 🛠"
+      extraContent={
+        <>
+          <ButtonGroup style={{ marginTop: '2em' }}>
+            <AUbutton
+              dark
+              as="tertiary"
+              onClick={() => {
+                router.back();
+              }}
+            >
+              ← Back
+            </AUbutton>
+            <AUbutton dark link={'/'}>
+              Start over again
+            </AUbutton>
+          </ButtonGroup>
+        </>
+      }
+    >
       <p>We&apos;re still working on that</p>
-      <ButtonGroup style={{ marginTop: '2em' }}>
-        <AUbutton
-          dark
-          as="tertiary"
-          onClick={() => {
-            router.back();
-          }}
-        >
-          ← Back
-        </AUbutton>
-        <AUbutton dark link={'/'}>
-          Start over again
-        </AUbutton>
-      </ButtonGroup>
     </IntroLayout>
   );
 };

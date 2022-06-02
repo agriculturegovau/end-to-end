@@ -154,6 +154,12 @@ const OverlayComponent = styled.div`
   display: flex;
   flex-flow: column;
   justify-content: flex-start;
+
+  & code {
+    background-color: #f5f5f5;
+    padding: 1rem;
+    border-radius: 4px;
+  }
 `;
 
 export const OverlayCapture: React.FC = ({ children }) => {

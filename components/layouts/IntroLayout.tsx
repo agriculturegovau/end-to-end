@@ -12,9 +12,17 @@ type IntroLayoutProps = {
   heading: string;
   cta?: { label?: string; href: string };
   logo?: React.ReactNode;
+  extraContent?: React.ReactNode;
 };
 
-export const IntroLayout: React.FC<IntroLayoutProps> = ({ superheading, heading, cta, children, logo }) => {
+export const IntroLayout: React.FC<IntroLayoutProps> = ({
+  superheading,
+  heading,
+  cta,
+  children,
+  logo,
+  extraContent = null,
+}) => {
   return (
     <App palette="dark">
       <Main background="body">
@@ -38,6 +46,8 @@ export const IntroLayout: React.FC<IntroLayoutProps> = ({ superheading, heading,
               <ButtonLink href={cta.href}>{cta.label ?? 'Get started'}</ButtonLink>
             </ButtonGroup>
           ) : null}
+
+          {extraContent}
         </Content>
       </Main>
     </App>

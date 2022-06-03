@@ -1,3 +1,4 @@
+import { Text, TextLink } from '@ag.ds-next/text';
 import AUbutton from 'components/@gov.au/AUbutton';
 import AUcallout from 'components/@gov.au/AUcallout';
 import AUheading from 'components/@gov.au/AUheading';
@@ -6,7 +7,6 @@ import { WizardLayout } from 'components/layouts/WizardLayout';
 import Sequence from 'components/Sequence';
 import { TodoLink } from 'components/Todo';
 import type { NextPage } from 'next';
-import Link from 'next/link';
 
 const Home: NextPage = () => (
   <WizardLayout
@@ -20,19 +20,19 @@ const Home: NextPage = () => (
       { label: 'New exporters' },
     ]}
   >
-    <p style={{ fontSize: '1.2em' }}>
+    <Text as="p" color={'muted'} fontSize="md">
       Follow these steps to export goods from Australia to another country. Our guide can also help you understand how
       long the process takes.
-    </p>
+    </Text>
 
     <Sequence style={{ marginTop: '2em' }}>
       <li>
         <AUheading level={2} size="lg">
-          <Link href="/discovery/understand">Understand the export rules for your products</Link>
+          <TextLink href="/discovery/understand">Understand the export rules for your products</TextLink>
         </AUheading>
         <p>
-          The rules and requirements differ, depending on the type of goods you plan to export. Here’s how to know which
-          ones apply to you.
+          The rules and requirements differ, depending on the type of goods you plan to export. Here&apos;s how to know
+          which ones apply to you.
         </p>
       </li>
 

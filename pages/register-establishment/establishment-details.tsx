@@ -1,6 +1,5 @@
 import AUbutton from 'components/@gov.au/AUbutton';
 import { WizardLayout } from 'components/layouts/WizardLayout';
-import Link from 'next/link';
 import type { NextPage } from 'next';
 import { ButtonGroup } from 'components/button-group';
 import AUheading from 'components/@gov.au/AUheading';
@@ -8,6 +7,8 @@ import styled from '@emotion/styled';
 import Hr from 'components/Hr';
 import TextInput from 'components/TextInput';
 import { Navigator, registerEstablishmentPages } from 'components/wizard/navigator';
+import { Text, TextLink } from '@ag.ds-next/text';
+import { Body } from '@ag.ds-next/body';
 
 const Step = styled.div`
   border: 1px solid black;
@@ -17,15 +18,11 @@ const Home: NextPage = () => (
   <WizardLayout
     title="Establishment details"
     navigator={<Navigator pages={registerEstablishmentPages} progress={0} />}
-    frontmatter={
-      <div style={{ marginTop: '2em' }}>
-        <strong>Register an establishment</strong>
-      </div>
-    }
+    frontmatter={<strong>Register an establishment</strong>}
   >
-    <p style={{ fontSize: '1.2em' }}>
+    <Text as="p" fontSize="md" color="muted">
       Lorem ipsum dolor sit amet, laoreet necessitatibus sed in, ut quem latine eligendi vim, noster utamur sit an.{' '}
-    </p>
+    </Text>
 
     <AUheading level={2} size="xl">
       Trading name/s
@@ -33,7 +30,7 @@ const Home: NextPage = () => (
     <p>Details must match the trading name/s on your ABN registration.</p>
     <TextInput id="trading_name" label="Trading name" type="text" width="xl" />
     <p>
-      <Link href="/todo">Add another trading name</Link>
+      <TextLink href="/todo">Add another trading name</TextLink>
     </p>
 
     <AUheading level={2} size="xl">

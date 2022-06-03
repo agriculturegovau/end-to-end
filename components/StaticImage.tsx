@@ -7,10 +7,10 @@ export const imageURL = (src: string) => (isProd ? `/end-to-end${src}` : src);
 
 const StaticLoader = (props: ImageLoaderProps) => props.src;
 
-const StaticImage: typeof Image = ({ loader = StaticLoader, ...props }: ImageProps) => {
+const StaticImage: typeof Image = ({ loader = StaticLoader, alt, ...props }: ImageProps) => {
   const src = isProd ? `/end-to-end${props.src}` : props.src;
 
-  return <Image unoptimized {...props} loader={loader} src={src} />;
+  return <Image unoptimized {...props} alt={alt} loader={loader} src={src} />;
 };
 
 export default StaticImage;

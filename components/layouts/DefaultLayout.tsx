@@ -18,7 +18,9 @@ export const DefaultLayout: React.FC<LayoutProps> = ({ children, ContentComponen
 
 export const ColumnLayout: React.FC = (props) => <DefaultLayout {...props} ContentComponent={ColumnContent} />;
 
+/*
 export const ColumnLayoutx: (navigator?: React.ReactNode) => React.FC = (navigator) => (props) =>
   <DefaultLayout {...props} ContentComponent={(props) => <ColumnContent navigator={navigator} {...props} />} />;
+*/
 
 export const EmptyLayout: React.FC = ({ children }) => <>{children}</>;

@@ -15,8 +15,8 @@ const Todo = styled.div`
 
 export const TodoText = styled.span`
   font-weight: normal;
-  color: var(--custom-color-foreground-hint);
-  border-bottom: 2px dashed var(--custom-color-foreground-hint);
+  color: var(--agds-foreground-muted);
+  border-bottom: 2px dashed var(--agds-foreground-muted);
 `;
 
 export const TodoLink: React.FC<{ href?: string }> = ({ children, href }) => <TodoText>{children}</TodoText>;

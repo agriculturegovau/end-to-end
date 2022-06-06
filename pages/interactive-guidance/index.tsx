@@ -27,15 +27,15 @@ const Page: LayoutPage = () => (
     <H1>What do you want to export?</H1>
 
     <EasyCard title="Dairy" href="/todo">
-      Includes milk, milk pwoder products, butter, cream, cheese and other processed dairy products
+      Includes milk, milk powder products, butter, cream, cheese and other processed dairy products
     </EasyCard>
 
     <EasyCard title="Eggs" href="/todo">
-      Includes shell eggs and egg products intended to exported as food
+      Includes shell eggs and egg products intended to be exported as food
     </EasyCard>
 
     <EasyCard title="Seafood" href="/todo">
-      Includes finifish, other saefood such as bivalves, crusaceans, echinoderms, gastropods, cephalopods, tunicates and
+      Includes finfish, other seafood such as bivalves, crustaceans, echinoderms, gastropods, cephalopods, tunicates and
       crocodile meat
     </EasyCard>
 
@@ -44,7 +44,7 @@ const Page: LayoutPage = () => (
       technical products
     </EasyCard>
 
-    <EasyCard title="Live Animals" href="/todo">
+    <EasyCard title="Live animals" href="/todo">
       Includes livestock, companion animals, horses, zoo animals, birds, hatching eggs, fish (not for export as food),
       bees and other invertebrates, and reproductive material
     </EasyCard>
@@ -54,12 +54,12 @@ const Page: LayoutPage = () => (
       plant products
     </EasyCard>
 
-    <EasyCard title="Other" href="/todo">
-      Includes all other goods not described in the other categories
+    <EasyCard title="Organics" href="/todo">
+      Includes goods that are organic or biodynamic
     </EasyCard>
 
     <EasyCard title="Other" href="/todo">
-      Includes goods that are organic or bio-dynamic
+      Includes all other goods not described in the other categories
     </EasyCard>
   </>
 );

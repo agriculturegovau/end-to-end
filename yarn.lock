@@ -133,6 +133,14 @@
   resolved "https://registry.yarnpkg.com/@ag.ds-next/page-alert/-/page-alert-4.0.0.tgz#6b31c911929593759ee2aaf4ec5918f246eb6c1c"
   integrity sha512-vw1X/c5EGwt0jgkP8sXK66Q1wdZlTZP+qcy4CPEem7pcud0N1nPaMABZoTZmwVMrc7+D7AKxJ9vjALEfXRYK1w==
 
+"@ag.ds-next/progress-indicator@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@ag.ds-next/progress-indicator/-/progress-indicator-7.0.0.tgz#72a7352ac609baf2ec7233a63669067e942ecdf9"
+  integrity sha512-HtCMOXAVW2jzkNYffhlZXiQqGHEr8QvNi0IRodpemAg8i/eY5Bv9/jXUFszOKgvtiST0L4c1iLNyF08q7dRlGg==
+  dependencies:
+    "@reach/auto-id" "^0.16.0"
+    "@react-spring/web" "^9.4.4"
+
 "@ag.ds-next/skip-link@^5.0.0":
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/@ag.ds-next/skip-link/-/skip-link-5.0.0.tgz#000bf705e2c7b17717fb37bf9ccf562366a3eac0"

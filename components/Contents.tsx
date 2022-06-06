@@ -1,7 +1,5 @@
-import { Body } from '@ag.ds-next/body';
 import { TextLink } from '@ag.ds-next/text';
 import styled from '@emotion/styled';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 
@@ -41,7 +39,7 @@ export const flows = {
     'confirm',
     'success',
   ],
-  ['interactive-guidance']: [],
+  ['interactive-guidance']: ['meat', 'animal-groups', 'product', 'role', 'result'],
 };
 
 export const tranche1Contents = new Map<keyof typeof flows, string>([
@@ -196,6 +194,8 @@ export const OverlayCapture: React.FC = ({ children }) => {
           <code style={{ display: 'block' }}>
             e2e tools
             <hr />
+            <References root="interactive-guidance" />
+            <hr />
             <References root="discovery" />
             <References root="register-establishment" />
             <References root="service-finder" />
@@ -231,4 +231,21 @@ export const OverlayCapture: React.FC = ({ children }) => {
       {children}
     </>
   );
+};
+
+export const useNextServicePage = () => {
+  const router = useRouter();
+  const [section, page] = router.pathname.substring(1).split('/');
+  const currentPages = flows[section as keyof typeof flows];
+  const currentPageOffset = currentPages?.indexOf(page);
+  const nextPage = currentPages[currentPageOffset + 1];
+
+  return nextPage ? `/${section}/${nextPage}` : '/404';
+};
+
+export const useServicePage = (page: string) => {
+  const router = useRouter();
+  const [section] = router.pathname.substring(1).split('/');
+
+  return `/${section}/${page}`;
 };

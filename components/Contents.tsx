@@ -41,12 +41,13 @@ export const flows = {
     'confirm',
     'success',
   ],
+  ['interactive-guidance']: [],
 };
 
-export const indexContents = new Map<keyof typeof flows, string>([
+export const tranche1Contents = new Map<keyof typeof flows, string>([
   //['register-establishment', 'Register establishment'], replace this
   ['discovery', 'Discovery'],
-  ['service-finder', 'Interactive guidance'],
+  ['service-finder', 'Service finder'],
   ['account-preferences', 'Account preferences'],
   ['book-an-inspection', 'Book an appointment'],
   ['book-a-call', 'Book a call'],
@@ -55,6 +56,10 @@ export const indexContents = new Map<keyof typeof flows, string>([
   //['make-payment', 'Make payment'],
   //['new-market-opportunity', 'New market eligibility'],
 ]);
+
+export const tranche2Contents = new Map<keyof typeof flows, string>([['interactive-guidance', 'Interactive guidance']]);
+
+const indexContents = new Map([...Array.from(tranche1Contents), ...Array.from(tranche2Contents)]);
 
 const Details = styled.details`
   & + & {

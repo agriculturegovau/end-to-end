@@ -1,10 +1,8 @@
 import { LayoutPage } from 'components/LayoutPage';
-import AUheading from 'components/@gov.au/AUheading';
 import LogoDAWE from 'components/LogoDAWE';
 import styled from '@emotion/styled';
-import Hr from 'components/Hr';
-import { indexContents } from 'components/Contents';
-import { Text, TextLink } from '@ag.ds-next/text';
+import { tranche1Contents, tranche2Contents } from 'components/Contents';
+import { TextLink } from '@ag.ds-next/text';
 import { Flex } from '@ag.ds-next/box';
 import { Body } from '@ag.ds-next/body';
 
@@ -76,7 +74,19 @@ const Home: LayoutPage = () => (
 
           <nav style={{ paddingTop: '2em' }}>
             <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
-              {Array.from(indexContents).map(([root, label]) => (
+              {Array.from(tranche1Contents).map(([root, label]) => (
+                <li key={root}>
+                  <TextLink href={`/${root}`}>{label}</TextLink>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <hr />
+
+          <nav>
+            <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
+              {Array.from(tranche2Contents).map(([root, label]) => (
                 <li key={root}>
                   <TextLink href={`/${root}`}>{label}</TextLink>
                 </li>

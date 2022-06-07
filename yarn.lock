@@ -141,6 +141,18 @@
     "@reach/auto-id" "^0.16.0"
     "@react-spring/web" "^9.4.4"
 
+"@ag.ds-next/search-box@^8.0.0":
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/@ag.ds-next/search-box/-/search-box-8.0.0.tgz#08a1f492734f860989be26159f30aed807f4e973"
+  integrity sha512-R6fCQotmHQIzV2QmgRnyEAIF6K/3feksXYCHiXe0d4qgKxJpxAlMwG8JthcduDe6hVKcA6tHwZNU2/6bzp5ypw==
+  dependencies:
+    "@reach/auto-id" "^0.16.0"
+
+"@ag.ds-next/select@^8.0.0":
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/@ag.ds-next/select/-/select-8.0.0.tgz#b6fcce9ec790465f1527b889e8063f80ff2a925a"
+  integrity sha512-gO99rOKlYrcNYUZ2J2QJ6nG6hTmiPMxsJXnlCKOJhFxWpVLQCTZJq8p2hpUi/p95fn9+6ClMhebxQHuNsYGdSQ==
+
 "@ag.ds-next/skip-link@^5.0.0":
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/@ag.ds-next/skip-link/-/skip-link-5.0.0.tgz#000bf705e2c7b17717fb37bf9ccf562366a3eac0"

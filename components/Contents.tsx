@@ -40,6 +40,7 @@ export const flows = {
     'success',
   ],
   ['interactive-guidance']: ['meat', 'animal-groups', 'product', 'role', 'result'],
+  ['find-establishment']: ['todo'],
 };
 
 export const tranche1Contents = new Map<keyof typeof flows, string>([
@@ -55,7 +56,10 @@ export const tranche1Contents = new Map<keyof typeof flows, string>([
   //['new-market-opportunity', 'New market eligibility'],
 ]);
 
-export const tranche2Contents = new Map<keyof typeof flows, string>([['interactive-guidance', 'Interactive guidance']]);
+export const tranche2Contents = new Map<keyof typeof flows, string>([
+  ['interactive-guidance', 'Interactive guidance'],
+  ['find-establishment', 'Find establishment'],
+]);
 
 const indexContents = new Map([...Array.from(tranche1Contents), ...Array.from(tranche2Contents)]);
 
@@ -195,6 +199,7 @@ export const OverlayCapture: React.FC = ({ children }) => {
             e2e tools
             <hr />
             <References root="interactive-guidance" />
+            <References root="find-establishment" />
             <hr />
             <References root="discovery" />
             <References root="register-establishment" />

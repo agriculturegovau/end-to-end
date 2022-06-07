@@ -1,5 +1,4 @@
 import { Stack } from '@ag.ds-next/box';
-import { Content } from '@ag.ds-next/content';
 import { Column, Columns } from '@ag.ds-next/columns';
 
 export const ColumnContent: React.FC<{ navigator?: React.ReactNode }> = ({ navigator, children }) => (

@@ -4,6 +4,7 @@ import { useNextServicePage } from 'components/Contents';
 import { Checkbox, ControlGroup } from '@ag.ds-next/control-input';
 import { ButtonGroup, ButtonLink } from '@ag.ds-next/button';
 import { Fieldset } from '@ag.ds-next/fieldset';
+import { Body } from '@ag.ds-next/body';
 
 const Page: LayoutPage = () => (
   <>
@@ -34,12 +35,16 @@ const Page: LayoutPage = () => (
         <Checkbox name="product-consignment">an external territory for consumption in that territory</Checkbox>
         <Checkbox name="product-consignment">
           a resource industry structure in any of the following areas, for consumption in that structure:
+          <Body>
+            <ul>
+              <li>the Greater Sunrise special regime area</li>
+              <li>the Greater Sunrise pipeline international offshore area</li>
+              <li>the Bayu-Undan Gas Field</li>
+              <li>the Bayu-Undan pipeline international offshore area</li>
+              <li>the Kitan Oil Field.</li>
+            </ul>
+          </Body>
         </Checkbox>
-        <Checkbox name="product-consignment">the Greater Sunrise special regime area</Checkbox>
-        <Checkbox name="product-consignment">the Greater Sunrise pipeline international offshore area</Checkbox>
-        <Checkbox name="product-consignment">the Bayu-Undan Gas Field</Checkbox>
-        <Checkbox name="product-consignment">the Bayu-Undan pipeline international offshore area</Checkbox>
-        <Checkbox name="product-consignment">the Kitan Oil Field.</Checkbox>
         <Checkbox name="product-consignment">none of the above</Checkbox>
       </ControlGroup>
     </Fieldset>

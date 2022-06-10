@@ -45,7 +45,14 @@ const Page: LayoutPage = () => {
         <>
           <H3>Filter establishments</H3>
           <Text as="p">
-            <TextLink href="/todo">Clear all filters</TextLink>
+            <TextLink
+              onClick={() => {
+                setPostCodeValue('');
+                setServiceValue('');
+              }}
+            >
+              Clear all filters
+            </TextLink>
           </Text>
 
           <form>
@@ -65,6 +72,7 @@ const Page: LayoutPage = () => {
                 label="What service do you need?"
                 hint="We'll only show facilities that are export approved to perform these operations."
                 onChange={(e) => setServiceValue(e.target.value)}
+                value={serviceValue}
               />
               <Select
                 label="What service do you need?"
@@ -74,6 +82,7 @@ const Page: LayoutPage = () => {
               <TextInput
                 label="Where would you like to find registered establishments?"
                 onChange={(e) => setPostCodeValue(e.target.value)}
+                value={postCodeValue}
               />
             </FormStack>
           </form>

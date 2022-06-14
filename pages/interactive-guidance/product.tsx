@@ -1,68 +1,89 @@
 import { LayoutPage } from 'components/LayoutPage';
 import { H1 } from '@ag.ds-next/heading';
-import { useNextServicePage } from 'components/Contents';
+import { useNextServicePage, useServicePage } from 'components/Contents';
 import { Checkbox, ControlGroup } from '@ag.ds-next/control-input';
-import { ButtonGroup, ButtonLink } from '@ag.ds-next/button';
+import { Button, ButtonGroup, ButtonLink } from '@ag.ds-next/button';
 import { Fieldset } from '@ag.ds-next/fieldset';
 import { Body } from '@ag.ds-next/body';
+import { IntroText } from 'components/IntroText';
+import { useRouter } from 'next/router';
+import { SubmitHandler, useForm } from 'react-hook-form';
 
-const Page: LayoutPage = () => (
-  <>
-    <H1>Is the product derived from any of the following animal groups?</H1>
+interface Product {
+  kind: false | string[];
+}
 
-    <Fieldset legend="The product is:" hint="Choose all that apply">
-      <ControlGroup block>
-        <Checkbox name="product-kind">soup, soup power or soup concentrate</Checkbox>
-        <Checkbox name="product-kind">meat extracts</Checkbox>
-        <Checkbox name="product-kind">tallow</Checkbox>
-        <Checkbox name="product-kind">gelatine</Checkbox>
-        <Checkbox name="product-kind">regenerated collagen products</Checkbox>
-        <Checkbox name="product-kind">animal food</Checkbox>
-        <Checkbox name="product-kind">pharmaceutical products</Checkbox>
-        <Checkbox name="product-kind">less than 5% meat, by weight</Checkbox>
-        <Checkbox name="product-kind">in a consignment weighing less than 10kg</Checkbox>
-        <Checkbox name="product-kind">
-          for consumption of passengers or crew of an aircraft or vessel on a flight or voyage from Australian
-          territory.
-        </Checkbox>
-        <Checkbox name="product-kind">none of the above</Checkbox>
-      </ControlGroup>
-    </Fieldset>
+const Page: LayoutPage = () => {
+  const router = useRouter();
+  const { register, handleSubmit } = useForm<Product>();
 
-    <Fieldset legend="The product is in a consignment for export to:" hint="Choose all that apply">
-      <ControlGroup block>
-        <Checkbox name="product-consignment">New Zealand for consumption in New Zealand</Checkbox>
-        <Checkbox name="product-consignment">an external territory for consumption in that territory</Checkbox>
-        <Checkbox name="product-consignment">
-          a resource industry structure in any of the following areas, for consumption in that structure:
-          <Body>
-            <ul>
-              <li>the Greater Sunrise special regime area</li>
-              <li>the Greater Sunrise pipeline international offshore area</li>
-              <li>the Bayu-Undan Gas Field</li>
-              <li>the Bayu-Undan pipeline international offshore area</li>
-              <li>the Kitan Oil Field.</li>
-            </ul>
-          </Body>
-        </Checkbox>
-        <Checkbox name="product-consignment">none of the above</Checkbox>
-      </ControlGroup>
-    </Fieldset>
+  const exitPage = useServicePage('exit');
+  const npgPage = useServicePage('result-npg');
+  const nextPage = useNextServicePage();
 
-    <Fieldset legend="The product is imported into Australian territory and" hint="Choose all that apply">
-      <ControlGroup block>
-        <Checkbox name="product-3">held in bond at all times until export</Checkbox>
-        <Checkbox name="product-3">
-          then exported in the same covering in which and with the same trade description.
-        </Checkbox>
-        <Checkbox name="product-3">none of the above</Checkbox>
-      </ControlGroup>
-    </Fieldset>
+  const onSubmit: SubmitHandler<Product> = (data) => {
+    if (data?.kind === false || data?.kind?.length === 0) {
+      router.push(exitPage);
+      return;
+    }
 
-    <ButtonGroup>
-      <ButtonLink href={useNextServicePage()}>Continue</ButtonLink>
-    </ButtonGroup>
-  </>
-);
+    if (data?.kind?.find((product) => product === 'none')) {
+      router.push(nextPage);
+      return;
+    }
+
+    router.push(npgPage);
+  };
+
+  return (
+    <>
+      <H1>Do any of the following apply to your product?</H1>
+      <IntroText>Choose all that apply</IntroText>
+
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <ControlGroup block>
+          <Checkbox {...register('kind')} value="soup">
+            soup, soup power or soup concentrate
+          </Checkbox>
+          <Checkbox {...register('kind')} value="extract">
+            meat extracts
+          </Checkbox>
+          <Checkbox {...register('kind')} value="tallow">
+            tallow
+          </Checkbox>
+          <Checkbox {...register('kind')} value="gelatine">
+            gelatine
+          </Checkbox>
+          <Checkbox {...register('kind')} value="collagen">
+            regenerated collagen products
+          </Checkbox>
+          <Checkbox {...register('kind')} value="animal_food">
+            animal food
+          </Checkbox>
+          <Checkbox {...register('kind')} value="pharma">
+            pharmaceutical products
+          </Checkbox>
+          <Checkbox {...register('kind')} value="five_percent">
+            less than 5% meat, by weight
+          </Checkbox>
+          <Checkbox {...register('kind')} value="unheavy">
+            in a consignment weighing less than 10kg
+          </Checkbox>
+          <Checkbox {...register('kind')} value="aircraft_food">
+            for consumption of passengers or crew of an aircraft or vessel on a flight or voyage from Australian
+            territory.
+          </Checkbox>
+          <Checkbox {...register('kind')} value="none">
+            none of the above
+          </Checkbox>
+        </ControlGroup>
+
+        <ButtonGroup>
+          <Button type="submit">Continue</Button>
+        </ButtonGroup>
+      </form>
+    </>
+  );
+};
 
 export default Page;

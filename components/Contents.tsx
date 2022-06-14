@@ -39,7 +39,7 @@ export const flows = {
     'confirm',
     'success',
   ],
-  ['interactive-guidance']: ['meat', 'animal-groups', 'product', 'role', 'result'],
+  ['interactive-guidance']: ['meat', 'animal-groups', 'product', 'product-2', 'product-3', 'role', 'result'],
   ['find-establishment']: ['todo'],
 };
 
